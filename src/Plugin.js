@@ -1,6 +1,7 @@
 import Logo from "./components/Logo/Logo.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
+import VModal from "vue-js-modal";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
@@ -14,6 +15,8 @@ import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 
 module.exports = {
   install: function (Vue, options) {
+    Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
+
     Vue.component('dock-components', Logo);
     Vue.component('dock-components', Modal);
     Vue.component('dock-components', Badge);

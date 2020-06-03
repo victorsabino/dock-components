@@ -11,10 +11,6 @@ import MenuList from "./components/MenuList/MenuList.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
-import Vue from "vue";
-import VModal from "vue-js-modal";
-
-Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 
 export {
   Logo,
