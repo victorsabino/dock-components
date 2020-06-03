@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <div class="logoWrapper">
-      <img src="@/assets/logoFull.svg" />
+      <img src="" />
     </div>
   </div>
 </template>
