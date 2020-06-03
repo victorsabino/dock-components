@@ -1,13 +1,14 @@
 {
   "name": "dock-components",
-  "version": "1.0.0",
-  "author": "Victor Sabino and Breno Ribeiro",
+  "version": "1.0.1",
+  "author": "dockmarket",
   "info": "This is a proprietary package, any problem contact contact@dockmarket.com.br",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service build --target lib --name dock-components src/main.js"
+    "build": "vue-cli-service build --target lib --name dock-components src/main.js",
+    "build-lib": "vue-cli-service build --target lib --name dock-components src/main.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
