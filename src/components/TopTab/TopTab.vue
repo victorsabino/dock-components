@@ -54,8 +54,13 @@ export default {
   margin-right: 20px;
   padding: 7px 10px;
   display: flex;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  width: 160px;
+}
+.topTab i {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .topTabTitle {
   font-weight: 500;

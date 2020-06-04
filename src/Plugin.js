@@ -12,10 +12,14 @@ import MenuList from "./components/MenuList/MenuList.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
+import VueMaterial from "vue-material";
+import VueTheMask from "vue-the-mask";
 
 module.exports = {
   install: function (Vue, options) {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
+    Vue.use(VueMaterial);
+    Vue.use(VueTheMask);
 
     Vue.component('dock-components', Logo);
     Vue.component('dock-components', Modal);
