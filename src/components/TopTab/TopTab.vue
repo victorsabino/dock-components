@@ -44,7 +44,7 @@ export default {
 <style scoped>
 .topTabRoot {
   height: 50px;
-  min-width: 290px;
+  min-width: 310px;
   display: flex;
   margin-top: 17px;
   cursor: pointer;
