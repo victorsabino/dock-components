@@ -42,6 +42,7 @@ export default {
   display: flex;
   text-transform: capitalize;
   cursor: pointer;
+  justify-content: space-between;
 }
 .toggleTitle {
   height: 2px;
