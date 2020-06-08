@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .topTabRoot {
-  height: 50px;
+  height: 35px;
   min-width: 310px;
   display: flex;
   margin-top: 17px;
@@ -67,7 +67,7 @@ export default {
   font-family: "Raleway", "sans-serif";
   font-size: 20px;
   margin-left: 5px;
-  margin-top: 8px;
+  margin-top: 2px;
   transition: all 0.5s;
 }
 .topTabTitleInactive {

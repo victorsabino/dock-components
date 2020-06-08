@@ -44,7 +44,7 @@ export default {
   height: 16px;
   margin-top: 25px;
   color: #10434f57 !important;
-  background-color: #ebe8e3 !important;
+  background-color: #E8E3DA !important;
   border-radius: 4px;
   box-shadow: 0px 2px 1px #dcd7cd;
   min-height: 35px;
