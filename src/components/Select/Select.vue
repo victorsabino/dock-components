@@ -60,7 +60,10 @@ export default {
     }
   },
   beforeMount() {
-    this.selected = this.startValue;
+    this.selected = this.options[0];
+     if (this.startValue) {
+      this.selected = this.startValue;
+    }
     if (this.currentValue) {
       this.selected = this.currentValue;
     }
