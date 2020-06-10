@@ -6,6 +6,7 @@
       style="height:90%;"
       v-bind:type="type"
       v-model="currentValue"
+      :disabled="disabled"
       @change="shouldHideLabel"
     />
     <md-icon :v-if="icon" style="color: #D8D1C4 !important">{{ icon }}</md-icon>
@@ -14,7 +15,7 @@
 
 <script>
 export default {
-  props: ["label", "icon", "value", "type", "height"],
+  props: ["label", "icon", "value", "type", "height", "disabled"],
   data() {
     return {
       hide: ""
@@ -22,7 +23,7 @@ export default {
   },
   methods: {
     shouldHideLabel: function(val) {
-      if (!val) return;
+      if (!val || (!val && !this.currentValue)) return;
       this.hide = val && val.target.value.length > 0 ? "hide" : "";
     }
   },
