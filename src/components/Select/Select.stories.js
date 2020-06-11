@@ -7,3 +7,9 @@ export const SelectBasic = () => ({
   template:
   "<Select :options=\"['teste']\" label='teste'/>"
 });
+
+export const SelectObjKey = () => ({
+  components: { Select },
+  template:
+  "<Select :options=\"[{id: 'teste'}]\" objKey=\"id\" label='teste'/>"
+});

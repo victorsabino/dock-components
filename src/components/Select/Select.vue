@@ -62,20 +62,18 @@ export default {
   beforeMount() {
     this.selected = this.options[0];
      if (this.startValue) {
-      return this.selected = this.startValue;
+      this.selected = this.startValue;
     }
     if (this.currentValue) {
-      return this.selected = this.currentValue;
+      this.selected = this.currentValue;
     }
   },
   computed: {
     hideLabel: function () {
-      console.log('this.selected ', this.selected)
-      return !!this.selected;
+      return !!this.selected && !this.objKey;
     }
   },
   updated() {
-    console.log("currentValue ", this.currentValue);
     if (this.currentValue) {
       this.selected = this.currentValue;
     }
