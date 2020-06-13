@@ -7,6 +7,8 @@
       v-bind:type="type"
       v-model="currentValue"
       :disabled="disabled"
+      :maxlength="maxLength"
+      :md-counter="maxLength"
       @change="shouldHideLabel"
     />
     <md-icon :v-if="icon" style="color: #D8D1C4 !important">{{ icon }}</md-icon>
@@ -15,7 +17,7 @@
 
 <script>
 export default {
-  props: ["label", "icon", "value", "type", "height", "disabled"],
+  props: ["label", "icon", "value", "type", "height", "disabled", "maxLength"],
   data() {
     return {
       hide: ""
@@ -131,5 +133,8 @@ textarea::-webkit-scrollbar-corner {
 }
 .textarea .md-textarea {
   padding-top: 0 !important;
+}
+.md-count {
+  bottom: -20px;
 }
 </style>
