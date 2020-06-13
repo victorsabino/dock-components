@@ -46,6 +46,7 @@ export default {
     borderRadius: {},
     paddingLeft: {},
     textAlign: {},
+    disabled: {},
     hasOverlay: {
       default: true,
       type: Boolean
@@ -79,16 +80,21 @@ export default {
       this.isListButtonsOpen = !this.isListButtonsOpen;
     },
     style() {
-      return `background-color: ${this.bgcolor}; 
-          box-shadow: 0px 3px 1px ${this.shadow} !important; 
-          color: ${this.color};  
-          width: ${this.width} !important; 
+      let disabled = "";
+      if (this.disabled) {
+        disabled = ' background-color: #7f7f7f !important; box-shadow: 0 3px 1px #959796 !important; pointer-events: none !important';
+        console.log('hello ', disabled)
+      }
+      return ` background-color: ${this.bgcolor};
+          box-shadow: 0px 3px 1px ${this.shadow} !important;
+          color: ${this.color};
+          width: ${this.width} !important;
           font-size: ${this.fontSize} !important;
           font-weight: ${this.fontWeight} !important;
           border: ${this.border};
           border-radius: ${this.borderRadius};
           padding-left: ${this.paddingLeft};
-          text-align: ${this.textAlign}`;
+          text-align: ${this.textAlign}; ` + disabled;
     }
   },
   computed: {
