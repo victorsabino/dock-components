@@ -20,11 +20,22 @@ module.exports = {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
     Vue.use(VueMaterial);
     Vue.use(VueTheMask);
-    Vue.directive('float ', {
-         bind(el, bind, vnode) {
-        console.log('el ', el);
-        console.log('bind', bind);
-        console.log('vnode ', vnode)
+    Vue.directive("decimal", {
+      bind(el, binding, vnode) {
+        let maxDecimal = parseInt(binding.value);
+        let countDecimals = function(value) {
+          if (Math.floor(value) !== value)
+            return value.toString().split(".")[1].length || 0;
+          return 0;
+        };
+        let handler = function(e) {
+          let value = parseFloat(e.target.value);
+          if (countDecimals(value) > maxDecimal) {
+            e.target.value = value.toFixed(maxDecimal);
+            vnode.elm.dispatchEvent(new CustomEvent("input"));
+          }
+        };
+        el.addEventListener("input", handler);
       }
     });
 
