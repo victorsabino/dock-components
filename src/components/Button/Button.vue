@@ -83,7 +83,6 @@ export default {
       let disabled = "";
       if (this.disabled) {
         disabled = ' background-color: #7f7f7f !important; box-shadow: 0 3px 1px #959796 !important; pointer-events: none !important';
-        console.log('hello ', disabled)
       }
       return ` background-color: ${this.bgcolor};
           box-shadow: 0px 3px 1px ${this.shadow} !important;
