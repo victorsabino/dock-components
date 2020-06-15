@@ -9,6 +9,7 @@
       :disabled="disabled === 'true'"
       v-bind:type="type"
       v-model="currentValue"
+      v-decimal="maxDecimal"
       @blur="blur"
     />
     <md-input
@@ -20,6 +21,7 @@
       v-model="currentValue"
       :step="step"
       :pattern="pattern"
+      v-decimal="maxDecimal"
       @blur="blur"
     />
 
@@ -38,6 +40,10 @@ export default {
     label: {
       type: String,
       default: ""
+    },
+    maxDecimal: {
+      type: String,
+      default: "999"
     },
     icon: {
       type: String,

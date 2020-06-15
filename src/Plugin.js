@@ -20,6 +20,13 @@ module.exports = {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
     Vue.use(VueMaterial);
     Vue.use(VueTheMask);
+    Vue.directive('float ', {
+         bind(el, bind, vnode) {
+        console.log('el ', el);
+        console.log('bind', bind);
+        console.log('vnode ', vnode)
+      }
+    });
 
     Vue.component('dock-components', Logo);
     Vue.component('dock-components', Modal);

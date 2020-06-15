@@ -9,6 +9,24 @@ import { configure, addDecorator } from "@storybook/vue";
 
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueMaterial);
+Vue.directive("decimal", {
+  bind(el, binding, vnode) {
+    let maxDecimal = parseInt(binding.value);
+    let countDecimals = function(value) {
+      if (Math.floor(value) !== value)
+        return value.toString().split(".")[1].length || 0;
+      return 0;
+    };
+    let handler = function(e) {
+      let value = parseFloat(e.target.value);
+      if (countDecimals(value) > maxDecimal) {
+        e.target.value = value.toFixed(maxDecimal);
+        vnode.elm.dispatchEvent(new CustomEvent("input"));
+      }
+    };
+    el.addEventListener("input", handler);
+  }
+});
 
 addDecorator(() => ({
   vuetify: VueMaterial,
