@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
