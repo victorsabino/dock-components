@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     hideLabel: function () {
-      return this.selected !== this.options[0] && this.selected !== this.startValue;
+      return !(this.selected === this.options[0] || this.selected === this.startValue);
     }
   },
   updated() {
