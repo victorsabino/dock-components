@@ -1,6 +1,6 @@
 <template>
   <md-field :style="style()" class="input md-layout-item md-size-100">
-    <label v-if="!hideLabel" for="Order">{{ label }}</label>
+    <label v-if="showLabel" for="Order">{{ label }}</label>
     <md-select :disabled="disabled" v-model="selected" :name="name" :id="id">
       <md-option
         v-for="option in options.filter(obj => typeof obj == typeof {})"
@@ -60,7 +60,9 @@ export default {
     }
   },
   beforeMount() {
-    this.selected = this.options[0];
+    if (!this.label) {
+      this.options[0];
+    }
     if (this.currentValue) {
       this.selected = this.currentValue;
     }
@@ -69,8 +71,8 @@ export default {
     }
   },
   computed: {
-    hideLabel: function () {
-      return !(this.selected === this.options[0] || this.selected === this.startValue);
+    showLabel: function () {
+      return !this.selected;
     }
   },
   updated() {
