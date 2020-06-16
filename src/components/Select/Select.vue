@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     hideLabel: function () {
-      return !!this.selected;
+      return !!this.selected && !this.objKey;
     }
   },
   updated() {
