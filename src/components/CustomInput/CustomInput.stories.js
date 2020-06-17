@@ -19,3 +19,9 @@ export const CustomInputDisabled = () => ({
     "<CustomInput :disabled=\"true\" label=\"teste\"/>"
 });
 
+export const CustomInputMax = () => ({
+  components: { CustomInput },
+  template:
+    "<CustomInput label=\"teste\" maxLength=\"3\"/>"
+});
+

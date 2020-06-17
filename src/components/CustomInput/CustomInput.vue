@@ -5,21 +5,22 @@
       v-if="mask"
       v-mask="mask"
       :placeholder="placeholder"
-      :maxlength="maxlength"
       :disabled="disabled === 'true'"
       v-bind:type="type"
       v-model="currentValue"
       v-decimal="maxDecimal"
+      :maxlength="maxLength"
+      :md-counter="maxLength"
       @blur="blur"
     />
     <md-input
       v-else
       :placeholder="placeholder"
-      :maxlength="maxlength"
       :disabled="disabled"
       v-bind:type="type"
       v-model="currentValue"
       :step="step"
+      :maxlength="maxLength"
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
@@ -88,7 +89,8 @@ export default {
     blur: {
       default: () => {},
       type: Function
-    }
+    },
+    maxLength: {}
   },
   methods: {},
   computed: {
