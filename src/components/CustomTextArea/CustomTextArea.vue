@@ -7,8 +7,8 @@
       v-bind:type="type"
       v-model="currentValue"
       :disabled="disabled"
-      :maxlength="maxLength.toString()"
-      :md-counter="maxLength"
+      :maxlength="computedMaxLength"
+      :md-counter="computedMaxLength"
       @change="shouldHideLabel"
     />
     <md-icon :v-if="icon" style="color: #D8D1C4 !important">{{ icon }}</md-icon>
@@ -30,6 +30,9 @@ export default {
     }
   },
   computed: {
+    computedMaxLength: function () {
+      return this.maxLength ? this.maxLength.toString() : undefined;
+    },
     currentValue: {
       get() {
         return this.value;
