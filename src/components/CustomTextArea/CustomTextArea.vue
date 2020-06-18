@@ -7,7 +7,7 @@
       v-bind:type="type"
       v-model="currentValue"
       :disabled="disabled"
-      :maxlength="maxLength"
+      :maxlength="maxLength.toString()"
       :md-counter="maxLength"
       @change="shouldHideLabel"
     />
