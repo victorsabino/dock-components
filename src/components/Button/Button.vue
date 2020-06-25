@@ -4,7 +4,7 @@
       <md-icon v-if="icon !== 'none' || !icon" :style="iconStyle">
         {{ icon }}
       </md-icon>
-      <span> {{ text }} </span>
+      <div> {{ text }} </div>
     </div>
     <div
       class="buttonOverlay"
