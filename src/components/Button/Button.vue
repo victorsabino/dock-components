@@ -22,7 +22,7 @@
         <md-icon v-if="icon !== 'none' || !icon" :style="iconStyle">
           {{ button.icon }}
         </md-icon>
-        <span> {{ button.text }} </span>
+        <div> {{ button.text }} </div>
       </div>
     </div>
   </div>
