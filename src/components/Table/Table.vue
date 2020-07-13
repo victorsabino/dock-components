@@ -9,7 +9,7 @@
             :key="index"
           >
             <div class="row">
-              <div class="rowTitle">{{ data[1] }}</div>
+              <div class="rowTitle" v-html="data[1]"></div>
               <div class="divisor" v-if="index + 1 < headerDataLength" />
               <div v-else class="divisor hidden" />
             </div>
@@ -38,7 +38,7 @@ export default {
       ]
     },
     headerData: {
-      default: {header1: "id", header2: "header 2", header3: "header 3", header4: "header 2", header5: "header 3", header6: "header 2", header7: "header 3", }
+      default: {header1: `<md-checkbox> teste</md-checkbox>`, header2: "header 2", header3: "header 3", header4: "header 2", header5: "header 3", header6: "header 2", header7: "header 3", }
     }
   },
   computed: {
