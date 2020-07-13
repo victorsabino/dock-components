@@ -5,6 +5,7 @@ import VModal from "vue-js-modal";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
+import Table from "./components/Table/Table.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
@@ -52,5 +53,6 @@ module.exports = {
     Vue.component('dock-components', ButtonIcon);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', CustomTextArea);
+    Vue.component('dock-components', Table);
   }
 };

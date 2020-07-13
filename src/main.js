@@ -11,10 +11,12 @@ import MenuList from "./components/MenuList/MenuList.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
+import Table from "./components/Table/Table.vue";
 
 export {
   Logo,
   Modal,
+  Table,
   Badge,
   TopTab,
   Toggle,
