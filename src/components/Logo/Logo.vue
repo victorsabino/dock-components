@@ -1,19 +1,23 @@
 <template>
   <div class="logo">
     <div class="logoWrapper">
-      <img src="" />
+      <img :src="logoImg" />
     </div>
   </div>
 </template>
 
 <script>
+import LogoFull from "@/assets/logoFull.svg";
 export default {
   props: {
     marginLeft: {
       default: null,
       type: String
+    },
+    logoImg: {
+      defaultt: LogoFull
     }
-  }
+  },
 };
 </script>
 

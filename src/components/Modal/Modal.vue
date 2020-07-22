@@ -15,7 +15,7 @@
       </div>
       <div>
         <div v-if="hasLogo" class="logo">
-          <Logo />
+          <Logo :logoImg="logoFull"/>
         </div>
       </div>
       <slot name="content" />
@@ -24,6 +24,7 @@
 </template>
 <script>
 import Logo from "../Logo/Logo.vue";
+import logoImg from "@/assets/logoFull.svg";
 
 export default {
   props: {
@@ -62,6 +63,9 @@ export default {
     hasLogo: {
       type: Boolean,
       default: true
+    },
+    logoFull: {
+      default: logoImg
     }
   },
   components: { Logo }
