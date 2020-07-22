@@ -47,7 +47,8 @@ export default {
   data: function() {
     return {
       selected: null,
-      option: ""
+      option: "",
+      hasSetedStartedValued: false,
     };
   },
   methods: {
@@ -85,7 +86,12 @@ export default {
       if (this.selected == null) this.selected = val;
     },
     selected: function(val) {
+      if  (this.startValue && !this.hasSetedStartedValued) {
+        this.hasSetedStartedValued = true;
+        return; 
+      }
       this.$emit("change", val);
+      
       // Remove currently selected after selecting
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     }
