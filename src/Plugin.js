@@ -11,6 +11,7 @@ import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
+import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
@@ -50,6 +51,7 @@ module.exports = {
     Vue.component('dock-components', TopTab);
     Vue.component('dock-components', MenuList);
     Vue.component('dock-components', Checkbox);
+    Vue.component('dock-components', DateInput);
     Vue.component('dock-components', ButtonIcon);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', CustomTextArea);
