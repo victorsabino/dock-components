@@ -3,7 +3,7 @@
     class="buttonIcon"
     :style="`background-color: ${bgColor}; width: ${radius}; height: ${radius}`"
   >
-    <md-icon style="color: #F4F1EB !important"> {{ icon }} </md-icon>
+    <md-icon :style="`color: ${color} !important`"> {{ icon }} </md-icon>
   </div>
 </template>
 
@@ -22,6 +22,10 @@ export default {
     radius: {
       type: String,
       default: "38px"
+    },
+    color: {
+      type: String,
+      default: "#F4F1EB"
     }
   }
 };
