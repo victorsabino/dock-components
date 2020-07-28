@@ -1,7 +1,7 @@
 <template>
   <div
     class="buttonIcon"
-    :style="`background-color: ${bgColor}; width: ${radius}; height: ${radius}`"
+    :style="`background-color: ${bgColor}; width: ${width || radius}; height: ${height || radius}`"
   >
     <md-icon :style="`color: ${color} !important`"> {{ icon }} </md-icon>
   </div>
@@ -22,6 +22,14 @@ export default {
     radius: {
       type: String,
       default: "38px"
+    },
+    width: {
+      type: String | undefined,
+      default: undefined
+    },
+    height: {
+      type: String | undefined,
+      default: undefined
     },
     color: {
       type: String,
