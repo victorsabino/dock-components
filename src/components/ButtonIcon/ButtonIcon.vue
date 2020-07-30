@@ -33,7 +33,7 @@ export default {
     },
     color: {
       type: String,
-      default: "#F4F1EB"
+      default: "red"
     }
   }
 };

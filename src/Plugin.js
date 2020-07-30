@@ -1,6 +1,7 @@
 import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
 import Logo from "./components/Logo/Logo.vue";
+import Money from "./components/Money/Money.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import VModal from "vue-js-modal";
@@ -44,6 +45,7 @@ module.exports = {
     Vue.component('dock-components', Logo);
     Vue.component('dock-components', Modal);
     Vue.component('dock-components', Badge);
+    Vue.component('dock-components', Money);
     Vue.component('dock-components', Select);
     Vue.component('dock-components', Status);
     Vue.component('dock-components', Button);

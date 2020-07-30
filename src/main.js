@@ -4,6 +4,7 @@ import Modal from "./components/Modal/Modal.vue";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
+import Money from "./components/Money/Money.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
@@ -17,6 +18,7 @@ import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDial
 export {
   Logo,
   Modal,
+  Money,
   Badge,
   TopTab,
   Toggle,
