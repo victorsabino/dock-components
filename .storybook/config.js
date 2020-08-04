@@ -2,6 +2,7 @@ import Vue from "vue";
 import VModal from "vue-js-modal";
 import "../public/MaterialIcons.css";
 import "../public/style.css";
+import "../public/multiselect.css";
 import "../public/Raleway.css";
 import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";

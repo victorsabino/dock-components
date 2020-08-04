@@ -8,7 +8,7 @@ const mockFunc = () => {
 export const SelectBasic = () => ({
   components: { Select },
   template:
-  "<Select :options=\"['teste']\" label='testao'/>"
+  "<div style='width: 330px'> <Select :options=\"['teste1', 'teste2']\" label='testao'/> </div>"
 });
 
 export const SelectObjKey = () => ({
