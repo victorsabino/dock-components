@@ -12,6 +12,7 @@ import DateInput from "./components/DateInput/DateInput.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
+import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
 
@@ -30,6 +31,7 @@ export {
   DateInput,
   ButtonIcon,
   CustomInput,
+  SlottedSelect,
   CustomTextArea,
   ConfirmationDialog
 };

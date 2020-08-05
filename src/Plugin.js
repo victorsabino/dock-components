@@ -1,10 +1,10 @@
+import VModal from "vue-js-modal";
 import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
 import Logo from "./components/Logo/Logo.vue";
 import Money from "./components/Money/Money.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
-import VModal from "vue-js-modal";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
@@ -15,6 +15,7 @@ import MenuList from "./components/MenuList/MenuList.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
+import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
 
@@ -56,6 +57,7 @@ module.exports = {
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', ButtonIcon);
     Vue.component('dock-components', CustomInput);
+    Vue.component('dock-components', SlottedSelect);
     Vue.component('dock-components', CustomTextArea);
     Vue.component('dock-components', ConfirmationDialog);
   }

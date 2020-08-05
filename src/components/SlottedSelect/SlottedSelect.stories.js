@@ -1,12 +1,12 @@
-import DateSelect from "./DateSelect.vue";
+import SlottedSelect from "./SlottedSelect.vue";
 
-export default { title: "DateSelect" };
+export default { title: "SlottedSelect" };
 const mockFunc = () => {
   console.log("testing ");
 };
 
-export const DateSelectDateForm = () => ({
-  components: { DateSelect },
+export const SlottedSelectDateForm = () => ({
+  components: { SlottedSelect },
   template:
-    "<div style='width: 195px'> <DateSelect label='testao'> </DateSelect> </div>"
+    "<div style='width: 195px'> <SlottedSelect label='testao'> </SlottedSelect> </div>"
 });

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Multiselect from "../Multiselect";
+import Multiselect from "vue-multiselect-fork";
 import DateForm from "../DateForm/DateForm";
 
 export default {

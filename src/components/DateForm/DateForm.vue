@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DateInput from "../DateInput/DateInput";
+import DateInput from "../DateInput";
 
 export default {
   props: {
