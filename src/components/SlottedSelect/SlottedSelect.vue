@@ -30,7 +30,7 @@
 
 <script>
 import Multiselect from "vue-multiselect-fork";
-import DateForm from "../DateForm/DateForm";
+import DateForm from "../DateForm/DateForm.vue";
 
 export default {
   props: {

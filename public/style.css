@@ -1,0 +1,328 @@
+html {
+  height: 100% !important;
+  background-color: #103a4f !important;
+  position: relative;
+}
+.raleway {
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 0;
+  color: #f4f1eb;
+  opacity: 1;
+  line-height: 22px;
+}
+.tableRoot {
+  margin-bottom: 50px;
+}
+input:required {
+  box-shadow: none;
+}
+.customInput {
+  padding-top: 13px !important;
+}
+input:invalid {
+  box-shadow: none;
+}
+.align-right {
+  text-align: right;
+}
+.md-snackbar {
+  background-color: #f4f1eb !important;
+}
+.md-snackbar.md-position-center {
+  top: 100px !important;
+  bottom: auto !important;
+}
+.snack-success {
+  border-left: 8px solid #81c784;
+}
+.snack-error {
+  border-left: 8px solid #f44336;
+}
+.snack-neutral {
+  border-left: 8px solid #4791db;
+}
+.snack-warning {
+  border-left: 8px solid #ff9800;
+}
+.md-snackbar-content {
+  color: #10434f;
+}
+.md-field.md-focused label,
+.md-field.md-has-value label {
+  font-size: 16px !important;
+  top: 23px !important;
+}
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #103a4f !important;
+}
+
+body {
+  background-color: #10434f;
+  height: 100%;
+}
+
+.container {
+  height: calc(100% - 180px);
+  max-width: 1550px;
+}
+.container > div {
+  width: 100%;
+}
+.hidden {
+  visibility: hidden;
+}
+.md-icon.md-theme-default.md-icon-font {
+  color: #4eb9a7 !important;
+}
+
+.vm--container {
+  background: rgb(16, 58, 79) !important;
+  z-index: 9999 !important;
+  height: 100% !important;
+}
+.v--modal-overlay[data-modal="signup"],
+.v--modal-overlay[data-modal="login"] {
+  background: linear-gradient(180deg, #10434f 70%, #4eb9b1 30%),
+    linear-gradient(0deg, rgba(0, 255, 0, 0.8) 50%, rgba(0, 255, 0, 0) 50%) !important;
+}
+.cell,
+.day__month_btn {
+  color: #10434f;
+}
+
+.md-datepicker-dialog.md-theme-default
+  .md-datepicker-day-button.md-datepicker-selected {
+  background-color: #104350 !important;
+  color: #f4f1eb !important;
+}
+.md-datepicker-header {
+  color: #f4f1eb !important;
+}
+.md-button-content,
+.md-datepicker-day-button .md-datepicker-today {
+  color: #103a4f;
+}
+.md-count {
+  position: absolute;
+  bottom: -3px;
+  right: 5px !important;
+  color: black !important;
+}
+.md-datepicker-overlay,
+.md-datepicker-dialog {
+  z-index: 9999 !important;
+}
+.md-datepicker-header {
+  background-color: #103a4f !important;
+}
+.align-center {
+  text-align: center;
+}
+.md-date-icon::after {
+  background-color: transparent !important;
+}
+.md-datepicker > button {
+  top: 0 !important;
+}
+.dateWrapper > div:first-child {
+}
+.md-datepicker::after,
+.md-datepicker::before {
+  background-color: transparent !important;
+}
+.md-datepicker .md-clear {
+  display: none !important;
+}
+.align-left {
+  text-align: left;
+}
+
+.flex {
+  display: flex;
+}
+.font12 {
+  font-size: 12px;
+}
+.font48 {
+  font-size: 48px;
+}
+.font13 {
+  font-size: 13px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.font14 {
+  font-size: 14px;
+}
+.font16 {
+  font-size: 16px;
+}
+
+.font17 {
+  font-size: 17px;
+}
+
+.font18 {
+  font-size: 18px;
+}
+
+.font19 {
+  font-size: 19px;
+}
+.font20 {
+  font-size: 20px;
+}
+.font22 {
+  font-size: 22px;
+}
+.font24 {
+  font-size: 24px;
+}
+.hide {
+  display: none !important;
+}
+.font34 {
+  font-size: 34px;
+  line-height: 41px;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.semiBold {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 600;
+}
+.md-snackbar {
+  z-index: 99999 !important;
+}
+.regular {
+  font-weight: 400;
+}
+
+.beige {
+  color: #f4f1eb;
+}
+
+.lightGreen {
+  color: #7ec6ae;
+}
+.vocaloidGreen {
+  color: #4eb9b1;
+}
+.darkBlue {
+  color: #10434f;
+}
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+.md-select-menu {
+}
+.grayishOrange {
+  color: #dcd7cd;
+}
+.gray {
+  color: #00000099;
+}
+.brown {
+  color: #ebe8e3;
+}
+
+.italic {
+  text-decoration: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+.underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.dimmingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 0.4;
+}
+
+.openSans {
+  font-family: Open Sans, sans-serif;
+}
+.titleSpacing {
+  margin: 20px 2px;
+}
+.spacing {
+  margin-top: 8px;
+}
+.opacity5 {
+  opacity: 0.5;
+}
+.vdp-datepicker__calendar {
+  z-index: 9999999999999 !important;
+}
+
+.tableRoot .md-table-head-label {
+  width: 100%;
+}
+.tableRoot .tableRow:first-child {
+  border-top: 3px solid #889da7;
+}
+.tableRoot .tableRow {
+  background-color: #f4f1eb;
+  color: #00000099;
+  border-top: 5px solid #889da7;
+  font-family: "Open Sans", sans-serif;
+}
+.tableRoot .md-table-content {
+  border-radius: 4px;
+}
+.tableRoot .md-table-cell {
+  padding: 10px 0 !important;
+}
+.tableRoot .md-table-head-label {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #f4f1eb;
+  overflow: visible;
+}
+.tableRoot .md-checkbox-container {
+  margin-top: -10px;
+}
+.tableRoot .md-table-head-container {
+  overflow: visible;
+}
+.tableRoot .md-checkbox-container {
+  border-color: #ffffff8a !important;
+}
+.md-table {
+  background-color: transparent !important;
+}
+.md-table.md-theme-default .md-table-content {
+  background-color: transparent !important;
+}
+
