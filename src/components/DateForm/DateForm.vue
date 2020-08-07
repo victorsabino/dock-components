@@ -1,8 +1,8 @@
 <template>
   <div class="dateForm">
-    <div class="dateFormTitle"> {{ title }} </div>
+    <div class="dateFormRow"> {{ row }} </div>
     <div class="dateInputWrapper" @click="click">
-      <DateInput/>
+      <DateInput :right="right"/>
     </div>
   </div>
 </template>
@@ -12,9 +12,13 @@ import DateInput from "../DateInput";
 
 export default {
   props: {
-    title: {
-      default: 'Title',
+    row: {
+      default: 'Row',
       type: String
+    },
+    right: {
+      default: false,
+      type: Boolean
     }
   },
   components: {
@@ -32,7 +36,7 @@ export default {
     margin-left: -15px;
     color: #103A4F;
   }
-  .dateFormTitle{
+  .dateFormRow{
     margin-left: -10px;
     margin-top: 5px;
   }
