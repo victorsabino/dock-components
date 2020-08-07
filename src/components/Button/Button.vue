@@ -125,7 +125,7 @@ export default {
   z-index: 2;
 }
 .mainButton {
-  z-index: -1 !important;
+  z-index: -1;
   position: relative;
 }
 .buttonOverlay {
@@ -145,7 +145,7 @@ export default {
 }
 .buttonRoot div {
   margin-top: 10px;
-  z-index: 2 !important;
+  z-index: 2;
 }
 .buttonRoot {
   z-index: 3;
