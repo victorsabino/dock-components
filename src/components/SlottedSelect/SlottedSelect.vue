@@ -5,8 +5,8 @@
       :clear-on-select="reset"
       v-model="value"
       placeholder="Select a date period"
-      label="title"
-      track-by="title"
+      label="row"
+      track-by="row"
       :options="options"
       :searchable="false"
       :option-height="104"
@@ -15,13 +15,18 @@
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc" v-if="!props.option.slot">
-          <span class="option__title">
-            {{ props.option.title }}
+          <span class="option__row">
+            {{ props.option.row }}
+          </span>
+        </div>
+        <div class="option__desc" v-else>
+          <span class="option__rowSlot">
+            {{ props.option.row }}
           </span>
         </div>
         <div v-if="props.option.dateForm" class="dateFormWrapper">
-          <DateForm title="from" />
-          <DateForm title="to" />
+          <DateForm row="from" right/>
+          <DateForm row="to" right/>
         </div>
       </template>
     </multiselect>
@@ -45,10 +50,10 @@ export default {
     },
     options: {
       default: () => [
-        { title: "Last 5 days", desc: "Last 5 days" },
-        { title: "Last 15 days", desc: "Last 15 days" },
-        { title: "Last 30 days", desc: "Last 30 days" },
-        { dateForm: true, title: "Period" }
+        { row: "Last 5 days", desc: "Last 5 days" },
+        { row: "Last 15 days", desc: "Last 15 days" },
+        { row: "Last 30 days", desc: "Last 30 days" },
+        { dateForm: true, row: "Period", slot:true}
       ],
       type: Array
     },
@@ -135,6 +140,9 @@ export default {
 </script>
 
 <style>
+.multiselect{
+  color:#51515180 !important;
+}
 .multiselect .multiselect__tags {
   background-color: #ebe8e3;
   box-shadow: 0px 2px 1px #d8d1c4;
@@ -160,11 +168,15 @@ export default {
 }
 .multiselect__option--highlight,
 .multiselect__option--selected,
-.option__title {
+.option__row {
   background-color: #ebe8e3;
   color: #00000099 !important;
 }
-.multiselect__option:last-child .option__title {
+.multiselect__option--highlight,
+.multiselect__option--selected,
+.option__rowSlot {
+  background-color: #ebe8e3;
+  color: #00000099 !important;
 }
 .multiselect__option::after {
   display: none;
@@ -174,6 +186,7 @@ export default {
   padding-left: 10px;
   margin-left: 0px;
   overflow: hidden;
+  font-weight: 400;
 }
 .multiselect__content-wrapper {
   min-height: 201px;
@@ -182,8 +195,11 @@ export default {
   padding: 5px !important;
   min-height: 17px !important;
 }
-.option__title {
+.option__row {
   color: #00000099 !important;
+}
+.option__rowSlot{
+  color: #103A4F !important;
 }
 .multiselect__input {
   font-size: 14px;
