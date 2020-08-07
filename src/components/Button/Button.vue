@@ -145,7 +145,7 @@ export default {
 }
 .buttonRoot div {
   margin-top: 10px;
-  z-index: 2 !important;
+  z-index: 2;
 }
 .buttonRoot {
   z-index: 3;
