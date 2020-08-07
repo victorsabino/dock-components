@@ -4,7 +4,19 @@
       v-model="currentValue"
       md-immediately
       :md-disabled-dates="disabled"
-    />
+      :dir="right ? 'rtl' : ''"
+      :class="right ? 'right' : 'left'"
+      class="iconFill"
+    >
+      <label 
+        :class="[
+          shouldHideLabel , 
+          right ? 'rightLabel' : ''
+        ]"
+      >
+        xx.xxx.xx
+      </label>
+    </md-datepicker>
   </div>
 </template>
 
@@ -20,7 +32,8 @@ export default {
     "type",
     "startDate",
     "error",
-    "disableDate"
+    "disableDate",
+    "right",
   ],
   methods: {
     shouldHideLabel: function() {
@@ -39,7 +52,13 @@ export default {
         return `color: red !important`;
       }
       return "";
-    }
+    },
+    shouldHideLabel() {
+      if (this.currentValue === null) return "";
+      return (this.currentValue)
+        ? "hide"
+        : "";
+    },
   },
   data: function() {
     return {
@@ -66,16 +85,36 @@ export default {
 .hide {
   display: none !important;
 }
-
 .md-focused label {
   display: none;
 }
-
 .md-field {
   padding-top: 0;
 }
+::v-deep .md-field.md-clearable .md-input{
+  color:#707070 !important;
+  font-size: 14px;
+  padding-right: 60px;
+}
 .dateInput {
   z-index: 99999999999 !important;
+}
+.left{
+  padding-left:6px;
+}
+.right{
+  padding-right:6px;
+}
+.rightLabel{
+  left:8px !important;
+}
+.md-field label{
+  top:6px;
+  font-size:14px;
+  color:#707070
+}
+.iconFill{
+  fill:#103A4F
 }
 </style>
 
