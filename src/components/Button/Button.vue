@@ -125,7 +125,7 @@ export default {
   z-index: 2;
 }
 .mainButton {
-  z-index: -1 !important;
+  z-index: -1;
   position: relative;
 }
 .buttonOverlay {
