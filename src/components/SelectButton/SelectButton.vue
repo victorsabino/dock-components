@@ -152,7 +152,7 @@ color: #ebe8e3;
 }
 .selectButton .multiselect__content-wrapper {
   background: #ebe8e3;
-  margin-top: 3px;
+  margin-top: -10px !important;
   border-radius: 5px;
   padding: 0 5px;
 }
@@ -194,10 +194,12 @@ color: #ebe8e3;
   font-weight: 400;
 }
 .selectButton .multiselect__content-wrapper {
-  min-height: 60px !important;
-  height: 60px !important;
-  margin-top:-2px;
+  min-height: 75px !important;
+  height: 75px !important;
+  margin-top:-15px !important;
   z-index: 2;
+  z-index: -1;
+padding-top: 10px;
 }
 .selectButton .multiselect__option {
   padding: 5px !important;
@@ -218,5 +220,9 @@ color: #ebe8e3;
 .selectButton .underlay {
     background-color: black;
     opacity: 0.4;
+}
+.selectButton .multiselect__tags {
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
 }
 </style>
