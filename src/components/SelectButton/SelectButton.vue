@@ -152,6 +152,7 @@ export default {
   margin-top: -10px !important;
   border-radius: 5px;
   padding: 0 5px;
+  z-index: -1;
 }
 .selectButton .multiselect__placeholder {
   font-size: 16px;
@@ -167,6 +168,9 @@ export default {
   border-top: 1px solid #d8d1c4;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
+}
+.selectButton .multiselect__element:last-child {
+  border-bottom: 0 solid white !important;
 }
 .selectButton .multiselect__option--highlight,
 .selectButton .multiselect__option--selected,
@@ -216,9 +220,13 @@ export default {
 .selectButton .underlay {
   background-color: black;
   opacity: 0.4;
+  z-index: -1;
 }
 .selectButton .multiselect__tags {
   border-bottom-left-radius: 20px !important;
   border-bottom-right-radius: 20px !important;
+}
+.selectButton .multiselect {
+    z-index: 11;
 }
 </style>
