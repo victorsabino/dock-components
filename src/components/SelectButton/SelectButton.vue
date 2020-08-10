@@ -130,6 +130,7 @@ export default {
 <style>
 .selectButton {
   color: #51515180 !important;
+  cursor: pointer;
 }
 .selectButton .multiselect__tags {
   background-color: #103a4f !important;
