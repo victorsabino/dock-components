@@ -191,7 +191,7 @@ export default {
 .multiselect__content-wrapper {
   min-height: 201px;
   margin-top:-2px;
-  z-index: -1;
+  z-index: 2;
 }
 .multiselect__option {
   padding: 5px !important;

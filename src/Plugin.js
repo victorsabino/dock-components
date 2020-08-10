@@ -15,6 +15,7 @@ import MenuList from "./components/MenuList/MenuList.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
+import SelectButton from "./components/SelectButton/SelectButton.vue";
 import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
@@ -56,6 +57,7 @@ module.exports = {
     Vue.component('dock-components', Checkbox);
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', ButtonIcon);
+    Vue.component('dock-components', SelectButton);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', SlottedSelect);
     Vue.component('dock-components', CustomTextArea);

@@ -130,10 +130,10 @@ export default {
 </script>
 
 <style>
-.multiselect{
+.selectButton{
   color:#51515180 !important;
 }
-.multiselect .multiselect__tags {
+.selectButton .multiselect__tags {
   background-color: #103A4F !important;
 box-shadow: none;
   border-radius: 20px;
@@ -141,7 +141,7 @@ box-shadow: none;
   box-shadow: none !important;
 }
 
-.multiselect .multiselect__input {
+.selectButton .multiselect__input {
   background: #ebe8e3;
 }
 .selectButton .multiselect__input,
@@ -197,7 +197,7 @@ color: #ebe8e3;
   min-height: 60px !important;
   height: 60px !important;
   margin-top:-2px;
-  z-index: -1;
+  z-index: 2;
 }
 .selectButton .multiselect__option {
   padding: 5px !important;
