@@ -15,9 +15,7 @@
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc">
-          <span class="option__row">
-            {{ props.option.row }}
-          </span>
+          <span class="option__row">{{ props.option.row }}</span>
         </div>
       </template>
     </multiselect>
@@ -36,18 +34,18 @@ export default {
     currentValue: null,
     backgroundColor: {
       type: String,
-      default: "black"
+      default: "black",
     },
     label: {
-        type: String,
-        default: "Select"
+      type: String,
+      default: "Select",
     },
     options: {
       default: () => [
         { row: "Pending", desc: "Last 5 days" },
         { row: "Complete", desc: "Last 15 days" },
       ],
-      type: Array
+      type: Array,
     },
     objKey: {},
     value: {},
@@ -55,25 +53,25 @@ export default {
     showKey: {},
     disabled: {},
     reset: {
-      default: () => false
+      default: () => false,
     },
     startValue: {
-      default: () => null
+      default: () => null,
     },
-    color: {}
+    color: {},
   },
   components: {
     Multiselect,
   },
-  data: function() {
+  data: function () {
     return {
       selected: null,
       option: "",
-      hasSetedStartedValued: false
+      hasSetedStartedValued: false,
     };
   },
   methods: {
-    style: function() {
+    style: function () {
       return `
         box-shadow: ${this.shadow} !important;
         background-color: ${this.backgroundColor} !important;
@@ -81,8 +79,8 @@ export default {
       `;
     },
     logProps: function (props) {
-      console.log('props ', props)
-    }
+      console.log("props ", props);
+    },
   },
   beforeMount() {
     if (!this.label) {
@@ -96,15 +94,15 @@ export default {
     }
   },
   computed: {
-    showLabel: function() {
+    showLabel: function () {
       return !this.selected;
     },
-    formatedOptions: function() {
+    formatedOptions: function () {
       if (this.showKey) {
-        return this.options.map(option => option[this.showKey]);
+        return this.options.map((option) => option[this.showKey]);
       }
       return this.options;
-    }
+    },
   },
   updated() {
     if (this.currentValue) {
@@ -112,30 +110,30 @@ export default {
     }
   },
   watch: {
-    startValue: function(val) {
+    startValue: function (val) {
       if (this.selected == null) this.selected = val;
     },
-    selected: function(val) {
-    //   if (this.startValue && !this.hasSetedStartedValued) {
-    //     this.hasSetedStartedValued = true;
-    //     return;
-    //   }
+    selected: function (val) {
+      //   if (this.startValue && !this.hasSetedStartedValued) {
+      //     this.hasSetedStartedValued = true;
+      //     return;
+      //   }
       this.$emit("change", val);
 
       // Remove currently selected after selecting
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-.selectButton{
-  color:#51515180 !important;
+.selectButton {
+  color: #51515180 !important;
 }
 .selectButton .multiselect__tags {
-  background-color: #103A4F !important;
-box-shadow: none;
+  background-color: #103a4f !important;
+  box-shadow: none;
   border-radius: 20px;
   border: none !important;
   box-shadow: none !important;
@@ -147,8 +145,7 @@ box-shadow: none;
 .selectButton .multiselect__input,
 .selectButton .multiselect__single {
   background: transparent;
-color: #ebe8e3;
-
+  color: #ebe8e3;
 }
 .selectButton .multiselect__content-wrapper {
   background: #ebe8e3;
@@ -157,12 +154,12 @@ color: #ebe8e3;
   padding: 0 5px;
 }
 .selectButton .multiselect__placeholder {
-    font-size: 16px;
-    color: #ebe8e3;
-    padding-left: 10px;
+  font-size: 16px;
+  color: #ebe8e3;
+  padding-left: 10px;
 }
 .selectButton .multiselect--active {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .selectButton .multiselect__element {
@@ -196,10 +193,9 @@ color: #ebe8e3;
 .selectButton .multiselect__content-wrapper {
   min-height: 75px !important;
   height: 75px !important;
-  margin-top:-15px !important;
-  z-index: 2;
+  margin-top: -15px !important;
   z-index: -1;
-padding-top: 10px;
+  padding-top: 10px;
 }
 .selectButton .multiselect__option {
   padding: 5px !important;
@@ -208,8 +204,8 @@ padding-top: 10px;
 .option__row {
   color: #00000099 !important;
 }
-.option__rowSlot{
-  color: #103A4F !important;
+.option__rowSlot {
+  color: #103a4f !important;
 }
 .selectButton .multiselect__input {
   font-size: 14px;
@@ -218,11 +214,11 @@ padding-top: 10px;
   background: transparent;
 }
 .selectButton .underlay {
-    background-color: black;
-    opacity: 0.4;
+  background-color: black;
+  opacity: 0.4;
 }
 .selectButton .multiselect__tags {
-    border-bottom-left-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
 }
 </style>
