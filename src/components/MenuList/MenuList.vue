@@ -13,8 +13,7 @@
           disableRipple="true"
           :key="item.name"
           v-for="item in items"
-          @click="item.onClick"
-          >{{ item.name }}</md-menu-item
+          ><div class="nameWrapper" @click="getClick(item)">{{ item.name }}</div></md-menu-item
         >
       </md-menu-content>
     </md-menu>
@@ -35,6 +34,12 @@ export default {
     zIndex: {
       type: Number,
       default: 2
+    }
+  },
+  methods: {
+    getClick: function (item) {
+      if (!item || !item.onClick) return;
+      item.onClick();
     }
   }
 };
