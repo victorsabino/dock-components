@@ -10,7 +10,6 @@
       :option-height="54"
       :custom-label="customLabel"
       :show-labels="false"
-      @select="onSelect"
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc">
@@ -118,7 +117,7 @@ export default {
     },
     value: function (val) {
       console.log('teste')
-      this.$emit("change", val);
+      this.$emit("change", this.value);
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     },
   },
