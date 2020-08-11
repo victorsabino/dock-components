@@ -14,7 +14,7 @@
           right ? 'rightLabel' : ''
         ]"
       >
-        xx.xxx.xx
+        dd/mm/aaaa
       </label>
     </md-datepicker>
   </div>
@@ -73,6 +73,7 @@ export default {
     }
   },
   beforeMount() {
+    this.$material.locale.dateFormat = 'dd/MM/yyyy'
     if (this.startDate)
       this.currentValue = moment(this.startDate, "YYYY-MM-DD")
         .add(1, "hour")
@@ -96,6 +97,10 @@ export default {
   font-size: 14px;
   padding-right: 60px;
 }
+.md-input{
+  position:relative;
+  top:4px;
+}
 .dateInput {
   z-index: 99999999999 !important;
 }
@@ -109,7 +114,7 @@ export default {
   left:8px !important;
 }
 .md-field label{
-  top:6px;
+  top:20px;
   font-size:14px;
   color:#707070
 }
