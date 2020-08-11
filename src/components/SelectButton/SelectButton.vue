@@ -1,9 +1,7 @@
 <template>
   <div class="selectButton md-layout-item md-size-100">
     <multiselect
-      :close-on-select="false"
-      :clear-on-select="reset"
-      v-model="currentValue"
+      v-model="value"
       :placeholder="label"
       label="row"
       track-by="row"
@@ -12,6 +10,7 @@
       :option-height="54"
       :custom-label="customLabel"
       :show-labels="false"
+      @select="onSelect"
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc">
@@ -78,6 +77,10 @@ export default {
         color: ${this.color} !important
       `;
     },
+    onSelect (option) {
+      console.log('teste')
+      this.$emit("change", val);
+    },
     logProps: function (props) {
       console.log("props ", props);
     },
@@ -113,7 +116,7 @@ export default {
     startValue: function (val) {
       if (this.selected == null) this.selected = val;
     },
-    currentValue: function (val) {
+    value: function (val) {
       console.log('teste')
       this.$emit("change", val);
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
