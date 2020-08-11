@@ -1,7 +1,7 @@
 <template>
   <div
     class="buttonIcon"
-    :style="`background-color: ${bgColor}; width: ${width || radius}; height: ${height || radius}`"
+    :style="`background-color: ${bgcolor}; width: ${width || radius}; height: ${height || radius}`"
   >
     <md-icon :style="`color: ${color} !important`"> {{ icon }} </md-icon>
   </div>
@@ -15,7 +15,7 @@ export default {
       type: String,
       default: ""
     },
-    bgColor: {
+    bgcolor: {
       type: String,
       default: "#10434F"
     },
