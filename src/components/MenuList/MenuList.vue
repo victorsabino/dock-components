@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     getClick: function (item) {
-      if (!item) return;
+      if (!item || !item.onClick) return;
       item.onClick();
     }
   }
