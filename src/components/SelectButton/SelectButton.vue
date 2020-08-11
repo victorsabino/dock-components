@@ -3,7 +3,7 @@
     <multiselect
       :close-on-select="false"
       :clear-on-select="reset"
-      v-model="value"
+      v-model="currentValue"
       :placeholder="label"
       label="row"
       track-by="row"
@@ -15,7 +15,7 @@
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc">
-          <span class="option__row">{{ props.option.row }}</span>
+          <span class="option__row"> {{ props.option.row }} </span>
         </div>
       </template>
     </multiselect>
@@ -113,14 +113,9 @@ export default {
     startValue: function (val) {
       if (this.selected == null) this.selected = val;
     },
-    selected: function (val) {
-      //   if (this.startValue && !this.hasSetedStartedValued) {
-      //     this.hasSetedStartedValued = true;
-      //     return;
-      //   }
+    currentValue: function (val) {
+      console.log('teste')
       this.$emit("change", val);
-
-      // Remove currently selected after selecting
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     },
   },
