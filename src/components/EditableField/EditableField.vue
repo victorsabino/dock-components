@@ -1,6 +1,6 @@
 <template>
-  <div @click="toggle" class="EditableFIeld">
-    <div v-if="!isToggled" value="value">{{value}}</div>
+  <div @click.stop="toggle" class="EditableField">
+    <div v-if="!isToggled" value="value" @blur="toggle">{{value}}</div>
     <div v-else class="inputWrapper">
       <input :value="value"/>
     </div>
@@ -25,7 +25,7 @@ export default {
     methods: { 
         toggle: function () {
             this.$emit("toggle ", !this.isToggled)
-        }
+        },
     }
 }
 </script>
