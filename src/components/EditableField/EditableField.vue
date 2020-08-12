@@ -1,8 +1,8 @@
 <template>
   <div @click.stop="toggle" class="EditableField">
-    <div v-if="!isToggled" value="value" @blur="toggle">{{value}}</div>
+    <div v-if="!isToggled" value="value">{{value}}</div>
     <div v-else class="inputWrapper">
-      <input :value="value"/>
+      <input :value="value" @blur.stop="toggle"/>
     </div>
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
     },
     methods: { 
         toggle: function () {
+            console.log('emit toggle')
             this.$emit("toggle ", !this.isToggled)
         },
     }
