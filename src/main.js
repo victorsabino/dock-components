@@ -10,8 +10,10 @@ import TopTab from "./components/TopTab/TopTab.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
+import DateForm from "./components/DateForm/DateForm.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
+import SelectButton from "./components/SelectButton/SelectButton.vue";
 import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
@@ -28,9 +30,11 @@ export {
   Button,
   Checkbox,
   MenuList,
+  DateForm,
   DateInput,
   ButtonIcon,
   CustomInput,
+  SelectButton,
   SlottedSelect,
   CustomTextArea,
   ConfirmationDialog
