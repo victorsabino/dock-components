@@ -2,7 +2,7 @@
   <div @click.stop="toggle" class="EditableField">
     <div v-if="!isToggled" value="value">{{value}}</div>
     <div v-else class="inputWrapper">
-      <input :value="value" @blur.stop="toggle"/>
+      <input :value="title" @blur.stop="toggle" v-model="value"/>
     </div>
   </div>
 </template>
@@ -19,11 +19,13 @@ export default {
             type: String
         }
     },
-    data: {
-
+    data: function () {
+      return {
+        editableValue: this.props.value
+      }
     },
     methods: { 
-        toggle: function () {
+        toggle: () => {
             console.log('emit toggle')
             this.$emit("toggle ", !this.isToggled)
         },
