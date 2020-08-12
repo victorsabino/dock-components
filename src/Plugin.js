@@ -17,6 +17,7 @@ import DateForm from "./components/DateForm/DateForm.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
+import EditableField from "./components/EditableField/EditableField.vue";
 import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
@@ -61,6 +62,7 @@ module.exports = {
     Vue.component('dock-components', ButtonIcon);
     Vue.component('dock-components', SelectButton);
     Vue.component('dock-components', CustomInput);
+    Vue.component('dock-components', EditableField);
     Vue.component('dock-components', SlottedSelect);
     Vue.component('dock-components', CustomTextArea);
     Vue.component('dock-components', ConfirmationDialog);

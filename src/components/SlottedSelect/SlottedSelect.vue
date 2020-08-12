@@ -3,7 +3,7 @@
     <multiselect
       :close-on-select="false"
       :clear-on-select="reset"
-      v-model="value"
+      v-model="selectedValue"
       placeholder="Select a date period"
       label="row"
       track-by="row"
@@ -77,6 +77,7 @@ export default {
   data: function() {
     return {
       selected: null,
+      selectedValue: null,
       option: "",
       hasSetedStartedValued: false
     };
@@ -125,7 +126,7 @@ export default {
     startValue: function(val) {
       if (this.selected == null) this.selected = val;
     },
-    selected: function(val) {
+    selectedValue: function(val) {
       if (this.startValue && !this.hasSetedStartedValued) {
         this.hasSetedStartedValued = true;
         return;

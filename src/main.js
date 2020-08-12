@@ -15,6 +15,7 @@ import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
 import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
+import EditableField from "./components/EditableField/EditableField.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
 
@@ -36,6 +37,7 @@ export {
   CustomInput,
   SelectButton,
   SlottedSelect,
+  EditableField,
   CustomTextArea,
   ConfirmationDialog
 };
