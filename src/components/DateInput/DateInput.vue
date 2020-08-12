@@ -1,9 +1,10 @@
 <template>
-  <div class="dateInput">
+  <div class="dateInput" ref="dateInput">
     <md-datepicker
       v-model="currentValue"
       md-immediately
       :md-disabled-dates="disabled"
+      :md-open-on-focus="false"
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
@@ -78,6 +79,15 @@ export default {
       this.currentValue = moment(this.startDate, "YYYY-MM-DD")
         .add(1, "hour")
         .toDate();
+  },
+  mounted () {
+    this.$refs.dateInput.querySelector('input').addEventListener(
+      'click',
+      (e) => {
+        this.$refs.dateInput.querySelector('input').focus();
+        e.stopPropagation();
+      }
+    );
   }
 };
 </script>
@@ -170,5 +180,13 @@ export default {
 }
 .vdp-datepicker {
   width: 100% !important;
+}
+.right input{
+  position:relative;
+  left:8px;
+  padding-right: 0px !important;
+  margin-left: 0px !important;
+  direction: ltr !important;
+  max-width:130px
 }
 </style>
