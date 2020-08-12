@@ -4,6 +4,7 @@
       v-model="currentValue"
       md-immediately
       :md-disabled-dates="disabled"
+      :md-open-on-focus="false"
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
