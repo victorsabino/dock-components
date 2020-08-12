@@ -19,11 +19,6 @@ export default {
             type: String
         }
     },
-    data: function () {
-      return {
-        editableValue: this.props.value
-      }
-    },
     methods: { 
         toggle: () => {
             console.log('emit toggle')
