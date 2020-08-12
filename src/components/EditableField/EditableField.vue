@@ -2,7 +2,7 @@
   <div @click.stop="toggle" class="EditableField">
     <div v-if="!isToggled" value="value">{{value}}</div>
     <div v-else class="inputWrapper">
-      <input :value="title" @blur.stop="toggle" v-model="value"/>
+      <input @blur.stop="toggle" v-model="value"/>
     </div>
   </div>
 </template>
