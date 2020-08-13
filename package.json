@@ -17,7 +17,8 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "test": "mochapack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js"
+    "test": "mochapack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
+    "test:unit": "vue-cli-service test:unit --watch"
   },
   "files": [
     "dist/*",
@@ -28,9 +29,11 @@
   "dependencies": {
     "@storybook/addon-links": "^5.3.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
+    "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
     "core-js": "^3.6.5",
     "cross-env": "^5.2.0",
+    "install": "^0.13.0",
     "minimist": "^1.2.0",
     "moment": "^2.27.0",
     "rollup": "^1.14.4",
@@ -55,7 +58,7 @@
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "@vue/test-utils": "^1.0.3",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-preset-env": "^1.7.0",
@@ -97,6 +100,11 @@
     },
     "rules": {}
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
   "jest": {
     "moduleFileExtensions": [
       "js",
@@ -104,16 +112,12 @@
       "vue"
     ],
     "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.vue$": "vue-jest"
+      "^.+\\.ts$": "ts-jest",
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.jsx?$": "babel-jest"
     },
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
     }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }
