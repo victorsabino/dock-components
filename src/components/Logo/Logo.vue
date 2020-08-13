@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <div class="logoWrapper">
-      <img :src="logoImg" />
+      <img :src="logoImg" data-testid="logoImg"/>
     </div>
   </div>
 </template>
