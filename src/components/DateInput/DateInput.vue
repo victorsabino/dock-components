@@ -1,7 +1,7 @@
 <template>
   <div class="dateInput">
     <md-datepicker
-      v-model="currentValue"
+      v-model="value"
       md-immediately
       :md-disabled-dates="disabled"
       :dir="right ? 'rtl' : ''"
@@ -37,7 +37,7 @@ export default {
   ],
   methods: {
     shouldHideLabel: function() {
-      if (this.currentValue === null) return "";
+      if (this.value === null) return "";
       return "hide";
     },
     disabled(date) {
@@ -54,20 +54,20 @@ export default {
       return "";
     },
     shouldHideLabel() {
-      if (this.currentValue === null) return "";
-      return (this.currentValue)
+      if (this.value === null) return "";
+      return (this.value)
         ? "hide"
         : "";
     },
   },
   data: function() {
     return {
-      currentValue: null,
+      value: null,
       ptBR
     };
   },
   watch: {
-    currentValue(val) {
+    value(val) {
       if (!val) return this.$emit("input", undefined);
       this.$emit("input", moment(val, "YYYY-MM-DD"));
     }
@@ -75,7 +75,7 @@ export default {
   beforeMount() {
     this.$material.locale.dateFormat = 'dd/MM/yyyy'
     if (this.startDate)
-      this.currentValue = moment(this.startDate, "YYYY-MM-DD")
+      this.value = moment(this.startDate, "YYYY-MM-DD")
         .add(1, "hour")
         .toDate();
   }
