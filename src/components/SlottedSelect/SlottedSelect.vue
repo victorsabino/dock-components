@@ -3,7 +3,7 @@
     <multiselect
       :close-on-select="false"
       :clear-on-select="reset"
-      v-model="selectedValue"
+      v-model="value"
       placeholder="Select a date period"
       label="row"
       track-by="row"
@@ -40,7 +40,6 @@ import DateForm from "../DateForm/DateForm.vue";
 export default {
   props: {
     label: {},
-    "v-modal": {},
     name: {},
     id: {},
     currentValue: null,
@@ -77,7 +76,7 @@ export default {
   data: function() {
     return {
       selected: null,
-      selectedValue: null,
+      value: null,
       option: "",
       hasSetedStartedValued: false
     };
@@ -126,7 +125,7 @@ export default {
     startValue: function(val) {
       if (this.selected == null) this.selected = val;
     },
-    selectedValue: function(val) {
+    value: function(val) {
       if (this.startValue && !this.hasSetedStartedValued) {
         this.hasSetedStartedValued = true;
         return;
