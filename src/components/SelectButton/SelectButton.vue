@@ -123,12 +123,22 @@ export default {
   },
 };
 </script>
+<style scoped>
 
-<style>
 .selectButton {
   color: #51515180 !important;
   cursor: pointer;
 }
+.dateFormWrapper {
+  width: 170px;
+  padding-left: 10px;
+  margin-left: 0px;
+  overflow: hidden;
+  font-weight: 400;
+}
+
+</style>
+<style>
 .selectButton .multiselect__tags {
   background-color: #103a4f !important;
   box-shadow: none;
@@ -185,13 +195,7 @@ export default {
 .selectButton .multiselect__option::after {
   display: none;
 }
-.dateFormWrapper {
-  width: 170px;
-  padding-left: 10px;
-  margin-left: 0px;
-  overflow: hidden;
-  font-weight: 400;
-}
+
 .selectButton .multiselect__content-wrapper {
   min-height: 75px !important;
   height: 75px !important;

@@ -1,0 +1,31 @@
+<template>
+  <div @click.stop="toggle" class="EditableField">
+    <div v-if="!isToggled" value="value">{{value}}</div>
+    <div v-else class="inputWrapper">
+      <input @blur.stop="toggle" v-model="value"/>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+    props: {
+        isToggled: {
+            default: false,
+            type: Boolean
+        },
+        value: {
+            default: '',
+            type: String
+        }
+    },
+    methods: { 
+        toggle: function () {
+            this.$emit("toggle ", !this.isToggled)
+        },
+    }
+}
+</script>
+
+<style scoped>
+</style>

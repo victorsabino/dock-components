@@ -114,6 +114,7 @@ export default {
   height: 40px;
   padding-top: 5px;
   padding-left: 5px;
+  z-index: 1;
 }
 .input input,
 .input label {
