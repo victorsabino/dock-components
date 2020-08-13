@@ -67,12 +67,6 @@ export default {
       ptBR
     };
   },
-  watch: {
-    value(val) {
-      if (!val) return this.$emit("input", undefined);
-      this.$emit("input", moment(val, "YYYY-MM-DD"));
-    }
-  },
   beforeMount() {
     this.$material.locale.dateFormat = 'dd/MM/yyyy'
     if (this.startDate)
