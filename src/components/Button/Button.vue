@@ -1,6 +1,6 @@
 <template>
   <div class="buttonRoot">
-    <div class="button mainButton" :style="style()" @click="click">
+    <div class="button mainButton" data-testid="mainButton" :style="style()" @click="click">
       <md-icon v-if="icon !== 'none' || !icon" :style="iconStyle">
         {{ icon }}
       </md-icon>
