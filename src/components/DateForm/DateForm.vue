@@ -1,7 +1,7 @@
 <template>
   <div class="dateForm">
     <div class="dateFormRow"> {{ row }} </div>
-    <div class="dateInputWrapper" @click="click">
+    <div class="dateInputWrapper">
       <DateInput :right="right"/>
     </div>
   </div>
@@ -24,11 +24,6 @@ export default {
   components: {
     DateInput
   },
-  methods: {
-    click () {
-      console.log('teste')
-    }
-  }
 }
 </script>
 <style scoped>
