@@ -20,8 +20,7 @@ export default {
         }
     },
     methods: { 
-        toggle: () => {
-            console.log('emit toggle')
+        toggle: function () {
             this.$emit("toggle ", !this.isToggled)
         },
     }
