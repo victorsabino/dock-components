@@ -41,7 +41,6 @@ export default {
     label: {},
     name: {},
     id: {},
-    currentValue: null,
     backgroundColor: {
       type: String,
       default: "black"
@@ -55,7 +54,6 @@ export default {
       ],
       type: Array
     },
-    objKey: {},
     value: {},
     shadow: {},
     showKey: {},
@@ -88,16 +86,10 @@ export default {
         color: ${this.color} !important
       `;
     },
-    logProps: function (props) {
-      console.log('props ', props)
-    }
   },
   beforeMount() {
     if (!this.label) {
       this.options[0];
-    }
-    if (this.currentValue) {
-      this.selected = this.currentValue;
     }
     if (this.startValue) {
       this.selected = this.startValue;
@@ -107,18 +99,6 @@ export default {
     showLabel: function() {
       return !this.selected;
     },
-    formatedOptions: function() {
-      if (this.showKey) {
-        return this.options.map(option => option[this.showKey]);
-      }
-      console.log("this.options ", this.options);
-      return this.options;
-    }
-  },
-  updated() {
-    if (this.currentValue) {
-      this.selected = this.currentValue;
-    }
   },
   watch: {
     startValue: function(val) {

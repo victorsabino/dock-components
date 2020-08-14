@@ -36,6 +36,7 @@
     "install": "^0.13.0",
     "minimist": "^1.2.0",
     "moment": "^2.27.0",
+    "mutation-observer": "^1.0.3",
     "rollup": "^1.14.4",
     "rollup-plugin-buble": "^0.19.6",
     "rollup-plugin-commonjs": "^9.3.4",
@@ -48,7 +49,8 @@
     "vue-multiselect-fork": "^2.1.10",
     "vue-template-compiler": "^2.6.10",
     "vue-the-mask": "^0.11.1",
-    "vuejs-datepicker": "^1.6.2"
+    "vuejs-datepicker": "^1.6.2",
+    "waait": "^1.0.5"
   },
   "devDependencies": {
     "@storybook/vue": "^5.3.19",
