@@ -2,7 +2,6 @@
   <div class="multiselect md-layout-item md-size-100">
     <multiselect
       :close-on-select="false"
-      :clear-on-select="reset"
       v-model="value"
       placeholder="Select a date period"
       label="row"
@@ -126,14 +125,7 @@ export default {
       if (this.selected == null) this.selected = val;
     },
     value: function(val) {
-      if (this.startValue && !this.hasSetedStartedValued) {
-        this.hasSetedStartedValued = true;
-        return;
-      }
       this.$emit("change", val);
-
-      // Remove currently selected after selecting
-      if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     }
   }
 };

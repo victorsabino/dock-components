@@ -55,6 +55,7 @@ export default {
       return "";
     },
     shouldHideLabel() {
+      console.log('value ', this.value)
       if (this.value === null) return "";
       return (this.value)
         ? "hide"
