@@ -70,9 +70,9 @@ export default {
   beforeMount() {
     this.$material.locale.dateFormat = 'dd/MM/yyyy'
     if (this.startDate)
-      this.value = moment(this.startDate, "YYYY-MM-DD")
+      this.value = this.startDate ? moment(this.startDate, "YYYY-MM-DD")
         .add(1, "hour")
-        .toDate();
+        .toDate() : undefined;
   },
   mounted () {
     this.$refs.dateInput.querySelector('input').addEventListener(
