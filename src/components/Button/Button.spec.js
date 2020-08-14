@@ -67,6 +67,6 @@ test('list button', async () => {
   });
 
   fireEvent.click(screen.queryByTestId('mainButton'));
-  await wait(1000);
+  await wait(0);
   expect(screen.getByTestId('listButtons')).toBeTruthy();
 })
