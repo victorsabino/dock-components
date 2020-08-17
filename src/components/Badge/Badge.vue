@@ -1,7 +1,7 @@
 <template>
-  <div class="badge">
+  <div class="badge" data-testid="badge">
     {{ name }}
-    <div @click="onDelete" class="closeWrapper">
+    <div @click="onDelete" data-testid="badgeDelete" class="closeWrapper">
       <md-icon>close</md-icon>
     </div>
   </div>
