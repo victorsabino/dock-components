@@ -1,7 +1,7 @@
 <template>
   <div class="dateInput" ref="dateInput">
     <md-datepicker
-      v-model="value"
+      v-model="vmodel"
       md-immediately
       :md-disabled-dates="disabled"
       :md-open-on-focus="false"
@@ -9,14 +9,12 @@
       :class="right ? 'right' : 'left'"
       class="iconFill"
     >
-      <label 
+      <label
         :class="[
           shouldHideLabel , 
           right ? 'rightLabel' : ''
         ]"
-      >
-        dd/mm/aaaa
-      </label>
+      >dd/mm/aaaa</label>
     </md-datepicker>
   </div>
 </template>
@@ -55,11 +53,20 @@ export default {
       return "";
     },
     shouldHideLabel() {
+      console.log('value ', this.value)
       if (this.value === null) return "";
       return (this.value)
         ? "hide"
         : "";
     },
+    vmodel: {
+      get() {
+        return this.value
+      },
+      set(val) {
+        this.$emit('input', val)
+      }
+    }
   },
   data: function() {
     return {
@@ -67,18 +74,8 @@ export default {
       ptBR
     };
   },
-  watch: {
-    value(val) {
-      if (!val) return this.$emit("input", undefined);
-      this.$emit("input", moment(val, "YYYY-MM-DD"));
-    }
-  },
   beforeMount() {
     this.$material.locale.dateFormat = 'dd/MM/yyyy'
-    if (this.startDate)
-      this.value = moment(this.startDate, "YYYY-MM-DD")
-        .add(1, "hour")
-        .toDate();
   },
   mounted () {
     this.$refs.dateInput.querySelector('input').addEventListener(
@@ -102,34 +99,34 @@ export default {
 .md-field {
   padding-top: 0;
 }
-::v-deep .md-field.md-clearable .md-input{
-  color:#707070 !important;
+::v-deep .md-field.md-clearable .md-input {
+  color: #707070 !important;
   font-size: 14px;
   padding-right: 60px;
 }
-.md-input{
-  position:relative;
-  top:4px;
+.md-input {
+  position: relative;
+  top: 4px;
 }
 .dateInput {
-  z-index: 99999999999 !important;
+  z-index: 99999999999;
 }
-.left{
-  padding-left:6px;
+.left {
+  padding-left: 6px;
 }
-.right{
-  padding-right:6px;
+.right {
+  padding-right: 6px;
 }
-.rightLabel{
-  left:8px !important;
+.rightLabel {
+  left: 8px !important;
 }
-.md-field label{
-  top:20px;
-  font-size:14px;
-  color:#707070
+.md-field label {
+  top: 20px;
+  font-size: 14px;
+  color: #707070;
 }
-.iconFill{
-  fill:#103A4F
+.iconFill {
+  fill: #103a4f;
 }
 </style>
 
@@ -181,12 +178,12 @@ export default {
 .vdp-datepicker {
   width: 100% !important;
 }
-.right input{
-  position:relative;
-  left:8px;
+.right input {
+  position: relative;
+  left: 8px;
   padding-right: 0px !important;
   margin-left: 0px !important;
   direction: ltr !important;
-  max-width:130px
+  max-width: 130px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="toggleRoot">
-    <div class="toggleHead" @click="toggle">
+    <div class="toggleHead" @click="toggle" data-testid="toggle">
       <div class="toggleTitle lightGreen font20">{{ title }}</div>
       <md-icon v-if="isToggled"> arrow_drop_down </md-icon>
       <md-icon v-else> arrow_right </md-icon>
@@ -14,7 +14,7 @@
 export default {
   data() {
     return {
-      isToggled: true
+      isToggled: this.defaultToggle
     };
   },
   props: {
@@ -32,9 +32,6 @@ export default {
       return (this.isToggled = !this.isToggled);
     }
   },
-  mount () {
-    this.isToggled = this.defaultToggle;
-  }
 };
 </script>
 <style scoped>

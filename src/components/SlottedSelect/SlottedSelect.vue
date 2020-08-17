@@ -2,8 +2,7 @@
   <div class="multiselect md-layout-item md-size-100">
     <multiselect
       :close-on-select="false"
-      :clear-on-select="reset"
-      v-model="selectedValue"
+      v-model="value"
       placeholder="Select a date period"
       label="row"
       track-by="row"
@@ -40,10 +39,8 @@ import DateForm from "../DateForm/DateForm.vue";
 export default {
   props: {
     label: {},
-    "v-modal": {},
     name: {},
     id: {},
-    currentValue: null,
     backgroundColor: {
       type: String,
       default: "black"
@@ -57,7 +54,6 @@ export default {
       ],
       type: Array
     },
-    objKey: {},
     value: {},
     shadow: {},
     showKey: {},
@@ -77,7 +73,7 @@ export default {
   data: function() {
     return {
       selected: null,
-      selectedValue: null,
+      value: null,
       option: "",
       hasSetedStartedValued: false
     };
@@ -90,16 +86,10 @@ export default {
         color: ${this.color} !important
       `;
     },
-    logProps: function (props) {
-      console.log('props ', props)
-    }
   },
   beforeMount() {
     if (!this.label) {
       this.options[0];
-    }
-    if (this.currentValue) {
-      this.selected = this.currentValue;
     }
     if (this.startValue) {
       this.selected = this.startValue;
@@ -109,32 +99,13 @@ export default {
     showLabel: function() {
       return !this.selected;
     },
-    formatedOptions: function() {
-      if (this.showKey) {
-        return this.options.map(option => option[this.showKey]);
-      }
-      console.log("this.options ", this.options);
-      return this.options;
-    }
-  },
-  updated() {
-    if (this.currentValue) {
-      this.selected = this.currentValue;
-    }
   },
   watch: {
     startValue: function(val) {
       if (this.selected == null) this.selected = val;
     },
-    selectedValue: function(val) {
-      if (this.startValue && !this.hasSetedStartedValued) {
-        this.hasSetedStartedValued = true;
-        return;
-      }
+    value: function(val) {
       this.$emit("change", val);
-
-      // Remove currently selected after selecting
-      if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     }
   }
 };
