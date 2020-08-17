@@ -23,7 +23,7 @@ export default {
       return {
         currentValue: this.value,
       }
-    },
+    }, 
     methods: { 
         toggle: function () {
           this.$emit("changeField", this.currentValue);
