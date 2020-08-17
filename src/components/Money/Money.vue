@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-testid="money">
     {{ formatedValue }}
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
   <div @click.stop="toggle" class="EditableField">
-    <div v-if="!isToggled" value="value">{{value}}</div>
+    <div v-if="!isToggled" value="value">{{vmodel}}</div>
     <div v-else class="inputWrapper">
-      <input @blur.stop="toggle" v-model="value"/>
+      <input @blur.stop="toggle" v-model="vmodel"/>
     </div>
   </div>
 </template>
@@ -19,9 +19,19 @@ export default {
             type: String
         }
     },
+  computed: {
+    vmodel: {
+      get(){
+        return this.value
+      },
+      set(val){
+        this.$emit("changeField", val);
+      }
+    }
+  },
     methods: { 
         toggle: function () {
-            this.$emit("toggle ", !this.isToggled)
+          this.$emit("toggle ", !this.isToggled)
         },
     }
 }
