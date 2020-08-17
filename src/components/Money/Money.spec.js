@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/vue'
 import Money from './Money.vue'
-import wait from 'waait';
 window.MutationObserver = require("mutation-observer");
 
 //Render test
