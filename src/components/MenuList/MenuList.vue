@@ -1,80 +1,113 @@
 <template>
-  <div class="MenuList">
-    <md-menu md-size="medium" md-align-trigger>
-      <md-button v-if="isButton" md-menu-trigger>
-        <slot name="button" />
-      </md-button>
-      <div v-else md-menu-trigger>
-        <slot name="button" />
+  <div class="MenuListContainer" v-if="open">
+    <div class="menu">
+        <div class="file" :key="item.id" v-for="(item, index) in items">
+          <div @click="() => _click(item.onClick)" class="flex rowWrapper">
+            <div  class="flex">
+              <div class="iconWrapper" v-if="item.icon"> <md-icon style="color: #e34642 !important"> {{item.icon}} </md-icon></div> 
+              <div class="menuListName"> {{item.name}} </div>
+            </div>
+            <div class="divisor" v-if="index !== (items.length - 1)"/>
+          </div>
+        </div>
       </div>
-
-      <md-menu-content class="MenuListItems" :style="{ zIndex: zIndex }">
-        <md-menu-item
-          disableRipple="true"
-          :key="item.name"
-          v-for="item in items"
-          ><div class="nameWrapper" @click="getClick(item)">{{ item.name }}</div></md-menu-item
-        >
-      </md-menu-content>
-    </md-menu>
+      <div class="fakebg" @click="toggleMenu" v-if="open" />
+    </div>
   </div>
 </template>
 <script>
 export default {
   name: "MenuList",
+  data: function () {
+    return {
+      open: true,
+    };
+  },
   props: {
     items: {
-      type: Array,
-      default: () => [{}]
-    },
-    isButton: {
-      type: Boolean,
-      deafult: true
+      type: Number,
+      default: () => [{name: 'test2'}, {name: 'test2'}, {name: 'test2'}]
     },
     zIndex: {
       type: Number,
-      default: 2
-    }
+      default: 2,
+    },
   },
   methods: {
-    getClick: function (item) {
-      if (!item || !item.onClick) return;
-      item.onClick();
+    toggleMenu: function () {
+      return (this.open = !this.open);
+    },
+    _click: function (click) {
+      if(click) click();
+      this.toggleMenu();
     }
-  }
+  },
 };
 </script>
 <style scoped>
-.MenuList {
+.UploadListMenu {
   height: 40px;
 }
-</style>
-<style>
-.MenuList .md-button {
-  height: 40px;
-  width: 40px;
-  min-width: 40px;
-  border-radius: 50%;
+.uploadListMenuTitle {
+  font-size: 12px;
+  letter-spacing: 0.4;
+  font-family: "Open Sans", sans-serif;
+  color: #00000099;
+  text-decoration: underline;
 }
-.MenuListItems .md-menu-content-container {
-  border-radius: 4px !important;
+
+.file {
+  height: 27px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  cursor: pointer;
 }
-.MenuListItems .md-list {
-  background-color: #ebe8e3 !important;
-  border-radius: 4px !important;
-  padding: 0 17px !important;
+.menu {
+  z-index: 999;
 }
-.MenuListItems .md-list-item-button:hover {
-  background-color: transparent !important;
+.MenuListContainer {
+  padding: 3px 9px;
+  width: 160px;
+  min-height: 50px;
+  background-color: #ebe8e3;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 999;
+  left:0px;
+  text-align: left;
+  cursor: pointer;
 }
-.MenuListItems .md-list-item {
+.menuListName {
+  color: #00000099;
+  letter-spacing: 0.4px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 3px 3px;
+}
+.divisor {
+  width: 100%;
+  height: 1px;
   border-bottom: 1px solid #d8d1c4;
   border-top: 1px solid #ffffff;
+  margin-top: 3px;
+  margin-bottom: 6px;
 }
-.MenuListItems .md-list-item:first-child {
-  border-top: 0;
+.fakebg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.1;
+  z-index: -1;
+  cursor: default;
 }
-.MenuListItems .md-list-item:last-child {
-  border-bottom: 0;
+.rowWrapper {
+  width: 100%;
+  cursor: pointer;
+  flex-direction: column;
+
 }
 </style>

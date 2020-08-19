@@ -7,3 +7,9 @@ test('test if button icon is rendering', async () => {
 
   expect(screen.queryByText('swap')).toBeTruthy();
 })
+
+test('test if button icon is not endering', async () => {
+  render(ButtonIcon, {props: {icon: 'swap'}});
+
+  expect(screen.queryByText('money')).toBeFalsy();
+})

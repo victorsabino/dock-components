@@ -1,6 +1,6 @@
 <template>
   <div class="checkboxRoot">
-    <md-checkbox v-model="currentValue">
+    <md-checkbox v-model="currentValue" data-testid="checkbox">
       <div class="darkBlue openSans font14">{{ label }}</div>
     </md-checkbox>
   </div>
