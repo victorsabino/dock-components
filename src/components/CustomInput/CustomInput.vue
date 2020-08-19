@@ -1,5 +1,5 @@
 <template>
-  <md-field class="customInput">
+  <md-field class="customInput" :md-counter="counter">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
       v-if="mask"
@@ -10,7 +10,6 @@
       v-model="currentValue"
       v-decimal="maxDecimal"
       :maxlength="maxLength"
-      :md-counter="counter"
       @blur="blur"
     />
     <md-input
@@ -21,7 +20,6 @@
       v-model="currentValue"
       :step="step"
       :maxlength="maxLength"
-      :md-counter="counter"
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
