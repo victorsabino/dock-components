@@ -10,7 +10,7 @@
       v-model="currentValue"
       v-decimal="maxDecimal"
       :maxlength="maxLength"
-      :md-counter="maxLength"
+      :md-counter="counter"
       @blur="blur"
     />
     <md-input
@@ -70,7 +70,7 @@ export default {
       type: Boolean,
       default: false
     },
-    maxlength: {
+    maxLength: {
       type: String,
       default: ""
     },
@@ -90,7 +90,10 @@ export default {
       default: () => {},
       type: Function
     },
-    maxLength: {}
+    counter: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {},
   computed: {
