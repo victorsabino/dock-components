@@ -4,70 +4,40 @@ import wait from 'waait';
 window.MutationObserver = require("mutation-observer");
 
 //Render test
-test('test if icon is rendering', async () => {
+test('test if component money is rendering', async () => {
   render(Money);
 
   expect(screen.queryByTestId('money')).toBeTruthy();
 })
 
-test('test if icon is not rendering', async () => {
+test('test if component money is not rendering', async () => {
   render(Money)
 
   expect(screen.queryByTestId('no_money')).toBeFalsy();
 })
 
-// test('test if icon is swap', async () => {
-//   render(Money, { props: { icon: 'swap' } });
+//Value test
+test('test if value is correct', async () => {
+  render(Money, { props: { value: '100' } });
 
-//   expect(screen.queryByText('swap')).toBeTruthy();
-// });
+  expect(screen.queryByText('US$ 100.00')).toBeTruthy();
+})
 
-// test('test if icon is not swap', async () => {
-//   render(Money, { props: { icon: 'not_s_wap' } });
+test('test if value is not correct', async () => {
+  render(Money, { props: { value: '200' } });
 
-//   expect(screen.queryByText('swap')).toBeFalsy();
-// })
+  expect(screen.queryByText('US$ 100.00')).toBeFalsy();
+})
 
-// test('test if text is rendering', async () => {
-//   render(Money, { props: { text: 'ImAUniqueText' } });
+//Currency test
+test('test if currency is correct', async () => {
+  render(Money, { props: { value: '100', currency:'BRL' } });
 
-//   expect(screen.queryByText('ImAUniqueText')).toBeTruthy();
-// })
+  expect(screen.queryByText('R$ 100.00')).toBeTruthy();
+})
 
-// test('test if onclick is workng', async () => {
-//   const mockCallback = jest.fn(() => { });
+test('test if currency is not correct', async () => {
+  render(Money, { props: { value: '100', currency:'USD' } });
 
-//   render(Money, { props: { onClick: mockCallback } });
-//   fireEvent.click(screen.queryByTestId('mainMoney'));
-//   expect(mockCallback).toHaveBeenCalled();
-// })
-
-// test('test if onclick is workng', async () => {
-//   const mockCallback = jest.fn(() => { });
-
-//   render(Money, { props: { onClick: () => { } } });
-//   fireEvent.click(screen.queryByTestId('mainMoney'));
-//   expect(mockCallback).not.toHaveBeenCalled();
-// })
-
-// test('list Money', async () => {
-//   const mockCallback = jest.fn(() => { });
-  
-//   render(Money, {
-//     props: {
-//       text: 'teste',
-//       onClick: mockCallback,
-//       listMoneys: [{
-//         text: "SERVICE",
-//         icon: "add_circle_outline",
-//         MoneyBgcolor: "#7EC6AE",
-//         MoneyShadow: "#579580",
-//         onClick: mockCallback
-//       }]
-//     }
-//   });
-
-//   fireEvent.click(screen.queryByTestId('mainMoney'));
-//   await wait(0);
-//   expect(screen.getByTestId('listMoneys')).toBeTruthy();
-// })
+  expect(screen.queryByText('R$ 100.00')).toBeFalsy();
+})
