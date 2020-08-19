@@ -21,6 +21,7 @@
       v-model="currentValue"
       :step="step"
       :maxlength="maxLength"
+      :md-counter="counter"
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
