@@ -1,5 +1,5 @@
 <template>
-  <md-field class="customInput">
+  <md-field class="customInput" :md-counter="counter">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
       v-if="mask"
@@ -10,7 +10,6 @@
       v-model="currentValue"
       v-decimal="maxDecimal"
       :maxlength="maxLength"
-      :md-counter="maxLength"
       @blur="blur"
     />
     <md-input
@@ -70,7 +69,7 @@ export default {
       type: Boolean,
       default: false
     },
-    maxlength: {
+    maxLength: {
       type: String,
       default: ""
     },
@@ -90,7 +89,10 @@ export default {
       default: () => {},
       type: Function
     },
-    maxLength: {}
+    counter: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {},
   computed: {
