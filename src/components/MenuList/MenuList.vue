@@ -1,18 +1,24 @@
 <template>
-  <div class="MenuListContainer" v-if="open">
+  <div class="">
     <div class="menu">
+      <div @click="toggleMenu">
+        <slot name="button" />
+      </div>
+      <div class="fileWrapper MenuListContainer" v-if="open">
         <div class="file" :key="item.id" v-for="(item, index) in items">
           <div @click="() => _click(item.onClick)" class="flex rowWrapper">
-            <div  class="flex">
-              <div class="iconWrapper" v-if="item.icon"> <md-icon style="color: #e34642 !important"> {{item.icon}} </md-icon></div> 
-              <div class="menuListName"> {{item.name}} </div>
+            <div class="flex">
+              <div class="iconWrapper" v-if="item.icon">
+                <md-icon style="color: #e34642 !important">{{item.icon}}</md-icon>
+              </div>
+              <div class="menuListName">{{item.name}}</div>
             </div>
-            <div class="divisor" v-if="index !== (items.length - 1)"/>
+            <div class="divisor" v-if="index !== (items.length - 1)" />
           </div>
         </div>
       </div>
-      <div class="fakebg" @click="toggleMenu" v-if="open" />
     </div>
+    <div class="fakebg" @click="toggleMenu" v-if="open" />
   </div>
 </template>
 <script>
@@ -20,17 +26,21 @@ export default {
   name: "MenuList",
   data: function () {
     return {
-      open: true,
+      open: false,
     };
   },
   props: {
     items: {
       type: Number,
-      default: () => [{name: 'test2'}, {name: 'test2'}, {name: 'test2'}]
+      default: () => [],
     },
     zIndex: {
       type: Number,
       default: 2,
+    },
+    isButton: {
+      type: Boolean,
+      deafult: true,
     },
   },
   methods: {
@@ -38,9 +48,9 @@ export default {
       return (this.open = !this.open);
     },
     _click: function (click) {
-      if(click) click();
+      if (click) click();
       this.toggleMenu();
-    }
+    },
   },
 };
 </script>
@@ -74,7 +84,7 @@ export default {
   border-radius: 4px;
   position: absolute;
   z-index: 999;
-  left:0px;
+  left: 0px;
   text-align: left;
   cursor: pointer;
 }
@@ -82,7 +92,7 @@ export default {
   color: #00000099;
   letter-spacing: 0.4px;
   font-size: 14px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   padding: 3px 3px;
 }
 .divisor {
@@ -101,13 +111,12 @@ export default {
   width: 100%;
   background-color: black;
   opacity: 0.1;
-  z-index: -1;
+  z-index: 3;
   cursor: default;
 }
 .rowWrapper {
   width: 100%;
   cursor: pointer;
   flex-direction: column;
-
 }
 </style>
