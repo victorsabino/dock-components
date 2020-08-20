@@ -79,7 +79,7 @@ export default {
 .modalContainer {
   overflow: visible;
   background-color: #f4f1eb !important;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 4px 4px;
   color: #f4f1eb;
   height: auto;
   top: 30px;

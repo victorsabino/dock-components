@@ -1,5 +1,5 @@
 <template>
-  <div @click.stop="openPriceQuote">
+  <div @click.stop="openPriceQuote" data-testid="status">
     <div v-if="status !== ''" class="statusCardRoot">
       <div class="verticalLine" />
       <span> {{ computedStatus }} </span>
