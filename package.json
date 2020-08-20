@@ -1,10 +1,6 @@
 {
   "name": "dock-components",
-<<<<<<< HEAD
-  "version": "2.0.6",
-=======
-  "version": "1.9.9",
->>>>>>> 65f225af3785770e59630f0e3ce0646923d9b571
+  "version": "2.0.7",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",

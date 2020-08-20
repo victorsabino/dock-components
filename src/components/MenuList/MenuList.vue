@@ -4,7 +4,7 @@
       <div @click="toggleMenu">
         <slot name="button" />
       </div>
-      <div class="fileWrapper MenuListContainer" v-if="open">
+      <div class="fileWrapper MenuListContainer" v-if="open" :style="style">
         <div class="file" :key="item.id" v-for="(item, index) in items">
           <div @click="() => _click(item.onClick)" class="flex rowWrapper">
             <div class="flex">
@@ -26,7 +26,7 @@ export default {
   name: "MenuList",
   data: function () {
     return {
-      open: false,
+      open: true,
     };
   },
   props: {
@@ -42,6 +42,10 @@ export default {
       type: Boolean,
       deafult: true,
     },
+    width: {
+      default: '400px',
+      type: String,
+    }
   },
   methods: {
     toggleMenu: function () {
@@ -52,6 +56,11 @@ export default {
       this.toggleMenu();
     },
   },
+  computed: {
+    style: function () {
+      return `width: ${this.width}`;
+    }
+  }
 };
 </script>
 <style scoped>
