@@ -6,6 +6,7 @@ import Money from "./components/Money/Money.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import Status from "./components/Status/Status.vue";
+import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
@@ -55,6 +56,7 @@ module.exports = {
     Vue.component('dock-components', Button);
     Vue.component('dock-components', Toggle);
     Vue.component('dock-components', TopTab);
+    Vue.component('dock-components', Ellipsis);
     Vue.component('dock-components', MenuList);
     Vue.component('dock-components', Checkbox);
     Vue.component('dock-components', DateInput);
