@@ -1,5 +1,5 @@
 <template>
-  <div class="ellipsis" :style="style">{{name}} <md-tooltip md-direction="top">{{name}}</md-tooltip></div>
+  <div class="ellipsis" :style="style"> {{name}} <md-tooltip md-direction="top">{{name}}</md-tooltip></div>
 </template>
 <script>
 export default {
