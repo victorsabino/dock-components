@@ -1,7 +1,7 @@
 <template>
   <div class="dateInput" ref="dateInput">
     <md-datepicker
-      v-model="vmodel"
+      v-model="value"
       md-immediately
       :md-disabled-dates="disabled"
       :md-open-on-focus="false"
@@ -35,13 +35,12 @@ export default {
     "right",
   ],
   methods: {
-    shouldHideLabel: function() {
-      if (this.value === null) return "";
-      return "hide";
-    },
     disabled(date) {
       if (!this.disableDate) return false;
       return moment(date) < moment(this.disableDate);
+    },
+    emitValue(val) {
+      this.$emit('input', val)
     }
   },
   components: {},
@@ -53,20 +52,12 @@ export default {
       return "";
     },
     shouldHideLabel() {
-      console.log('value ', this.value)
       if (this.value === null) return "";
+      this.emitValue(this.value);
       return (this.value)
         ? "hide"
         : "";
     },
-    vmodel: {
-      get() {
-        return this.value
-      },
-      set(val) {
-        this.$emit('input', val)
-      }
-    }
   },
   data: function() {
     return {
