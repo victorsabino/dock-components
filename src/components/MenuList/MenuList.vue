@@ -43,7 +43,7 @@ export default {
       deafult: true,
     },
     width: {
-      default: '400px',
+      default: '150px',
       type: String,
     }
   },
