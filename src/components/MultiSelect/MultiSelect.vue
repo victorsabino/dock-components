@@ -1,6 +1,6 @@
 <template>
   <div class="multiselect md-layout-item md-size-100">
-    <multiselect
+    <multiselectfork
       :close-on-select="false"
       v-model="value"
       :placeholder="placeholder"
@@ -28,12 +28,12 @@
           <DateForm row="to" right/>
         </div>
       </template>
-    </multiselect>
+    </multiselectfork>
   </div>
 </template>
 
 <script>
-import Multiselect from "vue-multiselect-fork";
+import Multiselectfork from "vue-multiselect-fork";
 import DateForm from "../DateForm/DateForm.vue";
 
 export default {
@@ -71,7 +71,7 @@ export default {
     color: {}
   },
   components: {
-    Multiselect,
+    Multiselectfork,
     DateForm
   },
   data: function() {
@@ -139,7 +139,13 @@ export default {
 .multiselect__element {
   border-bottom: 1px solid white;
   border-top: 1px solid #d8d1c4;
-  font-size: 14px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+.multiselect__element:last-child {
+  border-bottom: none;
+  border-top: none;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
 }
 .multiselect__option--highlight,
@@ -180,7 +186,7 @@ export default {
   color: #103A4F !important;
 }
 .multiselect__input {
-  font-size: 14px;
+  font-size: 16px;
 }
 .multiselect__option--selected.multiselect__option--highlight {
   background: transparent;
