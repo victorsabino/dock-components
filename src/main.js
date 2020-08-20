@@ -9,13 +9,13 @@ import Money from "./components/Money/Money.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
-import DateInput from "./components/DateInput/DateInput.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
+import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
-import SlottedSelect from "./components/SlottedSelect/SlottedSelect.vue";
+import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
 import EditableField from "./components/EditableField/EditableField.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
@@ -37,8 +37,8 @@ export {
   DateInput,
   ButtonIcon,
   CustomInput,
+  MultiSelect,
   SelectButton,
-  SlottedSelect,
   EditableField,
   CustomTextArea,
   ConfirmationDialog
