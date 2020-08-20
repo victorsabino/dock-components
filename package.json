@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "1.9.9",
+  "version": "2.0.6",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -17,8 +17,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "test": "mochapack --webpack-config webpack.config.js --require test/setup.js test/**/*.spec.js",
-    "test:unit": "vue-cli-service test:unit --watch"
+    "test": "jest"
   },
   "files": [
     "dist/*",
@@ -33,7 +32,6 @@
     "babel-preset-vue": "^2.0.2",
     "core-js": "^3.6.5",
     "cross-env": "^5.2.0",
-    "install": "^0.13.0",
     "minimist": "^1.2.0",
     "moment": "^2.27.0",
     "mutation-observer": "^1.0.3",
@@ -43,6 +41,7 @@
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-uglify-es": "0.0.1",
     "rollup-plugin-vue": "^4.7.2",
+    "template-compiler": "^1.2.1",
     "vue": "^2.6.11",
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-material": "^1.0.0-beta-14",
@@ -71,8 +70,6 @@
     "file-loader": "^6.0.0",
     "jest-transform-stub": "^2.0.0",
     "minimist": "^1.2.0",
-    "mocha": "^8.1.1",
-    "mochapack": "^2.0.3",
     "node-sass": "^4.14.1",
     "rollup": "^1.14.4",
     "rollup-plugin-buble": "^0.19.6",
@@ -83,7 +80,6 @@
     "sass-loader": "^8.0.2",
     "vue-jest": "^3.0.6",
     "vue-loader": "^15.9.2",
-    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
@@ -116,7 +112,9 @@
     "transform": {
       "^.+\\.ts$": "ts-jest",
       ".*\\.(vue)$": "vue-jest",
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.svg$": "<rootDir>/src/utils/svgTransform.js",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
     },
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
