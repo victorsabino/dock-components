@@ -2,6 +2,7 @@ import Logo from "./components/Logo/Logo.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import Status from "./components/Status/Status.vue";
+import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
 import Money from "./components/Money/Money.vue";
@@ -29,6 +30,7 @@ export {
   Status,
   Select,
   Button,
+  Ellipsis,
   Checkbox,
   MenuList,
   DateForm,
