@@ -9,7 +9,7 @@
       v-bind:type="type"
       v-model="currentValue"
       v-decimal="maxDecimal"
-      :maxlength="maxLength"
+      :maxlength="maxlength"
       @blur="blur"
     />
     <md-input
@@ -69,7 +69,7 @@ export default {
       type: Boolean,
       default: false
     },
-    maxLength: {
+    maxlength: {
       type: String,
       default: ""
     },
