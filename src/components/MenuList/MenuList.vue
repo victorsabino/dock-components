@@ -26,7 +26,7 @@ export default {
   name: "MenuList",
   data: function () {
     return {
-      open: true,
+      open: false,
     };
   },
   props: {
