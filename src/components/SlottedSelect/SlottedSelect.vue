@@ -3,7 +3,7 @@
     <multiselect
       :close-on-select="false"
       v-model="value"
-      placeholder="Select a date period"
+      :placeholder="placeholder"
       label="row"
       track-by="row"
       :options="options"
@@ -63,6 +63,10 @@ export default {
     },
     startValue: {
       default: () => null
+    },
+    placeholder: {
+      type: String,
+      default: ""
     },
     color: {}
   },
