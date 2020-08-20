@@ -7,3 +7,10 @@ export const MenuListStory = () => ({
   template:
     "<MenuList>"
 });
+
+
+export const MenuListStoryWidth = () => ({
+  components: { MenuList },
+  template:
+    "<MenuList width='100px'>"
+});
