@@ -69,10 +69,7 @@ export default {
       type: Boolean,
       default: false
     },
-    maxlength: {
-      type: String,
-      default: ""
-    },
+    maxlength: {},
     placeholder: {
       type: String,
       default: ""
