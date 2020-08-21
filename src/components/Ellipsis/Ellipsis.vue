@@ -27,5 +27,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 200px;
+  text-align: left;
+  padding-left: 5px;
 }
 </style>
