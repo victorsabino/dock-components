@@ -1,7 +1,6 @@
 <template>
   <div class="multiselect md-layout-item md-size-100">
     <multiselectfork
-      :close-on-select="false"
       v-model="value"
       :placeholder="placeholder"
       label="row"
@@ -23,7 +22,7 @@
             {{ props.option.row }}
           </span>
         </div>
-        <div v-if="props.option.dateForm" class="dateFormWrapper">
+        <div v-if="props.option.dateForm" class="dateFormWrapper" @click.stop="() => {}">
           <DateForm row="from" right/>
           <DateForm row="to" right/>
         </div>

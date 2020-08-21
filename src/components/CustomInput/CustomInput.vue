@@ -19,7 +19,7 @@
       v-bind:type="type"
       v-model="currentValue"
       :step="step"
-      :maxlength="maxLength"
+      :maxlength="maxlength"
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
