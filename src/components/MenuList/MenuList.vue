@@ -80,7 +80,6 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  cursor: pointer;
 }
 .menu {
   z-index: 999;
