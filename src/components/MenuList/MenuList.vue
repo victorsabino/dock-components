@@ -6,7 +6,7 @@
       </div>
       <div class="fileWrapper MenuListContainer" v-if="open" :style="style">
         <div class="file" :key="item.id" v-for="(item, index) in items">
-          <div @click="() => _click(item.onClick)" class="flex rowWrapper">
+          <div @click="() => _click(item.onClick)" class="rowWrapper">
             <div class="flex">
               <div class="iconWrapper" v-if="item.icon">
                 <md-icon style="color: #e34642 !important">{{item.icon}}</md-icon>
@@ -80,7 +80,6 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  cursor: pointer;
 }
 .menu {
   z-index: 999;
@@ -95,7 +94,6 @@ export default {
   z-index: 999;
   left: 0px;
   text-align: left;
-  cursor: pointer;
 }
 .menuListName {
   color: #00000099;
@@ -125,7 +123,9 @@ export default {
 }
 .rowWrapper {
   width: 100%;
-  cursor: pointer;
   flex-direction: column;
+}
+.flex{
+  cursor: pointer;
 }
 </style>
