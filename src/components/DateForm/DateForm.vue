@@ -2,7 +2,7 @@
   <div class="dateForm">
     <div class="dateFormRow"> {{ row }} </div>
     <div class="dateInputWrapper">
-      <DateInput :right="right"/>
+      <DateInput :right="right" :row="row"/>
     </div>
   </div>
 </template>

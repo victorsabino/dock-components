@@ -25,14 +25,15 @@ import moment from "moment";
 
 export default {
   props: [
-    "label",
-    "icon",
-    "value",
+    "row",
     "type",
-    "startDate",
-    "error",
-    "disableDate",
+    "icon",
+    "label",
     "right",
+    "error",
+    "value",
+    "startDate",
+    "disableDate",
   ],
   methods: {
     disabled(date) {
