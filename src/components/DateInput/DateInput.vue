@@ -40,7 +40,11 @@ export default {
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
-      this.$emit('input', val)
+      if(this.row !== "Row" && this.row){
+        this.$emit(`${this.row}`, val)
+      }else{
+        this.$emit('input', val)
+      }
     }
   },
   components: {},
