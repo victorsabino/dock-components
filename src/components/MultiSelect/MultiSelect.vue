@@ -8,6 +8,7 @@
       :options="options"
       :searchable="false"
       :option-height="104"
+      openDirection="below"
       :custom-label="customLabel"
       :show-labels="false"
     >
@@ -23,8 +24,8 @@
           </span>
         </div>
         <div v-if="props.option.dateForm" class="dateFormWrapper" @click.stop="() => {}">
-          <DateForm row="from" right/>
-          <DateForm row="to" right/>
+          <DateForm row="from" right @input="e => emitInput(e, 'from')"/>
+          <DateForm row="to" right @input="e => emitInput(e, 'to')"/>
         </div>
       </template>
     </multiselectfork>
@@ -84,6 +85,9 @@ export default {
         color: ${this.color} !important
       `;
     },
+    emitInput(payload, row){
+      this.$emit(row, payload);
+    }
   },
   beforeMount() {
     if (!this.label) {
@@ -168,6 +172,7 @@ export default {
   min-height: 201px;
   margin-top:-2px;
   z-index: 2;
+  box-shadow: 0 2px 1px #d8d1c4;
 }
 .multiselect__option {
   padding: 5px !important;
@@ -184,6 +189,9 @@ export default {
 }
 .multiselect__option--selected.multiselect__option--highlight {
   background: transparent;
+}
+.multiselect--active{
+  z-index:999 !important;
 }
 ul li:nth-last-child(3){
   border-bottom: none !important;
