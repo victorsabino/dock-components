@@ -45,12 +45,7 @@ export default {
       default: "black"
     },
     options: {
-      default: () => [
-        { row: "Last 5 days", desc: "Last 5 days" },
-        { row: "Last 15 days", desc: "Last 15 days" },
-        { row: "Last 30 days", desc: "Last 30 days" },
-        { dateForm: true, row: "Period", slot:true}
-      ],
+      default: () => [],
       type: Array
     },
     value: {},

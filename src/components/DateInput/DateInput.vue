@@ -26,11 +26,11 @@ import moment from "moment";
 export default {
   props: [
     "row",
-    "icon",
     "type",
+    "icon",
+    "label",
     "right",
     "error",
-    "label",
     "value",
     "startDate",
     "disableDate",
