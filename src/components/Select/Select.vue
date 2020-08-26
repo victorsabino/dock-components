@@ -106,7 +106,7 @@ export default {
   color: #104550 !important;
   -webkit-text-fill-color: #104550;
 
-  background-color: #E8E3DA;
+  background-color: #EBE8E3;
   border-radius: 4px;
   box-shadow: 0px 2px 1px #dcd7cd;
   max-width: 90px;

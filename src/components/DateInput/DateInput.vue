@@ -8,6 +8,7 @@
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
+      @input="emitValue"
     >
       <label
         :class="[
@@ -41,11 +42,7 @@ export default {
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
-      if(this.row !== "Row" && this.row){
-        this.$emit(`${this.row}`, val)
-      }else{
-        this.$emit('input', val)
-      }
+      this.$emit('input', val)
     }
   },
   components: {},
@@ -58,7 +55,6 @@ export default {
     },
     shouldHideLabel() {
       if (this.value === null) return "";
-      this.emitValue(this.value);
       return (this.value)
         ? "hide"
         : "";

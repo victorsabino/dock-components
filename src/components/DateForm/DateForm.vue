@@ -2,7 +2,7 @@
   <div class="dateForm">
     <div class="dateFormRow"> {{ row }} </div>
     <div class="dateInputWrapper">
-      <DateInput :right="right" :row="row"/>
+      <DateInput :right="right" :row="row" @input="emitInput"/>
     </div>
   </div>
 </template>
@@ -23,6 +23,11 @@ export default {
   },
   components: {
     DateInput
+  },
+  methods: {
+    emitInput(payload) {
+      this.$emit('input', payload);
+    }
   },
 }
 </script>
