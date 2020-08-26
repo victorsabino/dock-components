@@ -8,7 +8,7 @@
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
-      @input="emitValue"
+      @change="emitValue(this.value)"
     >
       <label
         :class="[
@@ -38,12 +38,22 @@ export default {
   ],
   methods: {
     disabled(date) {
-      if (!this.disableDate) return false;
+      if (!this.disableDate || !this.value || this.value === "") return false;
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
-      this.$emit('input', val)
-    }
+      this.$emit("input", val);
+    },
+    formatDate(str) {
+      let input = str;
+      var len = str.length;
+      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
+      if (len >= 10) return str.slice(0, 9);
+      if (len === 2) input += "/";
+      if (len === 5) input += "/";
+
+      return input;
+    },
   },
   components: {},
   computed: {
@@ -55,29 +65,41 @@ export default {
     },
     shouldHideLabel() {
       if (this.value === null) return "";
-      return (this.value)
-        ? "hide"
-        : "";
+      return "hide";
     },
   },
-  data: function() {
+  data: function () {
     return {
       value: null,
-      ptBR
+      ptBR,
     };
   },
   beforeMount() {
-    this.$material.locale.dateFormat = 'dd/MM/yyyy'
+    this.$material.locale.dateFormat = "dd/MM/yyyy";
   },
-  mounted () {
-    this.$refs.dateInput.querySelector('input').addEventListener(
-      'click',
-      (e) => {
-        this.$refs.dateInput.querySelector('input').focus();
+  mounted() {
+    this.$refs.dateInput
+      .querySelector("input")
+      .addEventListener("click", (e) => {
+        this.$refs.dateInput.querySelector("input").focus();
         e.stopPropagation();
-      }
-    );
-  }
+      });
+    this.$refs.dateInput
+      .querySelector("input")
+      .addEventListener("keyup", (e) => {
+        console.log(
+          "lool",
+          this.$refs.dateInput.querySelector("input").value,
+          this.value
+        );
+        let v = "";
+        let _date = this.$refs.dateInput.querySelector("input").value;
+
+        this.$refs.dateInput.querySelector("input").value = this.formatDate(
+          _date
+        );
+      });
+  },
 };
 </script>
 
