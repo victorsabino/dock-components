@@ -25,14 +25,15 @@ import moment from "moment";
 
 export default {
   props: [
-    "label",
-    "icon",
-    "value",
+    "row",
     "type",
-    "startDate",
-    "error",
-    "disableDate",
+    "icon",
+    "label",
     "right",
+    "error",
+    "value",
+    "startDate",
+    "disableDate",
   ],
   methods: {
     disabled(date) {
@@ -40,7 +41,11 @@ export default {
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
-      this.$emit('input', val)
+      if(this.row !== "Row" && this.row){
+        this.$emit(`${this.row}`, val)
+      }else{
+        this.$emit('input', val)
+      }
     }
   },
   components: {},

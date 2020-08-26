@@ -92,7 +92,7 @@ export default {
   border-radius: 4px;
   position: absolute;
   z-index: 999;
-  left: 0px;
+  left: -45px;
   text-align: left;
 }
 .menuListName {
