@@ -185,4 +185,7 @@ export default {
 .multiselect__option--selected.multiselect__option--highlight {
   background: transparent;
 }
+ul li:nth-last-child(3){
+  border-bottom: none !important;
+}
 </style>
