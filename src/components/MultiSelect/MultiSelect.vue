@@ -116,6 +116,7 @@ export default {
 <style>
 .multiselect{
   color:#51515180 !important;
+  cursor: pointer;
 }
 .multiselect .multiselect__tags {
   background-color: #ebe8e3;
