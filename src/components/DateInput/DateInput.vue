@@ -64,7 +64,7 @@ export default {
       return "";
     },
     shouldHideLabel() {
-      if (this.value === null) return "";
+      if (this.value === null) return "dd/MM/yyyy";
       return "hide";
     },
   },
