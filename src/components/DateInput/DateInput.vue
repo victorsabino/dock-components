@@ -47,7 +47,7 @@ export default {
     formatDate(str) {
       let input = str;
       var len = str.length;
-      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len);
+      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len-1);
       if (len >= 10) return str.slice(0, 10);
       if (len === 2) input += "/";
       if (len === 5) input += "/";
@@ -86,7 +86,7 @@ export default {
       });
     this.$refs.dateInput
       .querySelector("input")
-      .addEventListener("keyup", (e) => {
+      .addEventListener("input", (e) => {
         let v = "";
         let _date = this.$refs.dateInput.querySelector("input").value;
 
