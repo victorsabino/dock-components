@@ -85,7 +85,7 @@ export default {
   z-index: 999;
 }
 .MenuListContainer {
-  padding: 3px 9px;
+  padding: 6px 9px;
   width: 160px;
   min-height: 50px;
   background-color: #ebe8e3;
@@ -94,6 +94,7 @@ export default {
   z-index: 999;
   left: -45px;
   text-align: left;
+  box-shadow: 0 2px 1px #d8d1c4;
 }
 .menuListName {
   color: #00000099;
