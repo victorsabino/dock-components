@@ -42,6 +42,7 @@ export default {
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
+      console.log('emitin date input')
       this.$emit("input", val);
     },
     formatDate(str) {
@@ -65,6 +66,7 @@ export default {
     },
     shouldHideLabel() {
       if (!this.value) return "dd/MM/yyyy";
+      this.emitValue(this.value);
       return "hide";
     },
   },
