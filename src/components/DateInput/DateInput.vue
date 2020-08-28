@@ -45,7 +45,7 @@ export default {
       };
     },
     disabled(date) {
-      if (!this.disableDate || !this.value || this.value === "") return false;
+      if (!this.disableDate || this.value === "") return false;
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
