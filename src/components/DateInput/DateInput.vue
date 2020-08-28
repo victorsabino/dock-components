@@ -37,18 +37,27 @@ export default {
     "disableDate",
   ],
   methods: {
+    data: function () {
+      return {
+        value: null,
+        ptBR,
+        timer: undefined,
+      };
+    },
     disabled(date) {
       if (!this.disableDate || !this.value || this.value === "") return false;
       return moment(date) < moment(this.disableDate);
     },
     emitValue(val) {
-      console.log('emitin date input')
+      if (this.timer) clearTimeout();
+      this.timer = setTimeout(() =>{
       this.$emit("input", val);
+      }, 100)
     },
     formatDate(str) {
       let input = str;
       var len = str.length;
-      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len-1);
+      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
       if (len >= 10) return str.slice(0, 10);
       if (len === 2) input += "/";
       if (len === 5) input += "/";
@@ -69,12 +78,6 @@ export default {
       this.emitValue(this.value);
       return "hide";
     },
-  },
-  data: function () {
-    return {
-      value: null,
-      ptBR,
-    };
   },
   beforeMount() {
     this.$material.locale.dateFormat = "dd/MM/yyyy";

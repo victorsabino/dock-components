@@ -74,7 +74,8 @@ export default {
       selected: null,
       value: null,
       option: "",
-      hasSetedStartedValued: false
+      hasSetedStartedValued: false,
+      timer: undefined
     };
   },
   methods: {
@@ -86,7 +87,10 @@ export default {
       `;
     },
     emitInput(payload, row){
+      if (this.timer) clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
       this.$emit(row, payload);
+      }, 500);
     }
   },
   beforeMount() {
