@@ -133,6 +133,7 @@ export default {
 }
 .rightLabel {
   left: 8px !important;
+  top: 14px !important;
 }
 .md-field label {
   top: 20px;
@@ -157,10 +158,8 @@ export default {
   font-family: Open Sans, sans-serif;
   z-index: 1;
 }
-.dateInput input i {
-  top: 25px;
-  position: absolute;
-  right: 10px;
+.dateInput i {
+  margin-top: 0 !important;
 }
 .dateInput input::after,
 .dateInput input::before {

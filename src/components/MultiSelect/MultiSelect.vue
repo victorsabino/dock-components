@@ -19,7 +19,7 @@
           </span>
         </div>
         <div class="option__desc" v-else>
-          <span class="option__rowSlot">
+          <span class="option__rowSlot optionSlot">
             {{ props.option.row }}
           </span>
         </div>
@@ -144,6 +144,9 @@ export default {
   border-top: 1px solid #d8d1c4;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
+}
+.optionSlot{
+  font-weight: 600;
 }
 .multiselect__element:last-child {
   border-bottom: none;
