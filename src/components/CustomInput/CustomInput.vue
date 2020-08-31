@@ -25,7 +25,7 @@
       @blur="blur"
     />
 
-    <md-icon :v-if="icon" style="color: #D8D1C4 !important">{{ icon }}</md-icon>
+    <md-icon :v-if="icon" class="color">{{ icon }}</md-icon>
   </md-field>
 </template>
 
@@ -159,6 +159,9 @@ export default {
 
 .md-field {
   padding-top: 0;
+}
+.color {
+  color: #D8D1C4 !important;
 }
 </style>
 
