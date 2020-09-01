@@ -8,11 +8,12 @@
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
-      @change="emitValue(this.value)"
+      @input="emitInput"
     >
       <label
+        ref="label"
         :class="[
-          shouldHideLabel , 
+          shouldHideLabel,
           right ? 'rightLabel' : ''
         ]"
       >dd/mm/aaaa</label>
@@ -39,9 +40,9 @@ export default {
   methods: {
     data: function () {
       return {
-        value: null,
         ptBR,
         timer: undefined,
+        val: "",
       };
     },
     disabled(date) {
@@ -50,14 +51,19 @@ export default {
     },
     emitValue(val) {
       if (this.timer) clearTimeout();
-      this.timer = setTimeout(() =>{
-      this.$emit("input", val);
-      }, 100)
+      this.timer = setTimeout(() => {
+        this.$emit("input", val);
+      }, 100);
+    },
+    isDateValid(val) {
+      var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+      // Match the date format through regular expression
+      if (val && typeof val.match === "function") return val.match(dateformat);
     },
     formatDate(str) {
+      if (!str) return;
       let input = str;
       var len = str.length;
-      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
       if (len >= 10) return str.slice(0, 10);
       if (len === 2) input += "/";
       if (len === 5) input += "/";
@@ -83,6 +89,7 @@ export default {
     this.$material.locale.dateFormat = "dd/MM/yyyy";
   },
   mounted() {
+    const that = this;
     this.$refs.dateInput
       .querySelector("input")
       .addEventListener("click", (e) => {
@@ -94,11 +101,12 @@ export default {
       .addEventListener("input", (e) => {
         let v = "";
         let _date = this.$refs.dateInput.querySelector("input").value;
+        if (!e.data) return;
+        const _formatedDate = that.formatDate(_date);
 
-        this.$refs.dateInput.querySelector("input").value = this.formatDate(
-          _date
-        );
-      });
+        if (this.$refs.dateInput.querySelector("input").value.length > 0) that.hideLabel = that.$refs.label.style.display = 'none';
+        that.$refs.dateInput.querySelector("input").value = _formatedDate;
+      })
   },
 };
 </script>
