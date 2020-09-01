@@ -58,7 +58,9 @@ export default {
     formatDate(str) {
       if (!str) return;
       let input = str;
+
       var len = str.length;
+      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
       if (len >= 10) return str.slice(0, 10);
       if (len === 2) input += "/";
       if (len === 5) input += "/";
