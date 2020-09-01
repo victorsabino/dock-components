@@ -99,7 +99,7 @@ export default {
         if (!e.data) return;
         const _formatedDate = that.formatDate(_date);
 
-        if (this.$refs.dateInput.querySelector("input").value.length > 0) that.hideLabel = that.$refs.label.style.display = 'none';
+        if (_date.length > 0) that.hideLabel = that.$refs.label.style.display = 'none';
         that.$refs.dateInput.querySelector("input").value = _formatedDate;
       })
   },
