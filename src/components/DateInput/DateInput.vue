@@ -98,14 +98,14 @@ export default {
       .addEventListener("input", (e) => {
         let v = "";
         let _date = this.$refs.dateInput.querySelector("input").value;
-        if (_date.length > 0) that.$refs.label.style.display = 'none';
-        else that.$refs.label.style.display = 'block';
+        if (_date.length > 0) that.$refs.label.style.display = "none";
+        else that.$refs.label.style.display = "block";
 
         if (!e.data) return;
         const _formatedDate = that.formatDate(_date);
 
         that.$refs.dateInput.querySelector("input").value = _formatedDate;
-      })
+      });
   },
 };
 </script>

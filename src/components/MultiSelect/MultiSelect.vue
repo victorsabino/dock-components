@@ -25,7 +25,7 @@
         </div>
         <div v-if="props.option.dateForm" class="dateFormWrapper" @click.stop="() => {}">
           <DateForm row="from" right @input="e => emitInput(e, 'from')"/>
-          <DateForm row="to" right @input="e => emitInput(e, 'to')"/>
+          <DateForm row="to" right @input="e => emitInput(e, 'to')" :disableDate="from"/>
         </div>
       </template>
     </multiselectfork>
@@ -75,7 +75,9 @@ export default {
       value: null,
       option: "",
       hasSetedStartedValued: false,
-      timer: undefined
+      timer: undefined,
+      to: undefined,
+      from: undefined
     };
   },
   methods: {
@@ -89,7 +91,9 @@ export default {
     emitInput(payload, row){
       if (this.timer) clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-      this.$emit(row, payload);
+      const date = payload;
+      if (row === 'from') this.from = new Date(date);
+      this.$emit(row, date);
       }, 500);
     }
   },

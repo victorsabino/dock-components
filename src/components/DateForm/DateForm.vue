@@ -2,7 +2,7 @@
   <div class="dateForm">
     <div class="dateFormRow"> {{ row }} </div>
     <div class="dateInputWrapper">
-      <DateInput :right="right" :row="row" @input="emitInput"/>
+      <DateInput :right="right" :row="row" @input="emitInput" :disableDate="disableDate"/>
     </div>
   </div>
 </template>
@@ -19,7 +19,8 @@ export default {
     right: {
       default: false,
       type: Boolean
-    }
+    },
+    disableDate: {}
   },
   components: {
     DateInput
