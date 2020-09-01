@@ -35,7 +35,7 @@
 <script>
 import Multiselectfork from "vue-multiselect-fork";
 import DateForm from "../DateForm/DateForm.vue";
-
+import moment from "moment";
 export default {
   props: {
     label: {},
@@ -92,7 +92,7 @@ export default {
       if (this.timer) clearTimeout(this.timer);
       this.timer = setTimeout(() => {
       const date = payload;
-      if (row === 'from') this.from = new Date(date);
+      if (row === 'from') this.from = moment(date).add(1, 'd').toDate();
       this.$emit(row, date);
       }, 500);
     }
