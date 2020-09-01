@@ -55,11 +55,6 @@ export default {
         this.$emit("input", val);
       }, 100);
     },
-    isDateValid(val) {
-      var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-      // Match the date format through regular expression
-      if (val && typeof val.match === "function") return val.match(dateformat);
-    },
     formatDate(str) {
       if (!str) return;
       let input = str;
