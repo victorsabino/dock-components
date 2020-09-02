@@ -74,20 +74,27 @@ If you have to make any changes to the lint you can find there the `eslintConfig
 - build:es  
 - build:unpkg  
 - build  
-
+  
 
 ## How to create a Component
-#### Every component must have
-- componentName.stories.js
-- componentName.spec.js
-- componentName.vue
+#### Every component
+- Must have a story componentName.stories.js
+- Must have a test componentName.spec.js
+- Must be export at main.js
+- Must be instanced at plugin.js
+  
+# Component Documentation   
+You can find the Documentation for a specific component at the storybook using the Story documentation plugin, you can acess at `localhost:6006` running `yarn storybook`  
+  
+# Storybook
+Storybook was introduced so dock-components can have a 'face' and can be coded as a stand alone application.  
+Running `yarn storybook` or `yarn build` storybook is going to scan for .stories.js file extensions, the path/extension can be configured at `.storybook/main.js`
 
+*Note to self: We need to host storybook in dev envirements*
 
-## ⛏️ Built With
-
-- [nodejs](https://www.mongodb.com/) - Database
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+# Testing
+We use [Vue Testing Library](https://github.com/testing-library/vue-testing-library) and [Jest](https://jestjs.io/) as our main test base.  
+If you need a good test exemple check components/Button/Button.spec.js
 
 ## ✍️ Authors
 
