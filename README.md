@@ -9,7 +9,7 @@ Dockcomponents is a shared component library used in Dockmarket and Dockpay proj
 
 ## Table of Contents
 
-- [1. Why a separe Library?](#why)
+- [1. Why a separed Library?](#why)
 - [2. List of Scripts](#scripts)
 - [3. package.json](#how)
 - [4. How to create a Component](#create_component)
@@ -20,7 +20,7 @@ Dockcomponents is a shared component library used in Dockmarket and Dockpay proj
 - [9. Storybook Configuration](#storybook_config)
 - [10. Test Configuration](#test_config)
 
-# Why a separe Library
+# Why a separed Library
 
 We had to built two softwares having very similar interfaces so we could use components for both Dockmarket and Dockpay without rewriting code.
 This library is an attempt to reduce the time spent developing both plataforms.
