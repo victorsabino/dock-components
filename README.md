@@ -21,7 +21,7 @@ Dockcomponents is a shared component library used in Dockmarket and Dockpay proj
 - [10. Test Configuration](#test_config)
 - [11. Dockcomponents Configuration](#dock_cofig)
 
-## Why a separe Library
+# Why a separe Library
 
 We had to built two softwares having very similar interfaces so we could use components for both Dockmarket and Dockpay without rewriting code.
 This library is an attempt to reduce the time spent developing both plataforms.
@@ -29,6 +29,7 @@ This library is an attempt to reduce the time spent developing both plataforms.
 Despise having atomic design on the other two projects, I willingly choose to no use in this project for two main reasons:
 - to simplify the further develop of this project.
 - Almost all components in this library would fall on the `atom` category
+  
 # List of Scripts
 The use of `yarn` instead of `npm` is highly suggested but npm should also work.
 
