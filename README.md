@@ -7,10 +7,7 @@ dock-components
 
 </div>
 
----
-
-<p align="center"> Dockcomponents is a shared component library used in Dockmarket and Dockpay projets.
-</p>
+Dockcomponents is a shared component library used in Dockmarket and Dockpay projets.
 
 ## Table of Contents
 
@@ -43,7 +40,7 @@ The use of `yarn` instead of `npm` is highly suggested but npm should also work.
 Alias to `yarn serve`  
 ``` yarn start ```
 ### Storybook  
-Opens storybook at `localhost:6006`  
+Opens storybook at `localhost:6006`    
 ``` yarn storybook ```
 ### Test  
 Alias for `yarn jest`  
@@ -64,7 +61,7 @@ Same for above, but just for `dockpay`
 Same for above, but just for `dockmarket`  
 ``` yarn build-dev-dockmarket ```
 
-# package.json <a name = "authors"></a>
+# package.json
 ### Version
 The most valuable information for most part is just the package `version`. Avoid creating unecessary tags, be 100% sure you actually have everything working (lint, tests, build, storybook)  
 You should also test changes locally before commiting them to the repostory using `yarn build-dev-dockmarket` or `yarn build-dev-dockpay`.
@@ -72,21 +69,32 @@ You should also test changes locally before commiting them to the repostory usin
 ### EslintConfig
 If you have to make any changes to the lint you can find there the `eslintConfig` block.
 
-## scripts
+### Scripts
 ### Essencial scripts for the build process.
-**Don't touch these scripts**
-- build:umd
-- build:es
-- build:unpkg
-- build
+**Don't touch these scripts**  
+- build:umd  
+- build:es  
+- build:unpkg  
+- build  
 
-## ⛏️ Built With <a name = "tech_stack"></a>
+
+## How to create a Component
+#### Every component must have
+- componentName.stories.js
+- componentName.spec.js
+- componentName.vue
+
+ 
+
+
+
+## ⛏️ Built With
 
 - [nodejs](https://www.mongodb.com/) - Database
 - [VueJs](https://vuejs.org/) - Web Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Authors
 
 - [@Victor Sabino](https://github.com/vsabino) - Creator & Collaborator
 - [@Lucas Estrela](https://github.com/lucasestrela) - Collaborator
