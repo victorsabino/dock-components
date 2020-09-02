@@ -38,35 +38,35 @@ Despise having atomic design on the other two projects, I willingly choose to no
 The use of `yarn` instead of `npm` is highly suggested but npm should also work.
 
 ### Install
-<pre> <code> yarn install </code> </pre>
+``` yarn install ```
 ### Start
 Alias to `yarn serve`
-<pre> <code> yarn start </code> </pre>
-### Storybook <br/>
+``` yarn start ```
+### Storybook  
 Opens storybook at `localhost:6006`
-<pre> <code> yarn storybook </code> </pre>
-### Test <br/>
+``` yarn storybook ```
+### Test  
 Alias for `yarn jest`
-<pre> <code> yarn test </code> </pre>
+``` yarn test ```
 ### Build
 Script to build and publish the package, you have to wait the build then write the new version.
-<pre> <code> yarn build </code> </pre>
-### Publish <br/>
+``` yarn build ```
+### Publish  
 This **do not** build the package, if you forget to built it's going to pubish an older version **yarn build** is preferred instead
-<pre> <code> yarn publish </code> </pre>
-### Build-dev: <br/>
+``` yarn publish ```
+### Build-dev:  
 Script to build and copy the Dist directory to both dockmarket and dockpay (both need to be in the same directory)
-<pre> <code> yarn build-dev </code> </pre>
-### Build-dev-dockpay:<br/>
+``` yarn build-dev ```
+### Build-dev-dockpay  
 Same for above, but just for `dockpay`
-<pre> <code> yarn build-dev-dockpay </code> </pre>
-### Build-dev-dockmarket:<br/>
+``` yarn build-dev-dockpay ```
+### Build-dev-dockmarket  
 Same for above, but just for `dockmarket`
-<pre> <code> yarn build-dev-dockmarket </code> </pre>
+``` yarn build-dev-dockmarket ```
 
 # package.json <a name = "authors"></a>
 ### Version
-The most valuable information for most part is just the package `version`. Avoid creating unecessary tags, be 100% sure you actually have everything working (lint, tests, build, storybook) <br/>
+The most valuable information for most part is just the package `version`. Avoid creating unecessary tags, be 100% sure you actually have everything working (lint, tests, build, storybook)  
 You should also test changes locally before commiting them to the repostory using `yarn build-dev-dockmarket` or `yarn build-dev-dockpay`.
 
 ### EslintConfig
