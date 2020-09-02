@@ -100,7 +100,7 @@ If you need a good test exemple check components/Button/Button.spec.js
 # Plugin.js and main.js
 These files are this library basic configuration. 
 `main.js` is just there to export the components so they're visible to the user (dockpay, dockmarket)  
-`plugin.js` injects everything that you need to inject with vue.use (it's basically like the main.js in vue) and applies to every component before exporting.  
+`plugin.js` injects everything that you need to inject (it's basically like the main.js in vue) and applies to every component before exporting.  
 **if your new component isn't showing when you're trying to import it's probably related to a misconfiguration in one of these files**
   
 # Storybook Configuration
