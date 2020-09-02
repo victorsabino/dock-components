@@ -97,6 +97,13 @@ Running `yarn storybook` or `yarn build` storybook is going to scan for .stories
 We use [Vue Testing Library](https://github.com/testing-library/vue-testing-library) and [Jest](https://jestjs.io/) as our main test base.  
 If you need a good test exemple check components/Button/Button.spec.js
 
+# Plugin.js and main.js
+These files are this library basic configuration. 
+`main.js` is just there to export the components so they're visible to the user (dockpay, dockmarket)  
+`plugin.js` injects everything that you need to inject with vue.use (it's basically like the main.js in vue) and applies to every component before exporting.  
+**if your new component isn't showing when you're trying to import it's probably related to a misconfiguration in one of these files**
+  
+# Storybook Configuration
 ## ✍️ Authors
 
 - [@Victor Sabino](https://github.com/vsabino) - Creator & Collaborator
