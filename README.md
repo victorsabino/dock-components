@@ -1,4 +1,4 @@
-![picture](https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg)\
+![picture](https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg)  
 dock-components
 
 [![Dockcomponents](https://img.shields.io/badge/dockmarket-name-orange.svg)](https://www.dockmarket.com.br)
