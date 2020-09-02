@@ -12,7 +12,7 @@ dock-components
 <p align="center"> Dockcomponents is a shared component library used in Dockmarket and Dockpay projets.
 </p>
 
-## 📝 Table of Contents
+## Table of Contents
 
 - [1. Why a separe Library?](#why)
 - [2. List of Scripts](#scripts)
@@ -34,34 +34,34 @@ This library is an attempt to reduce the time spent developing both plataforms.
 Despise having atomic design on the other two projects, I willingly choose to no use in this project for two main reasons:
 - to simplify the further develop of this project.
 - Almost all components in this library would fall on the `atom` category
-# List of Scripts <a name = "scripts"></a>
+# List of Scripts
 The use of `yarn` instead of `npm` is highly suggested but npm should also work.
 
 ### Install
-``` yarn install ```
+``` yarn install ```  
 ### Start
-Alias to `yarn serve`
+Alias to `yarn serve`  
 ``` yarn start ```
 ### Storybook  
-Opens storybook at `localhost:6006`
+Opens storybook at `localhost:6006`  
 ``` yarn storybook ```
 ### Test  
-Alias for `yarn jest`
+Alias for `yarn jest`  
 ``` yarn test ```
 ### Build
-Script to build and publish the package, you have to wait the build then write the new version.
+Script to build and publish the package, you have to wait the build then write the new version.  
 ``` yarn build ```
 ### Publish  
-This **do not** build the package, if you forget to built it's going to pubish an older version **yarn build** is preferred instead
+This **do not** build the package, if you forget to built it's going to pubish an older version **yarn build** is preferred instead  
 ``` yarn publish ```
 ### Build-dev:  
-Script to build and copy the Dist directory to both dockmarket and dockpay (both need to be in the same directory)
+Script to build and copy the Dist directory to both dockmarket and dockpay (both need to be in the same directory)  
 ``` yarn build-dev ```
 ### Build-dev-dockpay  
-Same for above, but just for `dockpay`
+Same for above, but just for `dockpay`  
 ``` yarn build-dev-dockpay ```
 ### Build-dev-dockmarket  
-Same for above, but just for `dockmarket`
+Same for above, but just for `dockmarket`  
 ``` yarn build-dev-dockmarket ```
 
 # package.json <a name = "authors"></a>
