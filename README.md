@@ -1,10 +1,5 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg" alt="Project logo"></a>
-</p>
-<h3 align="center">dock-components</h3>
-
-<div align="center">
+![picture](https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg)\
+dock-components
 
 [![Dockcomponents](https://img.shields.io/badge/dockmarket-name-orange.svg)](https://www.dockmarket.com.br)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -31,7 +26,7 @@
 - [10. Test Configuration](#test_config)
 - [11. Dockcomponents Configuration](#dock_cofig)
 
-## Why a separe Library <a name = "why"></a>
+## Why a separe Library
 
 We had to built two softwares having very similar interfaces so we could use components for both Dockmarket and Dockpay without rewriting code.
 This library is an attempt to reduce the time spent developing both plataforms.
@@ -44,7 +39,7 @@ The use of `yarn` instead of `npm` is highly suggested but npm should also work.
 
 ### Install
 <pre> <code> yarn install </code> </pre>
-### Start <br/>
+### Start
 Alias to `yarn serve`
 <pre> <code> yarn start </code> </pre>
 ### Storybook <br/>
