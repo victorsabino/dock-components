@@ -19,7 +19,6 @@ Dockcomponents is a shared component library used in Dockmarket and Dockpay proj
 - [8. Plugin.js and main.js](#plugin_main)
 - [9. Storybook Configuration](#storybook_config)
 - [10. Test Configuration](#test_config)
-- [11. Dockcomponents Configuration](#dock_cofig)
 
 # Why a separe Library
 
@@ -83,15 +82,16 @@ If you have to make any changes to the lint you can find there the `eslintConfig
 - Must have a test componentName.spec.js
 - Must be export at main.js
 - Must be instanced at plugin.js
-  
-# Component Documentation   
-You can find the Documentation for a specific component at the storybook using the Story documentation plugin, you can acess at `localhost:6006` running `yarn storybook`  
-  
+
 # Storybook
 Storybook was introduced so dock-components can have a 'face' and can be coded as a stand alone application.  
 Running `yarn storybook` or `yarn build` storybook is going to scan for .stories.js file extensions, the path/extension can be configured at `.storybook/main.js`
 
 *Note to self: We need to host storybook in dev envirements*
+
+# Component Documentation   
+You can find the Documentation for a specific component at the storybook using the Story documentation plugin, you can acess at `localhost:6006` running `yarn storybook`  
+  
 
 # Testing
 We use [Vue Testing Library](https://github.com/testing-library/vue-testing-library) and [Jest](https://jestjs.io/) as our main test base.  
@@ -104,6 +104,14 @@ These files are this library basic configuration.
 **if your new component isn't showing when you're trying to import it's probably related to a misconfiguration in one of these files**
   
 # Storybook Configuration
+Storybook congfig can be found at `.storybook/config.js` and `.storybook/main.js`  
+Config.js loads the decorators and plugins and main.js has the scan path for the stories and also loads [addons](https://www.learnstorybook.com/intro-to-storybook/vue/en/using-addons/)  
+
+# Test Configuration
+The test configuration can be found at jest.config.js and uses `vue-jest` to load vue files.  
+The configuration only reads from jest.config.js, don't put any jest configuration in package.json like many exemples on the web
+
+
 ## ✍️ Authors
 
 - [@Victor Sabino](https://github.com/vsabino) - Creator & Collaborator
