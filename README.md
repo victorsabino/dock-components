@@ -1,11 +1,9 @@
+# dock-components
 ![picture](https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg)  
-dock-components
 
 [![Dockcomponents](https://img.shields.io/badge/dockmarket-name-orange.svg)](https://www.dockmarket.com.br)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![DOCUMENATION](https://img.shields.io/badge/documentation-blue.svg)](LICENSE.md)
-
-</div>
 
 Dockcomponents is a shared component library used in Dockmarket and Dockpay projets.
 
