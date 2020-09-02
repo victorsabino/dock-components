@@ -84,9 +84,6 @@ If you have to make any changes to the lint you can find there the `eslintConfig
 - componentName.spec.js
 - componentName.vue
 
- 
-
-
 
 ## ⛏️ Built With
 
