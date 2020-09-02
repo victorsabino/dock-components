@@ -1,6 +1,6 @@
 <template>
   <div class="checkboxRoot">
-    <md-checkbox v-model="currentValue" data-testid="checkbox">
+    <md-checkbox v-model="currentValue" data-testid="checkbox" :disabled="disabled">
       <div class="darkBlue openSans font14">{{ label }}</div>
     </md-checkbox>
   </div>
@@ -14,6 +14,10 @@ export default {
       type: String
     },
     value: {
+      default: false,
+      type: Boolean
+    },
+    disabled: {
       default: false,
       type: Boolean
     }
@@ -37,5 +41,9 @@ export default {
   box-shadow: 0px 2px 1px #dcd7cd;
   padding-left: px;
   padding-top: 2px;
+}
+.checkboxRoot .md-disabled .md-checkbox-container {
+  background-color: #98a7ac !important;
+  border-color: #191919 !important; 
 }
 </style>
