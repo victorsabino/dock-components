@@ -114,5 +114,5 @@ The configuration only reads from jest.config.js, don't put any jest configurati
 
 ## ✍️ Authors
 
-- [@Victor Sabino](https://github.com/vsabino) - Creator & Collaborator
+- [@Victor Sabino](https://github.com/victorsabino) - Creator & Collaborator
 - [@Lucas Estrela](https://github.com/lucasestrela) - Collaborator
