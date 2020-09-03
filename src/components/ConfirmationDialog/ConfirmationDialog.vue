@@ -55,7 +55,7 @@ export default {
     title: "",
     confirmButtonText: "Ok",
     width: "500px",
-    cancelButtonText: "Cancelar",
+    cancelButtonText: "Cancel",
     justifyContent: "space-between",
     buttonConfirmStyle: {
       bgcolor: undefined,
@@ -90,7 +90,7 @@ export default {
     resetDialog() {
       this.text = "";
       this.title = "";
-      this.cancelButtonText = "Cancelar";
+      this.cancelButtonText = "Cancel";
       this.confirmButtonText = "Ok";
       this.confirmListButtons = null;
       this.width = "500px";
