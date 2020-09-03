@@ -11,6 +11,7 @@ import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
+import Loading from "./components/Loading/Loading.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
@@ -56,6 +57,7 @@ module.exports = {
     Vue.component('dock-components', Button);
     Vue.component('dock-components', Toggle);
     Vue.component('dock-components', TopTab);
+    Vue.component('dock-components', Loading);
     Vue.component('dock-components', Ellipsis);
     Vue.component('dock-components', MenuList);
     Vue.component('dock-components', Checkbox);
