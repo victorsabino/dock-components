@@ -100,7 +100,7 @@ export default {
       return "color:  #104550;";
     },
     shouldHideLabel() {
-      if (this.currentVal === null || !this.value) return "";
+      if (!this.currentVal) return "";
       return (this.currentVal && this.currentVal.length > 0) ||
         (this.value && this.value.length > 0)
         ? "hide"
@@ -115,7 +115,10 @@ export default {
         this.$emit("input", val);
       }
     }
-  }
+  },
+  mounted () {
+    this.currentVal = this.value;
+  },
 };
 </script>
 
