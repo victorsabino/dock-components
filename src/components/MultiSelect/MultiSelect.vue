@@ -1,6 +1,6 @@
 <template>
   <div class="multiselect md-layout-item md-size-100">
-    <multiselectfork
+    <Multiselect
       v-model="value"
       :placeholder="placeholder"
       label="row"
@@ -8,7 +8,7 @@
       :options="options"
       :searchable="false"
       :option-height="104"
-      openDirection="below"
+      open-direction="below"
       :custom-label="customLabel"
       :show-labels="false"
     >
@@ -28,12 +28,12 @@
           <DateForm row="to" right @input="e => emitInput(e, 'to')" :disableDate="from"/>
         </div>
       </template>
-    </multiselectfork>
+    </Multiselect>
   </div>
 </template>
 
 <script>
-import Multiselectfork from "vue-multiselect-fork";
+import Multiselect from "vue-multiselect-fork";
 import DateForm from "../DateForm/DateForm.vue";
 import moment from "moment";
 export default {
@@ -66,7 +66,7 @@ export default {
     color: {}
   },
   components: {
-    Multiselectfork,
+    Multiselect,
     DateForm
   },
   data: function() {
@@ -136,6 +136,9 @@ export default {
 .multiselect__input,
 .multiselect__single {
   background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .multiselect__content-wrapper {
   background: #ebe8e3;
