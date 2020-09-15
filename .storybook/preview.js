@@ -6,7 +6,8 @@ import "../public/multiselect.css";
 import "../public/Raleway.css";
 import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
-import { configure, addDecorator } from "@storybook/vue";
+import { configure, addDecorator, addParameters } from "@storybook/vue";
+import {DocsPage, DocsContainer} from '@storybook/addon-docs/blocks';
 
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueMaterial);
@@ -34,9 +35,18 @@ addDecorator(() => ({
   template: "<div><story/></div>"
 }));
 
+addParameters({
+    docs: {
+      container: DocsContainer,
+      page: DocsPage,
+    },
+  });
+
 // automatically import all files ending in *.stories.js
 const req = require.context('../stories', true, /\.stories\.js$/);
 function loadStories() {
   req.keys().forEach(filename => req(filename));
 }
 configure(loadStories, module);
+
+

@@ -9,6 +9,7 @@
 
 <script>
 import DateInput from "../DateInput";
+import moment from "moment";
 
 export default {
   props: {
@@ -20,7 +21,10 @@ export default {
       default: false,
       type: Boolean
     },
-    disableDate: {}
+    disableDate: {
+      type: Function,
+      default: moment().subtract(3, "years")
+    }
   },
   components: {
     DateInput

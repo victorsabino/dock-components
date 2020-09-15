@@ -1,11 +1,11 @@
 import ButtonIcon from "./ButtonIcon.vue";
 
-export default { title: "ButtonIcon" };
+export default { title: "ButtonIcon", component: ButtonIcon };
 
 export const ButtonIconBasic = () => ({
   components: { ButtonIcon },
   template:
-  "<ButtonIcon icon=\"more_horizon\" slot=\"button\" bgColor=\"transparent\" color=\"red !important\" width=\"90px\" height=\"40px\"/>"
+  "<ButtonIcon icon=\"account_box\" slot=\"button\" color=\"#10434F\" radius=\"40px\" marginLeft=\"7.5px\" />"
 });
 
 export const ButtonIconObjKey = () => ({

@@ -10,7 +10,16 @@
 <script>
 import Ellipsis from "../Ellipsis";
 export default {
-  props: ["name", "onDelete"],
+  props: {
+    name: {
+      type: String,
+      default: ""
+    },
+    onDelete: {
+      type: Function,
+      default: () => () => {}
+    },
+  },
   components: {
     Ellipsis
   },

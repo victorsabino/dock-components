@@ -1,6 +1,6 @@
 import TopTab from "./TopTab.vue";
 
-export default { title: "TopTab" };
+export default { title: "TopTab", component: TopTab };
 
 export const TopTabWithIcon = () => ({
   components: { TopTab },

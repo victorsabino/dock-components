@@ -29,28 +29,64 @@ export default {
     };
   },
   props: {
-    text: {},
-    bgcolor: {},
-    fontSize: {},
-    width: {},
-    shadow: {},
-    color: {},
-    fontWeight: {},
-    borderRadius: {},
-    paddingLeft: {},
-    textAlign: {},
-    disabled: {},
-    hasOverlay: {
-      default: true,
+    text: {
+      type: String,
+      default: ''
+    },
+    bgcolor: {
+      type: String,
+      default: '#4eb9b1'
+    },
+    fontSize: {
+      type: String,
+      default: '20px'
+    },
+    width: {
+      type: String,
+      default: 'fit-content'
+    },
+    shadow: {
+      type: String,
+      default: '#388e88'
+    },
+    color: {
+      type: String,
+      default: ''
+    },
+    fontWeight: {
+      type: String,
+      default: '500'
+    },
+    borderRadius: {
+      type: String,
+      default: '50px'
+    },
+    paddingLeft: {
+      type: String,
+      default: ''
+    },
+    textAlign: {
+      type: String,
+      default: 'center'
+    },
+    disabled: {
       type: Boolean,
+      default: false
+    },
+    hasOverlay: {
+      type: Boolean,
+      default: true,
     },
     border: {
-      default: "",
+      type: String,
+      default: '',
     },
     onClick: {
+      type: Function,
       default: () => () => {},
     },
     icon: {
+      type: String,
       default: "add_circle_outline",
     },
     listButtons: {

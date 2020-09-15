@@ -17,7 +17,36 @@
 
 <script>
 export default {
-  props: ["label", "icon", "value", "type", "height", "disabled", "maxLength"],
+  props: {
+    label: {
+      type: String,
+      default: ''
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: undefined
+    },
+    height: {
+      type: Number,
+      default: 100
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    maxLength: {
+      type: Number,
+      default: undefined
+    },
+  },
   data() {
     return {
       hide: ""
