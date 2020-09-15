@@ -1,7 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/vue'
 import Checkbox from './Checkbox.vue'
-import { dockRender } from '../../../test/utils'
-
 window.MutationObserver = require("mutation-observer");
 
 //Render test
@@ -19,9 +17,15 @@ test('test if checkbox is not rendering', async () => {
 
 //Click test
 test('test if checkbox is clicking', async () => {
-    let { container, rerender } = dockRender(Checkbox, {props: {value: true}});
+    render(Checkbox, {props: {value: true}});
     await fireEvent.click(screen.queryByTestId('checkbox').firstChild);
-    console.log(container.innerHTML)
-    console.log(screen.queryByTestId('checkbox').firstChild)
+
     expect(screen.queryByTestId('checkbox')).toBeTruthy();
+  })
+
+test('test if checkbox is not clicking', async () => {
+    render(Checkbox, {props: {value: true}});
+    await fireEvent.click(screen.queryByTestId('checkbox').firstChild);
+
+    expect(screen.queryByTestId('unchecked')).toBeFalsy();
   })
