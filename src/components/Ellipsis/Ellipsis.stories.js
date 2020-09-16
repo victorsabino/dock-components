@@ -1,6 +1,6 @@
 import Ellipsis from "./Ellipsis.vue";
 
-export default { title: "Ellipsis" };
+export default { title: "Ellipsis", component: Ellipsis };
 
 export const EllipsisStory = () => ({
     components: { Ellipsis },

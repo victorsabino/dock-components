@@ -41,7 +41,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     maxDecimal: {
       type: String,
@@ -49,23 +49,23 @@ export default {
     },
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     value: {
       type: String,
-      default: ""
+      default: ''
     },
     pattern: {
       type: String,
-      default: ""
+      default: ''
     },
     step: {
       type: String,
-      default: ""
+      default: ''
     },
     type: {
       type: String,
-      default: ""
+      default: ''
     },
     disabled: {
       type: Boolean,
@@ -74,7 +74,7 @@ export default {
     maxlength: {},
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
     error: {
       type: Boolean,

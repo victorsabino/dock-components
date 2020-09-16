@@ -1,6 +1,6 @@
 import Select from "./Select.vue";
 
-export default { title: "Select" };
+export default { title: "Select", component: Select };
 const mockFunc = () => {
   console.log('testing ');
 }

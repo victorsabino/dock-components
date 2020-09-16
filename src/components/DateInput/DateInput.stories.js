@@ -1,9 +1,9 @@
 import DateInput from "./DateInput.vue";
 
-export default { title: "DateInput" };
+export default { title: "DateInput", component: DateInput };
 let model = 'teste3eee';
 export const DateInputBasic = () => ({
   components: { DateInput },
   template:
-    "<DateInput label=\"teste\" :startDate='undefined'/>"
+    "<DateInput label=\"teste\" />"
 });
