@@ -10,11 +10,8 @@ test('test if menu list is rendering', async () => {
 })
 
 test('test if menu list is not rendering', async () => {
-    let length = true;
     render(MenuList, {props: {items: [{name: 'Menu1'}, {name: 'Menu2'}]}});
-    if(screen.queryAllByText('Menu5').length <= 0){
-      length = false;
-    }
-    expect(length).toBeFalsy();
+
+    expect(screen.queryAllByText('Menu5').length).toBeLessThanOrEqual(0);
   })
   

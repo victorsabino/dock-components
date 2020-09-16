@@ -5,7 +5,7 @@ import VueTheMask from "vue-the-mask";
 import VueMaterial from "vue-material";
 import { render as VTLRender } from '@testing-library/vue';
 
-
+//Cria render customizado com bibliotecas utilizadas pelo Vue no projeto.
 export const dockRender = (component, options, callback) => {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
     Vue.use(VueMaterial);

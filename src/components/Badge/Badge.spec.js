@@ -22,12 +22,9 @@ test('test if name is correct', async () => {
 });
 
 test('test if name is not correct', async () => {
-  let length = true;
   render(Badge, { props: { icon: 'not_test' } });
-  if(screen.queryAllByText('test') <= 0){
-    length = false
-  }
-  expect(length).toBeFalsy();
+
+  expect(screen.queryAllByText('test').length).toBeFalsy();
 })
 
 //onDelete test
