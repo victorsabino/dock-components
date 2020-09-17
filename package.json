@@ -28,6 +28,11 @@
     "attributes.json",
     "tags.json"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
   "dependencies": {
     "@storybook/addon-links": "^5.3.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
@@ -55,8 +60,7 @@
     "waait": "^1.0.5"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^5.3.3",
-    "@storybook/vue": "^5.3.3",
+    "@storybook/vue": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/vue": "^5.0.4",
     "@vue/cli-plugin-babel": "~4.4.0",
@@ -72,11 +76,10 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
+    "husky": "^4.3.0",
     "jest-transform-stub": "^2.0.0",
     "minimist": "^1.2.0",
     "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-is": "^16.13.1",
     "rollup": "^1.14.4",
     "rollup-plugin-buble": "^0.19.6",
     "rollup-plugin-commonjs": "^9.3.4",
@@ -84,7 +87,6 @@
     "rollup-plugin-uglify-es": "0.0.1",
     "rollup-plugin-vue": "^4.7.2",
     "sass-loader": "^8.0.2",
-    "vue-docgen-api": "^4.32.1",
     "vue-jest": "^3.0.6",
     "vue-loader": "^15.9.2",
     "webpack": "^4.43.0",
