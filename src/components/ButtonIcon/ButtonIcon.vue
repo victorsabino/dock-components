@@ -3,7 +3,7 @@
     class="buttonIcon"
     :style="`background-color: ${bgcolor}; width: ${width || radius}; height: ${height || radius}`"
   >
-    <md-icon :style="`color: ${color} !important`"> {{ icon }} </md-icon>
+    <md-icon :style="`color: ${color} !important; margin-left:${marginLeft}`"> {{ icon }} </md-icon>
   </div>
 </template>
 
@@ -13,15 +13,15 @@ export default {
   props: {
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     bgcolor: {
       type: String,
-      default: "#10434F"
+      default: '#4eb9b1'
     },
     radius: {
       type: String,
-      default: "38px"
+      default: '38px'
     },
     width: {
       type: String | undefined,
@@ -33,8 +33,12 @@ export default {
     },
     color: {
       type: String,
-      default: "red"
-    }
+      default: ''
+    },
+    marginLeft: {
+      type: String,
+      default: '0px'
+    },
   }
 };
 </script>

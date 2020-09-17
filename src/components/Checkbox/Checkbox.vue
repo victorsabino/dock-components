@@ -1,7 +1,7 @@
 <template>
   <div class="checkboxRoot">
     <md-checkbox v-model="currentValue" data-testid="checkbox" :disabled="disabled">
-      <div class="darkBlue openSans font14">{{ label }}</div>
+      <div class="darkBlue openSans font14" :data-testid="currentValue ? 'checked' : 'unchecked'">{{ label }}</div>
     </md-checkbox>
   </div>
 </template>

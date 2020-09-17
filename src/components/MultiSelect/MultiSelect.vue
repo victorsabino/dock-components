@@ -38,32 +38,34 @@ import DateForm from "../DateForm/DateForm.vue";
 import moment from "moment";
 export default {
   props: {
-    label: {},
-    name: {},
-    id: {},
+    label: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
     backgroundColor: {
       type: String,
-      default: "black"
+      default: 'black'
     },
     options: {
       default: () => [],
       type: Array
     },
-    value: {},
-    shadow: {},
-    showKey: {},
-    disabled: {},
     reset: {
-      default: () => false
+      type: Boolean,
+      default: false
     },
     startValue: {
-      default: () => null
+      type: Object,
+      default: () => {}
     },
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
-    color: {}
   },
   components: {
     Multiselect,
@@ -81,13 +83,6 @@ export default {
     };
   },
   methods: {
-    style: function() {
-      return `
-        box-shadow: ${this.shadow} !important;
-        background-color: ${this.backgroundColor} !important;
-        color: ${this.color} !important
-      `;
-    },
     emitInput(payload, row){
       if (this.timer) clearTimeout(this.timer);
       this.timer = setTimeout(() => {

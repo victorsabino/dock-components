@@ -27,16 +27,25 @@ import moment from "moment";
 
 export default {
   props: {
-    row: {},
-    type: {},
-    icon: {},
-    label: {},
-    right: {},
-    error: {},
-    value: {},
-    startDate: {},
+    row: {
+      type: String,
+      default:''
+    },
+    right: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Date,
+      default: undefined
+    },
     disableDate: {
-      default: moment().subtract(3, "years" )
+      type: Function,
+      default: moment().subtract(3, "years")
     },
   },
   methods: {
