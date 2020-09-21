@@ -1,6 +1,6 @@
 import MultiSelect from "./MultiSelect.vue";
 
-export default { title: "MultiSelect", component: MultiSelect };
+export default { title: "Components/Select/MultiSelect", component: MultiSelect };
 
 export const MultiSelectDateForm = () => ({
   components: { MultiSelect },

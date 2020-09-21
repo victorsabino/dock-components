@@ -1,6 +1,6 @@
 import EditableField from "./EditableField.vue";
 
-export default { title: "EditableField", component: EditableField };
+export default { title: "Components/Input/EditableField", component: EditableField };
 
 export const EditableFieldIsToggledFalse = () => ({
   components: { EditableField },

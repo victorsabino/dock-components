@@ -1,6 +1,6 @@
 import DateForm from "./DateForm.vue";
 
-export default { title: "DateForm", component: DateForm };
+export default { title: "Components/Input/DateForm", component: DateForm };
 
 export const DateFormBasic = () => ({
   components: { DateForm },

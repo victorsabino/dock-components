@@ -1,6 +1,6 @@
 import CustomInput from "./CustomInput.vue";
 
-export default { title: "CustomInput", component: CustomInput };
+export default { title: "Components/Input/CustomInput", component: CustomInput };
 export const CustomInputBasic = () => ({
   components: { CustomInput },
   template:

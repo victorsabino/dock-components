@@ -1,7 +1,7 @@
 import MenuList from "./MenuList.vue";
 import ButtonIcon from "../ButtonIcon/ButtonIcon.vue";
 
-export default { title: "MenuList", component: MenuList };
+export default { title: "Components/MenuList", component: MenuList };
 
 export const MenuListStory = () => ({
   components: { MenuList },

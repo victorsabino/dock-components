@@ -1,6 +1,6 @@
 import Toggle from "./Toggle.vue";
 
-export default { title: "Toggle", component: Toggle };
+export default { title: "Components/Toggle", component: Toggle };
 
 export const ToggleBasic = () => ({
   components: { Toggle },
