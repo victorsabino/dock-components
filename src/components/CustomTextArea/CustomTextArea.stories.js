@@ -1,6 +1,6 @@
 import CustomTextArea from "./CustomTextArea.vue";
 
-export default { title: "CustomTextArea", component: CustomTextArea };
+export default { title: "Components/Input/CustomTextArea", component: CustomTextArea };
 let model = 'teste3eee';
 export const CustomTextAreaBasic = () => ({
   components: { CustomTextArea },

@@ -1,6 +1,6 @@
 import DateInput from "./DateInput.vue";
 
-export default { title: "DateInput", component: DateInput };
+export default { title: "Components/Input/DateInput", component: DateInput };
 let model = 'teste3eee';
 export const DateInputBasic = () => ({
   components: { DateInput },
