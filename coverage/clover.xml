@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1600708282512" clover="3.2.0">
-  <project timestamp="1600708282512" name="All files">
-    <metrics statements="293" coveredstatements="45" conditionals="148" coveredconditionals="25" methods="140" coveredmethods="24" elements="581" coveredelements="94" complexity="0" loc="293" ncloc="293" packages="23" files="41" classes="41"/>
+<coverage generated="1600961408551" clover="3.2.0">
+  <project timestamp="1600961408551" name="All files">
+    <metrics statements="290" coveredstatements="45" conditionals="144" coveredconditionals="25" methods="138" coveredmethods="24" elements="572" coveredelements="94" complexity="0" loc="290" ncloc="290" packages="23" files="41" classes="41"/>
     <package name="src">
       <metrics statements="38" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="Plugin.js" path="/home/sabino/workspace/dock-components/src/Plugin.js">
@@ -335,30 +335,27 @@
       </file>
     </package>
     <package name="src.components.MultiSelect">
-      <metrics statements="18" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <metrics statements="15" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="8" coveredmethods="0"/>
       <file name="MultiSelect.stories.js" path="/home/sabino/workspace/dock-components/src/components/MultiSelect/MultiSelect.stories.js">
         <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="5" count="0" type="stmt"/>
       </file>
       <file name="MultiSelect.vue" path="/home/sabino/workspace/dock-components/src/components/MultiSelect/MultiSelect.vue">
-        <metrics statements="17" coveredstatements="0" conditionals="10" coveredconditionals="0" methods="9" coveredmethods="0"/>
-        <line num="36" count="0" type="stmt"/>
+        <metrics statements="14" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="7" coveredmethods="0"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="89" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
         <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="91" count="0" type="stmt"/>
-        <line num="96" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="97" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="94" count="0" type="stmt"/>
         <line num="99" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="100" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
-        <line num="110" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="113" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Select">
