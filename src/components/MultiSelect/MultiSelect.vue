@@ -4,10 +4,11 @@
       v-model="value"
       :placeholder="placeholder"
       label="row"
-      track-by="row"
+      :track-by="track-by"
       :options="options"
       :searchable="false"
       :option-height="104"
+      :preselect-first="false"
       open-direction="below"
       :custom-label="customLabel"
       :show-labels="false"
@@ -46,6 +47,10 @@ export default {
       type: String,
       default: ''
     },
+    name: {
+      type: String,
+      default: 'row'
+    },
     backgroundColor: {
       type: String,
       default: 'black'
@@ -58,13 +63,13 @@ export default {
       type: Boolean,
       default: false
     },
-    startValue: {
-      type: Object,
-      default: () => {}
-    },
     placeholder: {
       type: String,
       default: ''
+    },
+    value: {
+      type: Object,
+      default: () => ({})
     },
   },
   components: {
@@ -73,8 +78,6 @@ export default {
   },
   data: function() {
     return {
-      selected: null,
-      value: null,
       option: "",
       hasSetedStartedValued: false,
       timer: undefined,
@@ -96,19 +99,8 @@ export default {
     if (!this.label) {
       this.options[0];
     }
-    if (this.startValue) {
-      this.selected = this.startValue;
-    }
-  },
-  computed: {
-    showLabel: function() {
-      return !this.selected;
-    },
   },
   watch: {
-    startValue: function(val) {
-      if (this.selected == null) this.selected = val;
-    },
     value: function(val) {
       this.$emit("change", val);
     }
