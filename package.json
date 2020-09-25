@@ -14,7 +14,7 @@
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd && yarn publish",
     "build-dev": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/ && cp -r . ../dockmarket-front/node_modules/dock-components/",
     "build-dev-dockpay": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/",
-    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockmarket-front/node_modules/dock-components/",
+    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r ./dist/* ../dockmarket-front/node_modules/dock-components/dist/",
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/index.umd.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/index.esm.js",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
