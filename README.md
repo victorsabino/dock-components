@@ -1,5 +1,5 @@
 # Dockcomponents
-![picture](./public/DockComponents.svg)  
+![picture](https://publicdock.s3.amazonaws.com/DockComponents.svg)  
 
 [![Dockcomponents](https://img.shields.io/badge/dockmarket-name-orange.svg)](https://www.dockmarket.com.br)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
