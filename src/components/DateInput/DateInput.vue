@@ -26,17 +26,28 @@ import { ptBR } from "vuejs-datepicker/dist/locale";
 import moment from "moment";
 
 export default {
-  props: [
-    "row",
-    "type",
-    "icon",
-    "label",
-    "right",
-    "error",
-    "value",
-    "startDate",
-    "disableDate",
-  ],
+  props: {
+    row: {
+      type: String,
+      default:''
+    },
+    right: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Date,
+      default: undefined
+    },
+    disableDate: {
+      type: Function,
+      default: moment().subtract(3, "years")
+    },
+  },
   methods: {
     data: function () {
       return {

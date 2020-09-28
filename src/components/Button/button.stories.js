@@ -1,6 +1,6 @@
 import Button from './Button.vue';
 
-export default { title: 'Button' };
+export default { title: 'Components/Botões/Button', component: Button };
 
 export const ButtonWithIcon = () => ({
   components: { Button },

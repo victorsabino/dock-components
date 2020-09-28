@@ -1,18 +1,13 @@
 import EditableField from "./EditableField.vue";
 
-export default { title: "EditableField" };
+export default { title: "Components/Input/EditableField", component: EditableField };
 
-export const EditableFieldDateFormIsToggle = () => ({
-  components: { EditableField },
-  template:
-    "<div style='width: 120px; margin-left: 20px; margin-top:20px'> <EditableField value='texto'> </EditableField> </div>"
-});
-export const EditableFieldDateFormIsToggledTur = () => ({
+export const EditableFieldIsToggledFalse = () => ({
   components: { EditableField },
   template:
     "<div style='width: 120px; margin-left: 20px; margin-top:20px'> <EditableField value='texto' :isToggled='false'> </EditableField> </div>"
 });
-export const EditableFieldDateFormIsToggledFalse= () => ({
+export const EditableFieldIsToggledTrue= () => ({
     components: { EditableField },
     template:
       "<div style='width: 120px; margin-left: 20px; margin-top:20px'> <EditableField value='texto' :isToggled='true'> </EditableField> </div>"

@@ -1,6 +1,6 @@
 import Badge from './Badge.vue';
 
-export default { title: 'Badge' };
+export default { title: 'Components/Badge', component: Badge };
 
 export const BadgeBasic = () => ({
   components: { Badge },

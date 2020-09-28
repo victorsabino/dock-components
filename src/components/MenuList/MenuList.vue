@@ -5,15 +5,15 @@
         <slot name="button" />
       </div>
       <div class="fileWrapper MenuListContainer" v-if="open" :style="style">
-        <div class="file" :key="item.id" v-for="(item, index) in items">
-          <div @click="() => _click(item.onClick)" class="rowWrapper">
+        <div class="file" :key="item.id" v-for="(item, index) in filteredItems">
+          <div v-if="item" @click="() => _click(item.onClick)" class="rowWrapper">
             <div class="flex">
               <div class="iconWrapper" v-if="item.icon">
                 <md-icon style="color: #e34642 !important">{{item.icon}}</md-icon>
               </div>
               <div class="menuListName">{{item.name}}</div>
             </div>
-            <div class="divisor" v-if="index !== (items.length - 1)" />
+            <div class="divisor" v-if="index !== (filteredItems.length - 1)" />
           </div>
         </div>
       </div>
@@ -59,6 +59,9 @@ export default {
   computed: {
     style: function () {
       return `width: ${this.width}`;
+    },
+    filteredItems: function() {
+      return this.items.filter(filter => filter)
     }
   }
 };

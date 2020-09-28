@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "2.2.5",
+  "version": "2.6.8",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -12,9 +12,9 @@
   "private": false,
   "scripts": {
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd && yarn publish",
-    "build-dev": "npm run build:unpkg & npm run build:es & npm run build:umd && cp . ../dockpay-front/node_modules/dock-components/ -r >/dev/null && cp . ../dockmarket-front/node_modules/dock-components/ -r >/dev/null",
-    "build-dev-dockpay": "npm run build:unpkg & npm run build:es & npm run build:umd && cp . ../dockpay-front/node_modules/dock-components/ -r >/dev/null",
-    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp . ../dockmarket-front/node_modules/dock-components/ -r >/dev/null",
+    "build-dev": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/ && cp -r . ../dockmarket-front/node_modules/dock-components/",
+    "build-dev-dockpay": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/",
+    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r ./dist/* ../dockmarket-front/node_modules/dock-components/dist/",
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/index.umd.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/index.esm.js",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
@@ -28,12 +28,19 @@
     "attributes.json",
     "tags.json"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
   "dependencies": {
+    "@storybook/addon-docs": "^6.0.21",
     "@storybook/addon-links": "^5.3.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
     "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
     "core-js": "^3.6.5",
+    "coverage": "^0.4.1",
     "cross-env": "^5.2.0",
     "minimist": "^1.2.0",
     "moment": "^2.27.0",
@@ -46,6 +53,8 @@
     "rollup-plugin-vue": "^4.7.2",
     "template-compiler": "^1.2.1",
     "vue": "^2.6.11",
+    "vue-docgen-api": "^4.32.1",
+    "vue-docgen-loader": "^1.5.0",
     "vue-js-modal": "^2.0.0-rc.3",
     "vue-material": "^1.0.0-beta-14",
     "vue-multiselect-fork": "^2.1.10",
@@ -71,6 +80,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^6.0.0",
+    "husky": "^4.3.0",
     "jest-transform-stub": "^2.0.0",
     "minimist": "^1.2.0",
     "node-sass": "^4.14.1",

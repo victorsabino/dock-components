@@ -1,5 +1,5 @@
 <template>
-  <div class="badge" data-testid="badge">
+  <div class="badgeRoot" data-testid="badge">
     <Ellipsis :name="name" width="auto"/>
     <div @click="onDelete" data-testid="badgeDelete" class="closeWrapper">
       <md-icon>close</md-icon>
@@ -10,15 +10,24 @@
 <script>
 import Ellipsis from "../Ellipsis";
 export default {
-  props: ["name", "onDelete"],
+  props: {
+    name: {
+      type: String,
+      default: ""
+    },
+    onDelete: {
+      type: Function,
+      default: () => () => {}
+    },
+  },
   components: {
     Ellipsis
-  }
+  },
 };
 </script>
 
 <style scoped>
-.badge {
+.badgeRoot {
   background-color: #4eb9b1;
   height: 35px;
   width: auto;

@@ -1,16 +1,18 @@
 <template>
   <div class="multiselect md-layout-item md-size-100">
-    <multiselectfork
+    <Multiselect
       v-model="value"
       :placeholder="placeholder"
       label="row"
-      track-by="row"
+      :track-by="track-by"
       :options="options"
       :searchable="false"
       :option-height="104"
-      openDirection="below"
+      :preselect-first="false"
+      open-direction="below"
       :custom-label="customLabel"
       :show-labels="false"
+      :disabled="disabled"
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc" v-if="!props.option.slot">
@@ -28,51 +30,59 @@
           <DateForm row="to" right @input="e => emitInput(e, 'to')" :disableDate="from"/>
         </div>
       </template>
-    </multiselectfork>
+    </Multiselect>
   </div>
 </template>
 
 <script>
-import Multiselectfork from "vue-multiselect-fork";
+import Multiselect from "vue-multiselect-fork";
 import DateForm from "../DateForm/DateForm.vue";
 import moment from "moment";
 export default {
   props: {
-    label: {},
-    name: {},
-    id: {},
+    label: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: 'row'
+    },
     backgroundColor: {
       type: String,
-      default: "black"
+      default: 'black'
     },
     options: {
       default: () => [],
       type: Array
     },
-    value: {},
-    shadow: {},
-    showKey: {},
-    disabled: {},
     reset: {
-      default: () => false
-    },
-    startValue: {
-      default: () => null
+      type: Boolean,
+      default: false
     },
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
-    color: {}
+    value: {
+      type: Object,
+      default: () => ({})
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
   },
   components: {
-    Multiselectfork,
+    Multiselect,
     DateForm
   },
   data: function() {
     return {
-      selected: null,
-      value: null,
       option: "",
       hasSetedStartedValued: false,
       timer: undefined,
@@ -81,13 +91,6 @@ export default {
     };
   },
   methods: {
-    style: function() {
-      return `
-        box-shadow: ${this.shadow} !important;
-        background-color: ${this.backgroundColor} !important;
-        color: ${this.color} !important
-      `;
-    },
     emitInput(payload, row){
       if (this.timer) clearTimeout(this.timer);
       this.timer = setTimeout(() => {
@@ -101,19 +104,8 @@ export default {
     if (!this.label) {
       this.options[0];
     }
-    if (this.startValue) {
-      this.selected = this.startValue;
-    }
-  },
-  computed: {
-    showLabel: function() {
-      return !this.selected;
-    },
   },
   watch: {
-    startValue: function(val) {
-      if (this.selected == null) this.selected = val;
-    },
     value: function(val) {
       this.$emit("change", val);
     }
@@ -136,6 +128,9 @@ export default {
 .multiselect__input,
 .multiselect__single {
   background: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .multiselect__content-wrapper {
   background: #ebe8e3;

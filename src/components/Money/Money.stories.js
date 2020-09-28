@@ -1,6 +1,6 @@
 import Money from "./Money.vue";
 
-export default { title: "Money" };
+export default { title: "Components/Modifier/Money", component: Money };
 const mockFunc = () => {
   console.log('testing ');
 }

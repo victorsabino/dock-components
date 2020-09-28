@@ -1,5 +1,5 @@
 <template>
-  <md-field class="customInput" :md-counter="counter">
+  <md-field class="customInput" :md-counter="counter" data-testid="customInput">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
       v-if="mask"
@@ -11,6 +11,7 @@
       v-decimal="maxDecimal"
       :maxlength="maxlength"
       @blur="blur"
+      :data-testid="currentValue"
     />
     <md-input
       v-else
@@ -23,6 +24,7 @@
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
+      :data-testid="currentValue"
     />
 
     <md-icon :v-if="icon" class="color">{{ icon }}</md-icon>
@@ -39,7 +41,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     maxDecimal: {
       type: String,
@@ -47,23 +49,23 @@ export default {
     },
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     value: {
       type: String,
-      default: ""
+      default: ''
     },
     pattern: {
       type: String,
-      default: ""
+      default: ''
     },
     step: {
       type: String,
-      default: ""
+      default: ''
     },
     type: {
       type: String,
-      default: ""
+      default: ''
     },
     disabled: {
       type: Boolean,
@@ -72,7 +74,7 @@ export default {
     maxlength: {},
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
     error: {
       type: Boolean,
@@ -100,7 +102,7 @@ export default {
       return "color:  #104550;";
     },
     shouldHideLabel() {
-      if (this.currentVal === null || !this.value) return "";
+      if (!this.currentVal) return "";
       return (this.currentVal && this.currentVal.length > 0) ||
         (this.value && this.value.length > 0)
         ? "hide"
@@ -115,7 +117,10 @@ export default {
         this.$emit("input", val);
       }
     }
-  }
+  },
+  mounted () {
+    this.currentVal = this.value;
+  },
 };
 </script>
 

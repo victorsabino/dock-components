@@ -21,27 +21,58 @@
 <script>
 export default {
   props: {
-    label: {},
-    "v-modal": {},
-    name: {},
-    id: {},
-    currentValue: null,
-    backgroundColor: {},
+    label: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    },
+    currentValue: {
+      type: String,
+      default: null
+    },
+    backgroundColor: {
+      type: String,
+      default: ''
+    },
     options: {
       default: () => [],
       type: Array
     },
-    objKey: {},
-    shadow: {},
-    showKey: {},
-    disabled: {},
+    objKey: {
+      type: String,
+      default: null
+    },
+    shadow: {
+      type: String,
+      default: ''
+    },
+    showKey: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     reset: {
-      default: () => false
+      type: Boolean,
+      default: false
     },
     startValue: {
-      default: () => null
+      type: String,
+      default: null
     },
-    color: {}
+    color: {
+      type: String,
+      default: ''
+    }
   },
 
   data: function() {

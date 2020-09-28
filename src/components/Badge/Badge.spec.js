@@ -18,13 +18,13 @@ test('test if badge is not rendering', async () => {
 test('test if name is correct', async () => {
   render(Badge, { props: { name: 'test' } });
 
-  expect(screen.queryByText('test')).toBeTruthy();
+  expect(screen.queryAllByText('test')).toBeTruthy();
 });
 
 test('test if name is not correct', async () => {
   render(Badge, { props: { icon: 'not_test' } });
 
-  expect(screen.queryByText('test')).toBeFalsy();
+  expect(screen.queryAllByText('test').length).toBeFalsy();
 })
 
 //onDelete test
