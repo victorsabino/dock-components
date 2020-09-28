@@ -70,7 +70,7 @@ export default {
     },
     value: {
       type: Object,
-      default: () => ({})
+      default: null
     },
     disabled: {
       type: Boolean,
