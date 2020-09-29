@@ -31,7 +31,7 @@ export default {
   },
   props: {
     items: {
-      type: Number,
+      type: Array,
       default: () => [],
     },
     zIndex: {
