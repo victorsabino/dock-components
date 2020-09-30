@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@storybook/addon-docs": "^6.0.21",
-    "@storybook/addon-links": "^5.3.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
     "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
@@ -64,6 +63,7 @@
     "waait": "^1.0.5"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^6.0.22",
     "@storybook/vue": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/vue": "^5.0.4",

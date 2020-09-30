@@ -46,10 +46,6 @@ export default {
     },
     name: {
       type: String,
-      default: ''
-    },
-    name: {
-      type: String,
       default: 'row'
     },
     backgroundColor: {
