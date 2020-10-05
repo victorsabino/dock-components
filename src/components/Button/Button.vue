@@ -142,7 +142,7 @@ export default {
 
 <style scoped>
 .button {
-  height: 42px !important;
+  height: 42px ;
   min-width: 166px;
   width: fit-content;
   font-size: 20px;
