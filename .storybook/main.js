@@ -70,5 +70,5 @@ module.exports = {
     return config;
   },
   stories: ['../stories/**/*.stories.@(js|mdx)', '../src/components/**/*.stories.@(js|mdx)'],
-  addons: ['@storybook/addon-docs/register']
+  addons: ['@storybook/addon-docs/register', '@storybook/addon-knobs/register']
 };

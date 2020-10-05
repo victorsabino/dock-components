@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "2.6.7",
+  "version": "2.7.1",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -14,7 +14,7 @@
     "build": "npm run build:unpkg & npm run build:es & npm run build:umd && yarn publish",
     "build-dev": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/ && cp -r . ../dockmarket-front/node_modules/dock-components/",
     "build-dev-dockpay": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockpay-front/node_modules/dock-components/",
-    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r . ../dockmarket-front/node_modules/dock-components/",
+    "build-dev-dockmarket": "npm run build:unpkg & npm run build:es & npm run build:umd && cp -r ./dist/* ../dockmarket-front/node_modules/dock-components/dist/",
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/index.umd.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/index.esm.js",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@storybook/addon-docs": "^6.0.21",
-    "@storybook/addon-links": "^5.3.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
     "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
@@ -64,6 +63,7 @@
     "waait": "^1.0.5"
   },
   "devDependencies": {
+    "@storybook/addon-knobs": "^6.0.22",
     "@storybook/vue": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/vue": "^5.0.4",

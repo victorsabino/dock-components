@@ -1,5 +1,5 @@
 # Dockcomponents
-![picture](https://testing.dockpay.com.br/img/logoFullWhite.5fbdab85.svg)  
+![picture](https://publicdock.s3.amazonaws.com/DockComponents.svg)  
 
 [![Dockcomponents](https://img.shields.io/badge/dockmarket-name-orange.svg)](https://www.dockmarket.com.br)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
@@ -114,5 +114,5 @@ The configuration only reads from jest.config.js, don't put any jest configurati
 
 ## ✍️ Authors
 
-- [@Victor Sabino](https://github.com/vsabino) - Creator & Collaborator
-- [@Lucas Estrela](https://github.com/lucasestrela) - Collaborator
+- [@Victor Sabino](https://github.com/victorsabino) - Creator & Collaborator
+- [@Lucas Estrela](https://github.com/lucasestreladeoliveira) - Collaborator

@@ -12,6 +12,7 @@
       open-direction="below"
       :custom-label="customLabel"
       :show-labels="false"
+      :disabled="disabled"
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc" v-if="!props.option.slot">
@@ -45,10 +46,6 @@ export default {
     },
     name: {
       type: String,
-      default: ''
-    },
-    name: {
-      type: String,
       default: 'row'
     },
     backgroundColor: {
@@ -69,7 +66,11 @@ export default {
     },
     value: {
       type: Object,
-      default: () => ({})
+      default: null
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     },
   },
   components: {
