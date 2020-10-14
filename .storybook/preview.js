@@ -8,6 +8,9 @@ import VueMaterial from "vue-material";
 import "vue-material/dist/vue-material.min.css";
 import { configure, addDecorator, addParameters } from "@storybook/vue";
 import {DocsPage, DocsContainer} from '@storybook/addon-docs/blocks';
+import { create } from '@storybook/theming';
+import logo from '../public/DockComponentsWhite.svg';
+
 
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueMaterial);
@@ -40,6 +43,39 @@ addParameters({
       container: DocsContainer,
       page: DocsPage,
     },
+    options: {
+      theme: create({
+        base: 'dark',
+        colorPrimary: '#10434F',
+        colorSecondary: '#4EB9B1',
+        brandImage: logo,
+  
+        // UI
+        appBg: '#0D3943',
+        appContentBg: '#f4f1eb',
+        appBorderColor: '#f4f1eb',
+        appBorderRadius: 4,
+
+        // Toolbar default and active colors
+        barTextColor: '#707070',
+        barSelectedColor: '#4EB9B1',
+        barBg: '#ebe8e3',
+
+        // Text colors
+        textColor: '#909090',
+        textInverseColor: '#FFFFFF',
+
+        // Form colors
+        inputBg: '#EBE8E3',
+        inputBorder: 'rgba(0,0,0,.3)',
+        inputTextColor: '#10434f',
+        inputBorderRadius: 4,
+        
+        // Typography
+        fontBase: '"Open Sans", sans-serif',
+        fontCode: 'monospace',
+      })
+    }
   });
 
 // automatically import all files ending in *.stories.js

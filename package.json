@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "2.7.2",
+  "version": "2.7.3",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -24,7 +24,6 @@
   },
   "files": [
     "dist/*",
-    "src/*",
     "attributes.json",
     "tags.json"
   ],
@@ -64,6 +63,8 @@
   },
   "devDependencies": {
     "@storybook/addon-knobs": "^6.0.22",
+    "@storybook/addons": "^6.0.26",
+    "@storybook/theming": "^6.0.26",
     "@storybook/vue": "^5.3.19",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/vue": "^5.0.4",
