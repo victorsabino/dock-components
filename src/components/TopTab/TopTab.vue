@@ -7,7 +7,7 @@
       @click="() => setActive(index)"
     >
       <md-icon v-if="tab.icon"> {{ tab.icon }} </md-icon>
-      <div v-if="tab.icon" :class="activeClass(index)">
+      <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
       </div>
     </div>
