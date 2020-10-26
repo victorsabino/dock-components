@@ -81,7 +81,7 @@ export default {
       default: false
     },
     mask: {
-      type: Array,
+      type: Object,
       default: () => {}
     },
     blur: {
