@@ -122,6 +122,6 @@ export default {
 <style>
 .customModal {
   overflow: visible !important;
-  top: 150px !important;
+  top: 150px;
 }
 </style>
