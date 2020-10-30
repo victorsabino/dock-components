@@ -1,22 +1,24 @@
 import VModal from "vue-js-modal";
 import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
+import Card from "./components/Card/Card.vue";
 import Logo from "./components/Logo/Logo.vue";
 import Money from "./components/Money/Money.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import Status from "./components/Status/Status.vue";
-import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import Button from "./components/Button/Button.vue";
 import Select from "./components/Select/Select.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Loading from "./components/Loading/Loading.vue";
+import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
+import InputLabel from "./components/InputLabel/InputLabel.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
@@ -49,6 +51,7 @@ module.exports = {
     });
 
     Vue.component('dock-components', Logo);
+    Vue.component('dock-components', Card);
     Vue.component('dock-components', Modal);
     Vue.component('dock-components', Badge);
     Vue.component('dock-components', Money);
@@ -64,6 +67,7 @@ module.exports = {
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', DateForm);
     Vue.component('dock-components', ButtonIcon);
+    Vue.component('dock-components', InputLabel);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', MultiSelect);
     Vue.component('dock-components', SelectButton);
