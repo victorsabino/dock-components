@@ -10,6 +10,7 @@ import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
 import Loading from "./components/Loading/Loading.vue";
 import Checkbox from "./components/Checkbox/Checkbox.vue";
+import Timeline from "./components/Timeline/Timeline.vue";
 import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
@@ -37,6 +38,7 @@ export {
   Loading,
   Ellipsis,
   Checkbox,
+  Timeline,
   MenuList,
   DateForm,
   DateInput,

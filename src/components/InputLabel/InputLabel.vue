@@ -101,4 +101,10 @@ export default {
 .font15 {
   font-size: 15px;
 }
+.openSans {
+  font-family: 'Open Sans', sans-serif;
+}
+.darkBlue {
+  color: #10434f;
+}
 </style>
