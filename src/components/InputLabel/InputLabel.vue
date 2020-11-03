@@ -1,5 +1,5 @@
 <template>
-  <div class="inputWrapper inputLabel" ref="inputLabel">
+  <div class="inputWrapper inputLabel" ref="inputLabel" :style="style">
     <label class="font15 openSans darkBlue formLabel">{{ label }}</label>
     <CustomInput
       :disabled="editing"
@@ -55,11 +55,22 @@ export default {
     refLabel: {
       type: String,
       default: ""
+    },
+    width: {
+      type: String,
+      default: "100%"
     }
   },
   data() {
     return {
       model: this.value ? this.value : "",
+    }
+  },
+  computed: {
+    style: function () {
+      return `
+        width: ${this.width}
+      `
     }
   },
   watch: {
