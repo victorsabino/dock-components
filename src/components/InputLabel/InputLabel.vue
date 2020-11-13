@@ -1,18 +1,18 @@
 <template>
-  <div class="inputWrapper inputLabel" ref="inputLabel" :style="style">
+  <div class="inputWrapper">
     <label class="font15 openSans darkBlue formLabel">{{ label }}</label>
     <CustomInput
       :disabled="editing"
       v-model="model"
       :label="labelInput ? labelInput : label"
-      :maxlength="30"
+      :maxlength="60"
       :type="type"
     />
-    <div class="labelWrapper" v-if="typeof description === 'string'">
-      <label>{{ description }}</label>
+    <div class="labelWrapper" v-if="typeof descricao === 'string'">
+      <label>{{ descricao }}</label>
     </div>
     <div class="labelWrapper" v-else>
-      <div v-for="desc in description" :key="desc.id">
+      <div v-for="desc in descricao" :key="desc.id">
         <label>{{ desc }}</label>
         <br />
       </div>
@@ -36,7 +36,7 @@ export default {
       type: String,
       default: ""
     },
-    description: {
+    descricao: {
       type: String || Array,
       default: ""
     },
@@ -52,14 +52,6 @@ export default {
       type: String,
       default: ""
     },
-    refLabel: {
-      type: String,
-      default: ""
-    },
-    width: {
-      type: String,
-      default: "100%"
-    }
   },
   data() {
     return {
@@ -75,7 +67,7 @@ export default {
   },
   watch: {
     model(newValue) {
-      this.$emit("newInputValue", newValue, this.refLabel)
+      this.$emit("input", newValue)
     }
   },
 }
