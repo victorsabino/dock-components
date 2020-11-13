@@ -1,7 +1,6 @@
 <template>
   <div class="dateInput" ref="dateInput">
-    <VueCtkDateTimePicker v-model="val" id="time" @input="emit" :no-keyboard="true" :noClearButton="false" formated="YYYY-MM-DD hh:mm a"/>
-    <md-icon> </md-icon>
+    <VueCtkDateTimePicker v-model="val" id="time" @input="emit" :no-keyboard="true" :noClearButton="false" format="DD/MM/YYYY hh:mm" formatted="DD/MM/YYYY hh:mm" :maxDate="maxDate" :minDate="minDate"/>
   </div>
 </template>
 
@@ -13,6 +12,9 @@ import '../../../node_modules/vue-ctk-date-time-picker/dist/vue-ctk-date-time-pi
 import './style.css';
 
 export default {
+  components: {
+    VueCtkDateTimePicker,
+  },
   props: {
     row: {
       type: String,
@@ -30,9 +32,13 @@ export default {
       type: Date,
       default: undefined,
     },
-    disableDate: {
-      type: Function,
-      default: moment().subtract(3, "years"),
+    maxDate: {
+      type: String,
+      default: ''
+    },
+    minDate: {
+      type: String,
+      default: ''
     },
   },
   data: function () {
@@ -44,46 +50,7 @@ export default {
   },
   methods: {
     emit (val) {
-      console.log('val ', val)
       this.$emit('input', val);
-    },
-    disabled(date) {
-      if (!this.disableDate || this.value === "") return false;
-      return moment(date) < moment(this.disableDate);
-    },
-    emitValue(val) {
-      if (this.timer) clearTimeout();
-      this.timer = setTimeout(() => {
-        this.$emit("input", val);
-      }, 100);
-    },
-    formatDate(str) {
-      if (!str) return;
-      let input = str;
-
-      var len = str.length;
-      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
-      if (len >= 10) return str.slice(0, 10);
-      if (len === 2) input += "/";
-      if (len === 5) input += "/";
-
-      return input;
-    },
-  },
-  components: {
-    VueCtkDateTimePicker,
-  },
-  computed: {
-    style() {
-      if (this.error) {
-        return `color: red !important`;
-      }
-      return "";
-    },
-    shouldHideLabel() {
-      if (!this.value) return "dd/MM/yyyy";
-      this.emitValue(this.value);
-      return "hide";
     },
   },
 };
