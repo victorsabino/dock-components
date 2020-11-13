@@ -14,6 +14,7 @@ import Timeline from "./components/Timeline/Timeline.vue";
 import Ellipsis from "./components/Ellipsis/Ellipsis.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
+import TimeInput from "./components/TimeInput/TimeInput.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
@@ -41,6 +42,7 @@ export {
   Timeline,
   MenuList,
   DateForm,
+  TimeInput,
   DateInput,
   ButtonIcon,
   InputLabel,

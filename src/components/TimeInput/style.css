@@ -1,43 +1,43 @@
 .header-picker {
     background-color: #104550 !important;
-  }
-  .datepicker-day-effect {
-      background-color: #104550 !important;
-  }
-  .time-picker-column-item-effect {
-      background-color: #104550 !important;
-  }
-  .custom-button-effect {
-      background-color: #104550 !important;
-  }
-  .custom-button-content {
+}
+.datepicker-day-effect {
+    background-color: #104550 !important;
+}
+.time-picker-column-item-effect {
+    background-color: #104550 !important;
+}
+.custom-button-effect {
+    background-color: #104550 !important;
+}
+.custom-button-content {
+  color: #104550 !important;
+}
+.datepicker-button-effect {
+  background: #104550 !important;
+}
+.datepicker-button-content {
     color: #104550 !important;
-  }
-  .datepicker-button-effect {
-    background: #104550 !important;
-  }
-  .datepicker-button-content {
-      color: #104550 !important;
-  }
-  #time-input {
-      background-color: transparent !important;
-      border: 0 !important;
-      width: Calc(100% - 30px);
-      padding-right: 0 !important;
-  }
-  .dateInput {
+}
+#time-input {
     background-color: transparent !important;
-  }
-  .field-input {
-      padding-top: 2px !important;
-      margin-top: -5px;
-      color: #707070!important;
-  }
+    border: 0 !important;
+    width: Calc(100% - 30px);
+    padding-right: 0 !important;
+}
+.dateInput {
+  background-color: transparent !important;
+}
+.field-input {
+    padding-top: 2px !important;
+    margin-top: -5px;
+    color: #707070!important;
+}
 
-  .dateInput .has-value label {
-    display: none;
-  }
-  .custom-button {
-      background-color: transparent !important;
-      margin-top: 5px !important;
-  }
+.dateInput .has-value label {
+  display: none;
+}
+.custom-button {
+    background-color: transparent !important;
+    margin-top: 5px !important;
+}
