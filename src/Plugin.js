@@ -17,6 +17,7 @@ import Checkbox from "./components/Checkbox/Checkbox.vue";
 import Timeline from "./components/Timeline/Timeline.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
 import DateForm from "./components/DateForm/DateForm.vue";
+import TimeInput from "./components/TimeInput/TimeInput.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
@@ -66,6 +67,7 @@ module.exports = {
     Vue.component('dock-components', MenuList);
     Vue.component('dock-components', Checkbox);
     Vue.component('dock-components', Timeline);
+    Vue.component('dock-components', TimeInput);
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', DateForm);
     Vue.component('dock-components', ButtonIcon);
