@@ -1,6 +1,21 @@
 <template>
   <div class="dateInput" ref="dateInput">
-    <VueCtkDateTimePicker v-model="val" id="time" @input="emit" :no-keyboard="true" :noClearButton="false" format="DD/MM/YYYY hh:mm" formatted="DD/MM/YYYY hh:mm" :maxDate="maxDate" :minDate="minDate"/>
+    <VueCtkDateTimePicker 
+      v-model="value" 
+      id="time" 
+      @input="emit" 
+      label="dd/mm/yyyy"
+      :no-keyboard="true" 
+      :noClearButton="false" 
+      :format="format" 
+      :formatted="formatted" 
+      :maxDate="maxStringDate" 
+      :minDate="minStringDate" 
+      :onlyDate="onlyDate" 
+    />
+    <div class="todayWrapper" >
+      <md-icon>today</md-icon>
+    </div>
   </div>
 </template>
 
@@ -26,16 +41,20 @@ export default {
       type: Boolean,
       default: false,
     },
+    onlyDate: {
+      type: Boolean,
+      default: true,
+    },
     value: {
       type: Date,
       default: undefined,
     },
     maxDate: {
-      type: String,
+      type: Date,
       default: ''
     },
     minDate: {
-      type: String,
+      type: Date,
       default: ''
     },
   },
@@ -43,12 +62,31 @@ export default {
     return {
       ptBR,
       timer: undefined,
-      val: undefined,
     };
   },
   methods: {
     emit (val) {
-      this.$emit('input', val);
+      this.$emit('input', new Date(val));
+    },
+  },
+  computed: {
+    minStringDate() {
+      if(this.minDate){
+        return this.minDate.toISOString(); 
+      }
+      return null
+    },
+    maxStringDate() {
+      if(this.maxDate){
+        return this.maxDate.toISOString(); 
+      }
+      return null
+    },
+    formatted() {
+      return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYYY hh:mm"
+    },
+    format() {
+      return this.onlyDate ? "YYYY-MM-DD" : "YYYY-MM-DD hh:mm"
     },
   },
 };
@@ -70,7 +108,7 @@ export default {
   top: 4px;
 }
 .dateInput {
-  z-index: 99999999999;
+  z-index: unset;
 }
 .left {
   padding-left: 6px;
@@ -90,6 +128,12 @@ export default {
 .iconFill {
   fill: #103a4f;
 }
+.todayWrapper {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  color: #D8D1C4;
+}
 </style>
 
 <style>
@@ -97,9 +141,12 @@ export default {
   margin-bottom: 0px;
   z-index: 99999999999 !important;
 }
+.dateInput input::placeholder {
+  color: #10434F57;
+}
 
 .dateInput input label {
-  color: #104550;
+  color: #10434f57 !important;
   margin-top: 7px;
   margin-left: 20px;
   font-family: Open Sans, sans-serif;
@@ -108,10 +155,7 @@ export default {
 .dateInput i {
   margin-top: 0 !important;
 }
-.dateInput input::after,
-.dateInput input::before {
-  background-color: transparent !important;
-}
+
 .md-toggle-password {
   margin-top: -10px !important;
 }
@@ -129,7 +173,7 @@ export default {
   max-width: 100% !important;
   position: relative;
   padding-left: 5px;
-  padding-top: 6px !important;
+  padding-top: 5px !important;
   margin-bottom: 5px;
 }
 ::placeholder {
@@ -167,6 +211,7 @@ export default {
 }
 .custom-button-content {
   position: relative;
+  color: rgba(0,0,0,0.54) !important;
 }
 .custom-button svg {
   position: relative;
@@ -270,11 +315,11 @@ export default {
   -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   font-size: 11px;
-  color: rgba(0, 0, 0, 0.54);
+  color: #10434f57 !important;;
 }
 .field-input {
   cursor: pointer;
-  background-color: #fff;
+  background-color: transparent !important;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   position: relative;
@@ -1120,6 +1165,12 @@ export default {
     margin: 0 !important;
   }
 }
+.dateInput > .date-time-picker {
+  margin-left: -14px;
+}
+.dateInput > .date-time-picker > .field{
+  z-index: 0;
+}
 .date-time-picker {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1778,13 +1829,10 @@ export default {
     color: #104550 !important;
 }
 #time-input {
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
     border: 0 !important;
     width: Calc(100% - 30px);
     padding-right: 0 !important;
-}
-.dateInput {
-  background-color: transparent !important;
 }
 .field-input {
     padding-top: 2px !important;
