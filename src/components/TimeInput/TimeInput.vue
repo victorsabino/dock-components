@@ -83,10 +83,10 @@ export default {
       return null
     },
     formatted() {
-      return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYY h:mm a"
+      return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYY H:mm"
     },
     format() {
-      return this.onlyDate ? "YYYY-MM-DD" : "YYYY-MM-DD h:mm a"
+      return this.onlyDate ? "YYYY-MM-DD" : "YYYY-MM-DD H:mm"
     },
   },
 };
