@@ -20,6 +20,7 @@ import DateForm from "./components/DateForm/DateForm.vue";
 import TimeInput from "./components/TimeInput/TimeInput.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
+import Pagination from "./components/Pagination/Pagination.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
@@ -71,6 +72,7 @@ module.exports = {
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', DateForm);
     Vue.component('dock-components', ButtonIcon);
+    Vue.component('dock-components', Pagination);
     Vue.component('dock-components', InputLabel);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', MultiSelect);

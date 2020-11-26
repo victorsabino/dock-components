@@ -9,6 +9,8 @@
       <div class="step">
         <div class="stepTitle">{{checkpoint.name}}</div>
         <div :class="checkpoint.completed ? 'circle': 'emptyCircle'" />
+        <div class="stepDate">{{checkpoint.date}}</div>
+
       </div>
       <div :class="checkpoint.completed ? 'line': 'dashedLine'" v-if="index + 1 === checkpoints.length"/>
     </div>
@@ -33,6 +35,7 @@ export default {
   display: flex;
   margin-top: 20px;
   margin-left: 15px;
+  width: 100%;
 }
 .circle {
   width: 12px;
@@ -56,6 +59,7 @@ export default {
   border-bottom: 1px solid #10434f;
   margin-top: 6px;
   border-radius: 10px;
+  width: 100%;
 }
 .dashedLine {
   width: 60px;
@@ -63,18 +67,36 @@ export default {
   border-top: 1px dashed #10434f;
   margin-top: 6px;
   border-radius: 10px;
+  width: 100%;
 }
-.lineWrapper {
+.TimelineRoot > div {
   display: flex;
+  width: 26%;
+}
+.TimelineRoot > div:last-child {
+  display: flex;
+  width: 47%;
 }
 .step {
-  margin-top: -10px;
+  margin-top: 0px;
+  position: relative;
 }
 .stepTitle {
-  letter-spacing: 0.4px;
-  font-size: 10px;
-  font: normal normal normal 8px/11px Open Sans;
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0.7px;
   color: #10434f;
-  margin-left: -2px;
+  margin-left: -7px;
+  position: absolute;
+  top: -20px;
+}
+.stepDate {
+  position: absolute;
+  top: 20px;
+  margin-left: -61px;
+  width: 130px;
+  text-align: center;
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0.46px;
+  color: #10434F;
 }
 </style>

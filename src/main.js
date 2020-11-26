@@ -18,6 +18,7 @@ import TimeInput from "./components/TimeInput/TimeInput.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
+import Pagination from "./components/Pagination/Pagination.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
@@ -46,6 +47,7 @@ export {
   DateInput,
   ButtonIcon,
   InputLabel,
+  Pagination,
   CustomInput,
   MultiSelect,
   SelectButton,
