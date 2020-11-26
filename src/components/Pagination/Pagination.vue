@@ -1,82 +1,108 @@
 <template>
   <div class="paginationRoot">
-    <slot name="content"/>
+    <slot name="content" />
     <div class="pages flex">
-    <div class="nextWrapper"  @click="() => setPage(this.current - 1)">
-      <div class="outerRight">
-        <div class="inner"/>
+      <div class="nextWrapper" @click="() => setPage(this.current - 1)">
+        <div class="outerRight">
+          <div class="inner" />
+        </div>
+      </div>
+      <div class="pageWrapper">
+        <div class="page" @click="() => setPage(1)">
+          <span :class="1 === current ? 'highlight' : ''"> 1 </span>
+          <span v-if="current > 6"> ... </span>
+        </div>
+        <div
+          v-for="(page, index) in generatedPages"
+          :key="index"
+          :class="'page ' + selectPageClass(page)"
+          @click="() => setPage(page)"
+        >
+          <span> {{ page }} </span>
+        </div>
+        <div class="page">
+          <span v-if="current < parseInt(length / 2)"> ... </span>
+          <span :class="length === current ? 'highlight' : ''">{{
+            length
+          }}</span>
+        </div>
+      </div>
+      <div class="nextWrapper" @click="() => setPage(this.current + 1)">
+        <div class="outerLeft">
+          <div class="inner" />
+        </div>
       </div>
     </div>
-    <div class="pageWrapper">
-      <div class="page" @click="() => setPage(1)" >
-        <span :class="1 === current ? 'highlight' : ''"> 1 </span>
-        <span v-if="current > 6"> ... </span>
-      </div>
-      <div v-for="(page, index) in generatedPages" :key="index" class="page"  @click="() => setPage(page)">
-        <span :class="page === current ? 'highlight' : ''"> {{page}} </span>
-      </div>
-      <div class="page">
-        <span v-if="current < parseInt(length/2) "> ... </span>
-        <span :class="length === current ? 'highlight' : ''">{{length}}</span>
-      </div>
-    </div>
-    <div class="nextWrapper"  @click="() => setPage(this.current+1)">
-      <div class="outerLeft">
-        <div class="inner"/>
-      </div>
-    </div>
-  </div>
   </div>
 </template>
 <script>
 export default {
-  
   props: {
     length: {
       type: Number,
-      default: 40
+      default: 10,
     },
   },
-  data () {
+  data() {
     return {
-      current: 6,
-    }
+      current: 1,
+    };
   },
   methods: {
     setPage(page) {
-      console.log('this.current ', this.current, this.length, page)
+      console.log("this.current ", this.current, this.length, page);
       if (page > this.length) return;
       if (page <= 0) return;
-     this.current = page;
-     this.$emit("input", page);
+      this.current = page;
+      this.$emit("input", page);
     },
+    selectPageClass (page) {
+      if (page > this.length) {
+        return 'disabled';
+      }
+      if (page === this.current ) {
+        return 'highlight';
+      }
+      return '';
+    }
   },
   computed: {
-    generatedPages () {
+    generatedPages() {
       let arr = [];
       if (this.current <= this.length) {
         for (
-          let i = 0, _current = parseInt(this.current/2) - 1; 
-          i < 8 && this.length >= _current + i -1; 
+          let i = 0, _current = parseInt(this.current) - 1;
+          i < 8;
           i++
         ) {
-          if (_current + i <= 1) {}
-          else if (_current + i + 1 > this.length) {}
-          else arr.push(_current + i)
+          if (_current + i <= 1) {
+          }else {
+            let num = _current + i;
+            arr.push(_current + i);
+          }
         }
       }
       return arr;
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .paginationRoot {
   display: flex;
 }
 .paginationWrapper {
   display: flex;
+}
+.pages {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 .nextWrapper {
   margin: 10px;
@@ -88,7 +114,7 @@ export default {
 
 .inner {
   transform: rotate(45deg);
-  background-color: silver;
+  background-color: #F4F1EB;
   cursor: pointer;
   width: 25px;
   height: 25px;
@@ -97,7 +123,7 @@ export default {
   position: relative;
   border-radius: 5px;
 }
-.highlight {
+.highlight, .highlight span {
   color: black;
   font-weight: 500;
 }
@@ -105,7 +131,7 @@ export default {
   width: 30px;
   height: 50px;
   overflow: hidden;
-  transform: rotate(180deg)
+  transform: rotate(180deg);
 }
 .outerLeft {
   width: 30px;
@@ -116,12 +142,16 @@ export default {
 .pageWrapper {
   display: flex;
   margin-top: 19px;
-  min-width: 360px;
+  min-width: 400px;
   justify-content: space-between;
 }
 .page {
   padding: 0 10px;
-  color: silver;
+  color: #F4F1EB;
   cursor: pointer;
+}
+.disabled {
+  color: #165e6f;
+  cursor: default
 }
 </style>
