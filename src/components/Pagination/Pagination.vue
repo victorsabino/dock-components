@@ -124,7 +124,7 @@ export default {
   border-radius: 5px;
 }
 .highlight, .highlight span {
-  color: black;
+  color: #4EB9B1;
   font-weight: 500;
 }
 .outerRight {
