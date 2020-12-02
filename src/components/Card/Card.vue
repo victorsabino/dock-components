@@ -1,6 +1,6 @@
 <template>
   <div :class="`cardRoot ${getClasses()}`" data-testid="card">
-    <div class="toggledWrapper" v-if="toggable && isMobile()" @click.stop="toggle()">
+    <div class="toggledWrapper" v-if="toggable && isMobile()" @click.stop="toggleCard()">
       <div class="toggleTitle">{{ title }}</div>
       <div>
         <md-icon style="color: #10434f !important">
@@ -33,7 +33,7 @@ export default {
   },
   components: {},
   methods: {
-    toggle: function () {
+    toggleCard: function () {
       this.toggled = !this.toggled;
     },
     isToggled: function () {
@@ -88,6 +88,9 @@ export default {
   text-align: left;
   font-weight: 500;
   padding-top: 3px;
+}
+.toggledWrapper i {
+  font-size: 44px !important;
 }
 @media only screen and (max-width: 900px) {
 }
