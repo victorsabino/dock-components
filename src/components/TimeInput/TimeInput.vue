@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     emit (val) {
-      this.$emit('input', new Date(val));
+      if (val) this.$emit('input', new Date(val));
     },
   },
   computed: {
@@ -83,7 +83,7 @@ export default {
       return null
     },
     formatted() {
-      return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYY H:mm"
+      return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYYY H:mm"
     },
     format() {
       return this.onlyDate ? "YYYY-MM-DD" : "YYYY-MM-DD H:mm"

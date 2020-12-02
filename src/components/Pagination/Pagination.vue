@@ -21,7 +21,7 @@
           <span> {{ page }} </span>
         </div>
         <div class="page">
-          <span v-if="current < parseInt(length / 2)"> ... </span>
+          <span v-if="current < parseInt(length)"> ... </span>
           <span :class="length === current ? 'highlight' : ''">{{
             length
           }}</span>

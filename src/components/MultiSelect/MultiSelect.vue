@@ -6,7 +6,7 @@
       label="row"
       :track-by="track-by"
       :options="options"
-      :searchable="false"
+      :searchable="searchable"
       :option-height="104"
       :preselect-first="false"
       open-direction="below"
@@ -55,6 +55,10 @@ export default {
     options: {
       default: () => [],
       type: Array
+    },
+    searchable: {
+      default: false,
+      type: Boolean
     },
     reset: {
       type: Boolean,
