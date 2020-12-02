@@ -1,15 +1,66 @@
 <template>
-  <div class="cardRoot" data-testid="card">
-    <slot name="card"/>
+  <div :class="`cardRoot ${getClasses()}`" data-testid="card">
+    <div class="toggledWrapper" v-if="toggable && isMobile()" @click.stop="toggle()">
+      <div class="toggleTitle">{{ title }}</div>
+      <div>
+        <md-icon style="color: #10434f !important">
+          keyboard_arrow_right
+        </md-icon>
+      </div>
+    </div>
+    <div v-if="!isToggled()">
+      <slot name="card" />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    toggable: {
+      default: false,
+      type: Boolean,
+    },
+    title: {
+      defalt: "",
+      type: String,
+    },
   },
-  components: {
+  data: function () {
+    return {
+      toggled: true,
+    };
   },
+  components: {},
+  methods: {
+    toggle: function () {
+      this.toggled = !this.toggled;
+    },
+    isToggled: function () {
+      return this.toggled && this.toggable && this.isMobile();
+    },
+    isMobile: function () {
+      return window.innerWidth < 900;
+    },
+    getClasses: function () {
+      if (this.isToggled()) {
+        return "toggled";
+      }
+      return "";
+    },
+  },
+  mounted () {
+    if (this.toggable) {
+      window.addEventListener("resize", () => {
+        this.$forceUpdate()
+      });
+    }
+  },
+  destroyed () {
+    if (this.toggable) {
+      window.removeEventListener("resize");
+    }
+  }
 };
 </script>
 
@@ -21,7 +72,27 @@ export default {
   height: auto;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 4px 4px 4px 4px;
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
   padding: 10px;
+}
+.toggledWrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.toggleTitle {
+  color: #10434f;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 500;
+  padding-top: 3px;
+}
+@media only screen and (max-width: 900px) {
+}
+.toggled {
+  height: auto !important;
+  min-height: 50px;
 }
 </style>
