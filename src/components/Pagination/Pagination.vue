@@ -56,27 +56,23 @@ export default {
       this.current = page;
       this.$emit("input", page);
     },
-    selectPageClass (page) {
+    selectPageClass(page) {
       if (page > this.length) {
-        return 'disabled';
+        return "disabled";
       }
-      if (page === this.current ) {
-        return 'highlight';
+      if (page === this.current) {
+        return "highlight";
       }
-      return '';
-    }
+      return "";
+    },
   },
   computed: {
     generatedPages() {
       let arr = [];
       if (this.current <= this.length) {
-        for (
-          let i = 0, _current = parseInt(this.current) - 1;
-          i < 8;
-          i++
-        ) {
+        for (let i = 0, _current = parseInt(this.current) - 1; i < 8; i++) {
           if (_current + i <= 1) {
-          }else {
+          } else {
             let num = _current + i;
             arr.push(_current + i);
           }
@@ -114,7 +110,7 @@ export default {
 
 .inner {
   transform: rotate(45deg);
-  background-color: #F4F1EB;
+  background-color: #f4f1eb;
   cursor: pointer;
   width: 25px;
   height: 25px;
@@ -123,8 +119,9 @@ export default {
   position: relative;
   border-radius: 5px;
 }
-.highlight, .highlight span {
-  color: #4EB9B1;
+.highlight,
+.highlight span {
+  color: #4eb9b1;
   font-weight: 500;
 }
 .outerRight {
@@ -147,11 +144,19 @@ export default {
 }
 .page {
   padding: 0 10px;
-  color: #F4F1EB;
+  color: #f4f1eb;
   cursor: pointer;
 }
 .disabled {
   color: #165e6f;
-  cursor: default
+  cursor: default;
+}
+@media only screen and (max-width: 900px) {
+  .pageWrapper {
+    width: 275px !important;
+  }
+  .page {
+    padding: 0 4px;
+  }
 }
 </style>

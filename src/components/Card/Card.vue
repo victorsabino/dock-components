@@ -89,13 +89,15 @@ export default {
   font-weight: 500;
   padding-top: 3px;
 }
-.toggledWrapper i {
-  font-size: 44px !important;
-}
 @media only screen and (max-width: 900px) {
 }
 .toggled {
   height: auto !important;
   min-height: 50px;
+}
+</style>
+<style>
+.toggledWrapper i {
+  font-size: 44px !important;
 }
 </style>
