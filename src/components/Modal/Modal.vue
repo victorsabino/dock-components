@@ -11,7 +11,7 @@
   >
     <div class="modalContainer">
       <div class="close" @click="close">
-        <md-icon style="color: #10434F !important">close</md-icon>
+        <md-icon class="iconColor" :style="`color: ${closeColor} !important`">close</md-icon>
       </div>
       <div>
         <div v-if="hasLogo" class="logo">
@@ -66,6 +66,10 @@ export default {
     },
     logoFull: {
       default: logoImg
+    },
+    closeColor: {
+      type: String,
+      default: "#10434F"
     }
   },
   components: { Logo }
@@ -118,6 +122,7 @@ export default {
   margin-right: auto;
   left: 0 !important;
 }
+
 </style>
 <style>
 .customModal {
