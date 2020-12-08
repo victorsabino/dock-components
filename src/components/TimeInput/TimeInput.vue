@@ -12,6 +12,7 @@
       :maxDate="maxStringDate" 
       :minDate="minStringDate" 
       :onlyDate="onlyDate" 
+      :range="range"
     />
     <div class="todayWrapper" >
       <md-icon>today</md-icon>
@@ -45,6 +46,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    range: {
+      type: Boolean,
+      default: false,
+    },
     value: {
       type: Date,
       default: undefined,
@@ -66,7 +71,10 @@ export default {
   },
   methods: {
     emit (val) {
-      if (val) this.$emit('input', new Date(val));
+      if (val.end) {
+        this.value = {"start" : new Date(val.start), "end" : new Date(val.end)};
+        this.$emit('input', this.value);
+      }
     },
   },
   computed: {
