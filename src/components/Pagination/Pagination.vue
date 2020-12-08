@@ -13,7 +13,7 @@
           <span v-if="current > 2"> ... </span>
         </div>
         <div
-          v-for="(page, index) in generatedPages"
+          v-for="(page, index) in generatedPages()"
           :key="index"
           :class="'page ' + selectPageClass(page)"
           @click="() => setPage(page)"
@@ -65,15 +65,13 @@ export default {
       }
       return "";
     },
-  },
-  computed: {
-    generatedPages() {
+        generatedPages() {
       let arr = [];
       if (this.current <= this.length) {
         for (let i = 0, _current = parseInt(this.current); i < 8; i++) {
           if (_current + i <= 1) {
           } else {
-            let num = _current + 8 >= this.length ? this.length - (8 - i)  : i + _current;
+            let num = _current + 8 >= this.length && this.length - (8 - i) > 1 ? this.length - (8 - i)  : i + _current;
             arr.push(num);
           }
         }
