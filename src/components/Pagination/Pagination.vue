@@ -10,7 +10,7 @@
       <div class="pageWrapper">
         <div class="page" @click="() => setPage(1)">
           <span :class="1 === current ? 'highlight' : ''"> 1 </span>
-          <span v-if="current > 6"> ... </span>
+          <span v-if="current > 2"> ... </span>
         </div>
         <div
           v-for="(page, index) in generatedPages"
@@ -21,7 +21,7 @@
           <span> {{ page }} </span>
         </div>
         <div class="page">
-          <span v-if="current < parseInt(length)"> ... </span>
+          <span v-if="parseInt(current) + 8 < length"> ... </span>
           <span :class="length === current ? 'highlight' : ''">{{
             length
           }}</span>
@@ -70,11 +70,11 @@ export default {
     generatedPages() {
       let arr = [];
       if (this.current <= this.length) {
-        for (let i = 0, _current = parseInt(this.current) - 1; i < 8; i++) {
+        for (let i = 0, _current = parseInt(this.current); i < 8; i++) {
           if (_current + i <= 1) {
           } else {
-            let num = _current + i;
-            arr.push(_current + i);
+            let num = _current + 8 >= this.length ? this.length - (8 - i)  : i + _current;
+            arr.push(num);
           }
         }
       }
@@ -150,6 +150,7 @@ export default {
 .disabled {
   color: #165e6f;
   cursor: default;
+  display: none;
 }
 @media only screen and (max-width: 900px) {
   .pageWrapper {
