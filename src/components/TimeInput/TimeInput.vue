@@ -1,5 +1,5 @@
 <template>
-  <div class="dateInput" ref="dateInput">
+  <div :class="`dateInput ${classes}`" ref="dateInput">
     <VueCtkDateTimePicker 
       v-model="value" 
       id="time" 
@@ -35,6 +35,10 @@ export default {
       default: "",
     },
     right: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
       type: Boolean,
       default: false,
     },
@@ -84,6 +88,11 @@ export default {
       }
       return null
     },
+    classes () {
+      if (this.disabled) {
+        return 'disabled';
+      }
+    },
     maxStringDate() {
       if(this.maxDate){
         return this.maxDate.toISOString(); 
@@ -120,6 +129,9 @@ export default {
 }
 .left {
   padding-left: 6px;
+}
+.disabled {
+  pointer-events: none;
 }
 .right {
   padding-right: 6px;
