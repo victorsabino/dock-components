@@ -57,7 +57,7 @@ export default {
       this.$emit("input", page);
     },
     selectPageClass(page) {
-      if (page > this.length) {
+      if (page >= this.length || page === 1)  {
         return "disabled";
       }
       if (page === this.current) {
@@ -65,17 +65,28 @@ export default {
       }
       return "";
     },
-        generatedPages() {
+    generatedPages() {
       let arr = [];
-      if (this.current <= this.length) {
-        for (let i = 0, _current = parseInt(this.current); i < 8; i++) {
-          if (_current + i <= 1) {
-          } else {
-            let num = _current + 8 >= this.length && this.length - (8 - i) > 1 ? this.length - (8 - i)  : i + _current;
-            arr.push(num);
-          }
+      const _current = parseInt(this.current);
+      let num;
+      if (_current + 8 <= this.length) {
+        num = this.length - 8;
+        for (let i = 0; i < Math.min(this.length, 8); i++) {
+          arr.push(_current + i);
+        }
+      } else if (this.length <= 8 ) {
+        for (let i = 0; i < 8; i++) {
+          arr.push(i + 2);
+        }
+      } else {
+        num = this.length - 8;
+
+        for (let i = 0; i < Math.min(this.length, 8); i++) {
+          num = this.length - 8 + i;
+          arr.push(num);
         }
       }
+
       return arr;
     },
   },
@@ -137,7 +148,7 @@ export default {
 .pageWrapper {
   display: flex;
   margin-top: 19px;
-  min-width: 400px;
+  width: 400px;
   justify-content: space-between;
 }
 .page {
@@ -152,10 +163,11 @@ export default {
 }
 @media only screen and (max-width: 900px) {
   .pageWrapper {
-    width: 275px !important;
+    width: 270px;
   }
   .page {
     padding: 0 4px;
+    min-width: 10px;
   }
 }
 </style>
