@@ -4,7 +4,7 @@
       <div class="toggleTitle">{{ title }}</div>
       <div>
         <md-icon style="color: #10434f !important">
-          keyboard_arrow_right
+          {{isToggled() ? 'expand_more' : 'expand_less' }}
         </md-icon>
       </div>
     </div>

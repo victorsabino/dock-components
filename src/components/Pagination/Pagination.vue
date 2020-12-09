@@ -22,7 +22,7 @@
         </div>
         <div class="page">
           <span v-if="parseInt(current) + 8 < length"> ... </span>
-          <span :class="length === current ? 'highlight' : ''">{{
+          <span :class="length === current ? 'highlight' : ''"  @click="() => setPage(this.length)">{{
             length
           }}</span>
         </div>
@@ -148,7 +148,7 @@ export default {
 .pageWrapper {
   display: flex;
   margin-top: 19px;
-  width: 400px;
+  width: fit-content;
   justify-content: space-between;
 }
 .page {
