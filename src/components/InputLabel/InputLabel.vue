@@ -18,7 +18,7 @@
       :type="type"
       v-else
     />
-    <div class="labelWrapper" v-if="typeof descricao === 'string'">
+    <div class="" v-if="typeof descricao === 'string'">
       <label>{{ descricao }}</label>
     </div>
     <div class="labelWrapper" v-else>
@@ -128,7 +128,7 @@ export default {
   font-size: 12px;
 }
 .inputWrapper > label:first-child {
-  -webkit-text-fill-color: #103a4f !important;
+  color: #103a4f !important;
   margin-left: 5px;
 }
 .inputWrapper .input {
