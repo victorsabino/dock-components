@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     setPage(page) {
-      console.log("this.current ", this.current, this.length, page);
       if (page > this.length) return;
       if (page <= 0) return;
       this.current = page;
