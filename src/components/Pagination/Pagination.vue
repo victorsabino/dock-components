@@ -10,7 +10,7 @@
       <div class="pageWrapper">
         <div class="page" @click="() => setPage(1)">
           <span :class="1 === current ? 'highlight' : ''"> 1 </span>
-          <span v-if="current > 2"> ... </span>
+          <span v-if="shouldShowFirstDot()"> ... </span>
         </div>
         <div
           v-for="(page, index) in generatedPages()"
@@ -64,6 +64,10 @@ export default {
         return "highlight";
       }
       return "";
+    },
+    shouldShowFirstDot () {
+      if (this.length < 8) return false;
+      return current > 2;
     },
     generatedPages() {
       let arr = [];
@@ -163,7 +167,7 @@ export default {
 }
 @media only screen and (max-width: 900px) {
   .pageWrapper {
-    width: 270px;
+    max-width: 270px;
   }
   .page {
     padding: 0 4px;
