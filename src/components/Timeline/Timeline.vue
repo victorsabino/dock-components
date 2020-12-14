@@ -65,6 +65,7 @@ export default {
   width: 60px;
   height: 0px;
   border-top: 1px dashed #10434f;
+  border-style: 1px dashed;
   margin-top: 6px;
   border-radius: 10px;
   width: 100%;

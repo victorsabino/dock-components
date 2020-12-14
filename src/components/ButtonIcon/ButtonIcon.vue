@@ -50,7 +50,8 @@ export default {
   cursor: pointer;
 }
 .buttonIcon i {
-  margin-top: 7px !important;
+  margin-top: 7px;
   margin-right: 0 !important;
 }
+
 </style>
