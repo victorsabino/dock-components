@@ -11,6 +11,7 @@
       v-decimal="maxDecimal"
       :maxlength="maxlength"
       @blur="blur"
+      @keyup.enter.native="onEnter"
       :data-testid="currentValue"
     />
     <md-input
@@ -24,6 +25,7 @@
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
+      @keyup.enter.native="onEnter"
       :data-testid="currentValue"
     />
 
@@ -85,6 +87,10 @@ export default {
       default: () => {}
     },
     blur: {
+      default: () => {},
+      type: Function
+    },
+    onEnter: {
       default: () => {},
       type: Function
     },
