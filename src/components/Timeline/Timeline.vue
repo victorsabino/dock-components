@@ -91,13 +91,11 @@ export default {
   top: -20px;
 }
 .stepDate {
+  font: normal normal normal 14px/19px Open Sans;
+  letter-spacing: 0.7px;
+  color: #10434f;
+  margin-left: -7px;
   position: absolute;
   top: 20px;
-  margin-left: -61px;
-  width: 130px;
-  text-align: center;
-  font: normal normal normal 14px/19px Open Sans;
-  letter-spacing: 0.46px;
-  color: #10434F;
 }
 </style>

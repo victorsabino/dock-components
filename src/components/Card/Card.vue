@@ -58,7 +58,9 @@ export default {
   },
   destroyed () {
     if (this.toggable) {
-      window.removeEventListener("resize");
+      window.removeEventListener("resize", () => {
+        this.$forceUpdate()
+      });
     }
   }
 };
