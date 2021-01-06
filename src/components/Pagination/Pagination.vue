@@ -157,7 +157,7 @@ export default {
   justify-content: space-between;
 }
 .page {
-  min-width: 20px;
+  min-width: 23px;
   padding: 0 10px;
   color: #f4f1eb;
   cursor: pointer;

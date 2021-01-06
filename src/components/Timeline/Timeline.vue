@@ -5,14 +5,16 @@
       v-for="(checkpoint, index) in checkpoints"
       :key="index"
     >
-      <div :class="checkpoint.completed ? 'line': 'dashedLine'"/>
+      <div :class="checkpoint.completed ? 'line' : 'dashedLine'" />
       <div class="step">
-        <div class="stepTitle">{{checkpoint.name}}</div>
-        <div :class="checkpoint.completed ? 'circle': 'emptyCircle'" />
-        <div class="stepDate">{{checkpoint.date}}</div>
-
+        <div class="stepTitle">{{ checkpoint.name }}</div>
+        <div :class="checkpoint.completed ? 'circle' : 'emptyCircle'" />
+        <div class="stepDate">{{ checkpoint.date }}</div>
       </div>
-      <div :class="checkpoint.completed ? 'line': 'dashedLine'" v-if="index + 1 === checkpoints.length"/>
+      <div
+        :class="checkpoint.completed ? 'line' : 'dashedLine'"
+        v-if="index + 1 === checkpoints.length"
+      />
     </div>
   </div>
 </template>
@@ -21,8 +23,7 @@
 export default {
   props: {
     checkpoints: {
-      default: () => [
-      ],
+      default: () => [],
       type: Array,
     },
   },
@@ -97,5 +98,22 @@ export default {
   margin-left: -7px;
   position: absolute;
   top: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .lineWrapper:first-child {
+    width: 15% !important;
+  }
+  .lineWrapper {
+    display: flex;
+    width: 29% !important;
+  }
+  .lineWrapper:last-child {
+    display: flex;
+    width: 47% !important;
+  }
+  .stepDate {
+    max-width: 105px !important;
+  }
 }
 </style>
