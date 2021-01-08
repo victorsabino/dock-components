@@ -1,5 +1,5 @@
 <template>
-	<div class="umidadeWrapper">
+	<div class="moistureWrapper">
 		<div class="min">
 			<img :src="minIcon">
 			<div class="value">{{min}}%</div>
@@ -35,7 +35,7 @@ export default {
 </script>
 
 <style scoped>
-.umidadeWrapper {
+.moistureWrapper {
 	background: #EBE8E3;
 	height: 40px;
 	width: 168px;

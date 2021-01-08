@@ -1,8 +1,5 @@
 <template>
 	<div>
-		<div class="title">
-			Clima
-		</div>
 		<div class="image">
 			<img :src="currentWeather"/>
 		</div>

@@ -1,5 +1,5 @@
 <template>
-	<div class="rainWrapper">
+	<div class="windWrapper">
 		<div class="min">
             <img :src="directionIcon" :style="angle">
 			<div class="value">{{direction}} - {{speed}}km/h</div>
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.rainWrapper {
+.windWrapper {
 	background: #EBE8E3;
 	height: 40px;
 	width: 168px;
