@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "3.1.25",
+  "version": "3.1.26",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -64,6 +64,7 @@
     "waait": "^1.0.5"
   },
   "devDependencies": {
+    "@rollup/plugin-url": "^6.0.0",
     "@storybook/addon-knobs": "^6.0.22",
     "@storybook/addons": "^6.0.26",
     "@storybook/theming": "^6.0.26",
