@@ -87,7 +87,7 @@ export default {
     },
     icon: {
       type: String,
-      default: "add_circle_outline",
+      default: "",
     },
     listButtons: {
       type: Array,

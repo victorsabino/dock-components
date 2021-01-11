@@ -1,17 +1,20 @@
 <template>
-	<div class="rainWrapper">
-		<div class="min">
-			<div v-for="gota in gotas" :key="gota.id">
-				<img :src="gota.gotaIcon">
-			</div>
-			<div class="value">{{quantity}}mm - {{percentage}}%</div>
-		</div>	
+	<div>
+		<label class="font12 openSans darkBlue formLabel">{{ label }}</label>
+		<div class="rainWrapper">
+			<div class="min">
+				<div v-for="gota in gotas" :key="gota.id">
+					<img :src="gota.gotaIcon">
+				</div>
+				<div class="value">{{quantity}}mm - {{percentage}}%</div>
+			</div>	
+		</div>
 	</div>
 </template>
 
 <script>
-import gotaCheia from "../../assets/weather/Gota cheia.svg";
-import gotaVazia from "../../assets/weather/Gota vazia.svg";
+import gotaCheia from "@/assets/weather/GotaCheia.png";
+import gotaVazia from "@/assets/weather/GotaVazia.png";
 export default {
 	props: {
 		percentage: {
@@ -22,6 +25,10 @@ export default {
 			type: Number,
 			default: 50
 		},
+		label: {
+			type: String,
+			default: "Chuva"
+		}
 	},
 	data() {
 		return {
@@ -51,24 +58,30 @@ export default {
 .rainWrapper {
 	background: #EBE8E3;
 	height: 40px;
-	width: 168px;
 	box-shadow: 0px 2px 1px #DCD7CD;
 	border-radius: 4px;
 	display: flex;
+	margin-top: 3px;
 }
 .min {
 	display: flex;
-	margin-left: 2px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .min img {
-	margin-top: 15px;
+	margin-top: 16px;
 	margin-left: 4px;
+	height: 13px;
 }
 .value {
 	margin-top: 13px;
-	margin-left: 2px;
+	margin-left: 10px;
 	color: #10434F;
 	font-size: 16px;
 	font-family: 'Open Sans', sans-serif;
+}
+.formLabel {
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 </style>

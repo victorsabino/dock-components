@@ -1,14 +1,14 @@
 <template>
-	<div>
+	<div >
 		<label class="font12 openSans darkBlue formLabel">{{ label }}</label>
-		<div class="temperatureWrapper">
+		<div class="moistureWrapper">
 			<div class="min">
 				<img :src="minIcon">
-				<div class="value">{{min}}°C</div>
+				<div class="value">{{min}}%</div>
 			</div>	
 			<div class="max">
 				<img :src="maxIcon">
-				<div class="value">{{max}}°C</div>
+				<div class="value">{{max}}%</div>
 			</div>	
 		</div>
 	</div>
@@ -29,7 +29,7 @@ export default {
 		},
 		label: {
 			type: String,
-			default: "Temperatura"
+			default: "Umidade"
 		}
 	},
 	data() {
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style scoped>
-.temperatureWrapper {
+.moistureWrapper {
 	background: #EBE8E3;
 	height: 40px;
 	box-shadow: 0px 2px 1px #DCD7CD;
@@ -61,13 +61,13 @@ export default {
 	margin-top: 11px;
 	margin-left: 8px;
 	height: 18px;
-	width: 18px;
+    width: 18px;
 }
 .max img {
 	margin-top: 14px;
 	margin-left: 8px;
 	height: 18px;
-	width: 18px;
+    width: 18px;
 }
 .value {
 	margin-top: 13px;
