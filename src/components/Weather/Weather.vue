@@ -10,14 +10,13 @@
 </template>
 
 <script>
-import sol from "../../assets/weather/Sol.svg";
-import solChuvaTrovoada from "../../assets/weather/Sol, pancadas de chuva e trovoadas.svg";
-import solMuitasNuvens from "../../assets/weather/Sol com muitas nuvens.svg";
-import solMuitasNuvensChuva from "../../assets/weather/Sol com muitas nuvens e chuva.svg";
-import solAlgumasNuvens from "../../assets/weather/Sol com algumas núvens.svg";
-import nubladoChuva from "../../assets/weather/nublado com chuva.svg";
-import geadaAmanhecer from "../../assets/weather/Geada ao amanhece.svg";
-
+import sol from "@/assets/weather/Sol.png";
+import solChuvaTrovoada from "@/assets/weather/SolPancadasDeChuvaETrovoadas.png";
+import solMuitasNuvens from "@/assets/weather/SolComMuitasNuvens.png";
+import solMuitasNuvensChuva from "@/assets/weather/SolComMuitasNuvensEChuva.png";
+import solAlgumasNuvens from "@/assets/weather/SolComAlgumasNuvens.png";
+import nubladoChuva from "@/assets/weather/NubladoComChuva.png";
+import geadaAmanhecer from "@/assets/weather/GeadaAoAmanhece.png";
 export default {
 	props: {
 		weather: {
@@ -42,7 +41,7 @@ export default {
 				return this.sol;
 			}else if(this.weather == 'Sol com chuva e trovoada' || this.weather == 'sol com chuva e trovoada' || this.weather === 2) {
 				return this.solChuvaTrovoada;
-			} else if(this.weather == 'Sol com muita nuvens' || this.weather == 'sol com muitas nuvens' || this.weather === 3) {
+			} else if(this.weather == 'Sol com muitas nuvens' || this.weather == 'sol com muitas nuvens' || this.weather === 3) {
 				return this.solMuitasNuvens;
 			} else if(this.weather == 'Sol com muitas nuvens e chuva' || this.weather == 'sol com muitas nuvens e chuva' || this.weather === 4) {
 				return this.solMuitasNuvensChuva;
@@ -71,14 +70,18 @@ export default {
 
 .image {
 	margin-top: 43px;
-	margin-left: 77px;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 20px;
+	height: 65px;
+	width: 65px;
 }
 
 .description {
 	color: #10434F;
 	font-size: 18px;
 	font-family: 'Raleway';
+	text-align: center;
 }
 
 </style>

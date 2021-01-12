@@ -1,15 +1,15 @@
-import Wind from "./Wind.vue";
-import { withKnobs, array } from '@storybook/addon-knobs';
+// import Wind from "./Wind.vue";
+// import { withKnobs, text, number } from '@storybook/addon-knobs';
 
-export default { title: "Components/Wind", component:Wind, decorators:[withKnobs] };
+// export default { title: "Components/Wind", component:Wind, decorators:[withKnobs] };
 
-export const WindStorie = () => ({
-  components: { Wind },
-  template:
-    '<Wind :min="min" :max="max"/>',
-    props: {
-      min: { default: 10},
-      max: { default: 60}
-    }
-});
+// export const WindStorie = () => ({
+//   components: { Wind },
+//   template:
+//     '<Wind :direction="direction" :max="max"/>',
+//     props: {
+//       direction: { default: text('Direction', "NW")},
+//       speed: { default: number('Speed', 50)}
+//     }
+// });
 
