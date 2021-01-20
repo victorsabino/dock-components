@@ -6,10 +6,10 @@ export default { title: "Components/TopTab", component: TopTab, decorators:[with
 export const TopTabWithIcon = () => ({
   components: { TopTab },
   template:
-    '<TopTab :tabs="tabs"> text</TopTab>',
+    '<div style="background: #10434F; padding: 10px"><TopTab :tabs="tabs"/></div>',
     props: {
       tabs: {
-        default: array('Tabs',[{title: ' Request ', icon: ' attach_money '}, {title: 'Proposals ', icon: 'swap_horiz'}])
+        default: array('Tabs',[{title: 'ESCALAS', icon: 'view_week'}, {title: 'PORTOS', img: '../../src/assets/hook.svg'}])
       }
     }
 });
