@@ -13,6 +13,7 @@
       :custom-label="customLabel"
       :show-labels="false"
       :disabled="disabled"
+      @search-change="searchChange"
     >
       <template slot="option" slot-scope="props">
         <div class="option__desc" v-if="!props.option.slot">
@@ -98,6 +99,9 @@ export default {
       if (row === 'from') this.from = moment(date).add(1, 'd').toDate();
       this.$emit(row, date);
       }, 500);
+    },
+    searchChange (val) {
+      this.$emit('search-change', val);
     }
   },
   beforeMount() {
