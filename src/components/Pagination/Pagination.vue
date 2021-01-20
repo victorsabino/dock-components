@@ -124,7 +124,7 @@ export default {
 
 .inner {
   transform: rotate(45deg);
-  background-color: #4EB9B1;
+  background-color: #f4f1eb;
   cursor: pointer;
   width: 25px;
   height: 25px;
@@ -135,7 +135,7 @@ export default {
 }
 .highlight,
 .highlight span {
-  color: #10434F;
+  color: #4eb9b1;
   font-weight: 500;
 }
 .outerRight {
@@ -159,7 +159,7 @@ export default {
 .page {
   min-width: 23px;
   padding: 0 10px;
-  color: #4EB9B1;
+  color: #f4f1eb;
   cursor: pointer;
 }
 .disabled {
