@@ -77,7 +77,7 @@ body {
   visibility: hidden;
 }
 .md-icon.md-theme-default.md-icon-font {
-  color: #4eb9a7 !important;
+  color: #4eb9a7;
 }
 
 .vm--container {

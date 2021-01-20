@@ -6,7 +6,9 @@
       class="topTab"
       @click="() => setActive(index)"
     >
-      <md-icon v-if="tab.icon"> {{ tab.icon }} </md-icon>
+      <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
+      <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
+      <img v-if="tab.img" :src="tab.img">
       <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
       </div>
@@ -16,6 +18,12 @@
 
 <script>
 export default {
+  props: {
+    tabs: {
+      type: Array,
+      default: () => []
+    }
+  },
   data: function() {
     return {
       active: 0
@@ -32,45 +40,43 @@ export default {
       return _class;
     }
   },
-  props: {
-    tabs: {
-      type: Array,
-      default: () => []
-    }
-  }
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .topTabRoot {
-  height: 35px;
+  height: 30px;
   min-width: 310px;
   display: flex;
   margin-top: 17px;
   cursor: pointer;
 }
 .topTab {
-  background-color: #1b4c57;
+  background: #F4F1EB 0% 0% no-repeat padding-box;
   margin-right: 20px;
-  padding: 7px 10px;
+  padding: 5px 10px;
   display: flex;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  width: 160px;
-}
-.topTab i {
-  margin-left: 5px;
-  margin-right: 5px;
+  border-radius: 4px 4px 0px 0px;
 }
 .topTabTitle {
   font-weight: 500;
-  font-family: "Raleway", "sans-serif";
-  font-size: 20px;
+  font-family: Raleway, "sans-serif";
+  font-weight: bold;
+  font-size: 15px;
   margin-left: 5px;
   margin-top: 2px;
+  color: #10434F;
   transition: all 0.5s;
+  text-transform: uppercase;
 }
 .topTabTitleInactive {
   opacity: 0.2;
+}
+.tabIcon {
+  color: #10434F !important;
+  font-size: 22px !important;
+  margin-top: -1px;
 }
 </style>
