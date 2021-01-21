@@ -4,12 +4,13 @@
       v-for="(tab, index) in tabs"
       :key="index"
       class="topTab"
+      :class="activeClass(index)"
       @click="() => setActive(index)"
     >
       <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
       <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
-      <img v-if="tab.img" :src="tab.img">
-      <div v-if="tab.title" :class="activeClass(index)">
+      <img v-if="tab.img" class="tabImg" :src="tab.img">
+      <div v-if="tab.title">
         {{ tab.title }}
       </div>
     </div>
@@ -22,6 +23,10 @@ export default {
     tabs: {
       type: Array,
       default: () => []
+    },
+    tabLock: {
+      type: Number,
+      default: null
     }
   },
   data: function() {
@@ -31,8 +36,13 @@ export default {
   },
   methods: {
     setActive: function(key) {
-      this.$emit("key", key);
-      this.active = key;
+      if(this.tabLock !== null) {
+        this.$emit("key", key);
+        this.active = this.tabLock;
+      }else {
+        this.$emit("key", key);
+        this.active = key;
+      }
     },
     activeClass: function(key) {
       let _class = "topTabTitle";
@@ -48,14 +58,17 @@ export default {
 
 .topTabRoot {
   height: 30px;
-  min-width: 310px;
+  width: Calc(100% - 100px);
+  max-width: 1300px;
   display: flex;
   margin-top: 17px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 .topTab {
   background: #F4F1EB 0% 0% no-repeat padding-box;
-  margin-right: 20px;
+  margin-right: 5px;
   padding: 5px 10px;
   display: flex;
   border-radius: 4px 4px 0px 0px;
@@ -72,11 +85,15 @@ export default {
   text-transform: uppercase;
 }
 .topTabTitleInactive {
-  opacity: 0.2;
+  opacity: 0.5;
 }
 .tabIcon {
   color: #10434F !important;
   font-size: 22px !important;
-  margin-top: -1px;
+  margin-top: -2px;
+}
+.tabImg {
+  margin-top: 2px;
+  margin-right: 3px;
 }
 </style>
