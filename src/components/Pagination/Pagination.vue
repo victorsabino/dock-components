@@ -74,14 +74,22 @@ export default {
       let arr = [];
       const _current = parseInt(this.current);
       let num;
-      if (_current + 8 <= this.length) {
+      console.log('_current ', _current, this.length)
+       if (this.length <= 8 ) {
+        for (let i = 0; i < 8; i++) {
+          arr.push(i + 2);
+        }
+      }
+      else if (_current > 1) {
+        num = this.length - 8;
+        for (let i = 0; i < Math.min(this.length, 8); i++) {
+          arr.push(_current + i - Math.min(4, _current - 2));
+        }
+      }
+      else if (_current + 8 <= this.length) {
         num = this.length - 8;
         for (let i = 0; i < Math.min(this.length, 8); i++) {
           arr.push(_current + i);
-        }
-      } else if (this.length <= 8 ) {
-        for (let i = 0; i < 8; i++) {
-          arr.push(i + 2);
         }
       } else {
         num = this.length - 8;
