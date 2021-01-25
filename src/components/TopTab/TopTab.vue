@@ -8,7 +8,7 @@
     >
       <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
       <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
-      <img v-if="tab.img" :src="tab.img">
+      <object v-if="tab.img" :src="tab.img">
       <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
       </div>
@@ -22,6 +22,10 @@ export default {
     tabs: {
       type: Array,
       default: () => []
+    },
+    key: {
+      type: Number,
+      defualt: 0
     }
   },
   data: function() {
@@ -40,6 +44,12 @@ export default {
       return _class;
     }
   },
+  mounted () {
+    this.active = this.key;
+  },
+  updated () {
+    this.active = this.key;
+  }
 };
 </script>
 
