@@ -9,7 +9,7 @@
     >
       <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
       <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
-      <object v-if="tab.img" :src="tab.img">
+      <img v-if="tab.img" :src="tab.img">
       <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
       </div>
