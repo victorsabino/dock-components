@@ -76,6 +76,7 @@ export default {
   transform: translate(0px, -50%);
   margin-left: 10px;
   font-weight: bold;
+  text-align: initial;
 }
 .itemLateralMenuActive {
    background-color:#10434F !important
