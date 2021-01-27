@@ -8,6 +8,7 @@
       :maxlength="maxlenght"
       :type="type"
       v-if="type !== 'number'"
+      :icon="icon"
     />
     <CustomInput
       class="numberInput"
@@ -16,6 +17,7 @@
       :label="labelInput ? labelInput : label"
       :maxlength="maxlenght"
       :type="type"
+      :icon="icon"
       v-else
     />
     <div class="" v-if="typeof descricao === 'string'">
@@ -39,6 +41,10 @@ export default {
   },
   props: {
     label: {
+      type: String,
+      default: ""
+    },
+    icon: {
       type: String,
       default: ""
     },
