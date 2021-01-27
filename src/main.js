@@ -24,6 +24,7 @@ import DateInput from "./components/DateInput/DateInput.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
 import Pagination from "./components/Pagination/Pagination.vue";
+import LateralMenu from "./components/LateralMenu/LateralMenu.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import Temperature from "./components/Temperature/Temperature.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
@@ -59,6 +60,7 @@ export {
   ButtonIcon,
   InputLabel,
   Pagination,
+  LateralMenu,
   CustomInput,
   Temperature,
   MultiSelect,
