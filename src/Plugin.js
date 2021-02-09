@@ -29,6 +29,7 @@ import Pagination from "./components/Pagination/Pagination.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
 import Temperature from "./components/Temperature/Temperature.vue";
+import LateralMenu from "./components/LateralMenu/LateralMenu.vue";
 import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
 import EditableField from "./components/EditableField/EditableField.vue";
@@ -85,6 +86,7 @@ module.exports = {
     Vue.component('dock-components', ButtonIcon);
     Vue.component('dock-components', Pagination);
     Vue.component('dock-components', InputLabel);
+    Vue.component('dock-components', LateralMenu);
     Vue.component('dock-components', CustomInput);
     Vue.component('dock-components', MultiSelect);
     Vue.component('dock-components', Temperature);

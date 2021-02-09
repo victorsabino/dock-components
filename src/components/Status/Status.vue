@@ -27,9 +27,7 @@ export default {
   },
   methods: {
     openPriceQuote() {
-      if (this.status.toLowerCase() === "waiting proposals") {
         this.openPriceQuotes();
-      }
     }
   },
   computed: {

@@ -5,7 +5,7 @@
       :disabled="editing"
       v-model="model"
       :label="labelInput ? labelInput : label"
-      :maxlength="maxlenght"
+      :maxlength="maxlength"
       :type="type"
       v-if="type !== 'number'"
       :icon="icon"
@@ -15,7 +15,7 @@
       :disabled="editing"
       v-model="number"
       :label="labelInput ? labelInput : label"
-      :maxlength="maxlenght"
+      :maxlength="maxlength"
       :type="type"
       :icon="icon"
       v-else
@@ -52,6 +52,7 @@ export default {
       type: String,
       default: ""
     },
+    
     descricao: {
       type: String || Array,
       default: ""
@@ -67,7 +68,7 @@ export default {
       type: String,
       default: ""
     },
-    maxlenght: {
+    maxlength: {
       type: String,
       default: ""
     },
