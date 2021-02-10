@@ -76,7 +76,10 @@ export default {
   },
   methods: {
     emit (val) {
-      if (val.end) {
+      if(!val.start){
+        this.value = val;
+        this.$emit('input', this.value);
+      }else if (val.end) {
         this.value = {"start" : new Date(val.start), "end" : new Date(val.end)};
         this.$emit('input', this.value);
       }
@@ -87,7 +90,7 @@ export default {
       if(this.minDate){
         return this.minDate.toISOString(); 
       }
-      return null
+      return null;
     },
     classes () {
       if (this.disabled) {
@@ -98,7 +101,7 @@ export default {
       if(this.maxDate){
         return this.maxDate.toISOString(); 
       }
-      return null
+      return null;
     },
     formatted() {
       return this.onlyDate ? "DD/MM/YYYY" : "DD/MM/YYYY H:mm"
