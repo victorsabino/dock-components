@@ -13,6 +13,7 @@
       :minDate="minStringDate" 
       :onlyDate="onlyDate" 
       :range="range"
+      button-now-translation="hoje"
     />
     <div class="todayWrapper" >
       <md-icon>today</md-icon>
