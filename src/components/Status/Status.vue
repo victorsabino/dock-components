@@ -2,7 +2,7 @@
   <div @click.stop="openPriceQuote" data-testid="status">
     <div v-if="status !== ''" class="statusCardRoot">
       <div class="verticalLine" />
-      <span> {{ computedStatus }} </span>
+      <span @click="click"> {{ computedStatus }} </span>
       <div class="verticalLine" />
     </div>
     <div v-else class="statusCardRoot">
@@ -23,6 +23,10 @@ export default {
     },
     openPriceQuotes: {
       type: Function
+    },
+    click: {
+      type: Function,
+      default: () => {}
     }
   },
   methods: {
