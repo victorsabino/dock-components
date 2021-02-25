@@ -1,5 +1,5 @@
 <template>
-  <div @click.stop="openPriceQuote" data-testid="status">
+  <div data-testid="status">
     <div v-if="status !== ''" class="statusCardRoot">
       <div class="verticalLine" />
       <span @click="click"> {{ computedStatus }} </span>
@@ -21,22 +21,13 @@ export default {
       type: Number,
       default: 0
     },
-    openPriceQuotes: {
-      type: Function
-    },
     click: {
       type: Function,
       default: () => {}
     }
   },
-  methods: {
-    openPriceQuote() {
-        this.openPriceQuotes();
-    }
-  },
   computed: {
     computedStatus() {
-      console.log("status ", this.status);
       let status = "";
       switch (this.status.toLowerCase()) {
         case "saved, needs price":

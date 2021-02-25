@@ -74,7 +74,6 @@ export default {
       let arr = [];
       const _current = parseInt(this.current);
       let num;
-      console.log('_current ', _current, this.length)
        if (this.length <= 8 ) {
         for (let i = 0; i < 8; i++) {
           arr.push(i + 2);

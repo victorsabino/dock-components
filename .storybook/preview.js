@@ -11,7 +11,6 @@ import {DocsPage, DocsContainer} from '@storybook/addon-docs/blocks';
 import { create } from '@storybook/theming';
 import logo from '../public/DockComponentsWhite.svg';
 
-
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueMaterial);
 Vue.directive("decimal", {

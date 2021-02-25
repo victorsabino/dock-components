@@ -4,7 +4,23 @@ import { withKnobs, text, number, boolean, array } from '@storybook/addon-knobs'
 export default { title: "Components/Input/CustomInput", component: CustomInput, decorators: [withKnobs] };
 export const CustomInputBasic = () => ({
   components: { CustomInput },
-  template: '<CustomInput :label="label" :icon="icon" :value="value" :disabled="disabled" :maxlength="maxlength" :mask="mask" :error="error" :pattern="pattern" :placeholder="placeholder" :step="step" :maxDecimal="maxDecimal" :type="type"/>',
+  template: `
+    <CustomInput 
+      :label="label" 
+      :icon="icon" 
+      :value="value" 
+      :disabled="disabled" 
+      :maxlength="maxlength" 
+      :mask="mask" 
+      :error="error" 
+      :pattern="pattern" 
+      :placeholder="placeholder" 
+      :step="step" 
+      :money="money"
+      :maxDecimal="maxDecimal" 
+      :type="type"
+    />
+  `,
   props: {
     label: {
       default: text('Label', '')
@@ -16,7 +32,10 @@ export const CustomInputBasic = () => ({
       default: text('Value', '')
     },
     disabled: {
-      default: boolean('Disabled',false)
+      default: boolean('Disabled', true)
+    },
+    money: {
+      default: boolean('Money', true)
     },
     pattern: {
       default: text('Pattern','')

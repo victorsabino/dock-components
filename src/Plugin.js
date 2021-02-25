@@ -1,3 +1,4 @@
+import money from "v-money";
 import VModal from "vue-js-modal";
 import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
@@ -41,6 +42,8 @@ module.exports = {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
     Vue.use(VueMaterial);
     Vue.use(VueTheMask);
+    Vue.use(money, { precision: 2, prefix: "R$ ", decimal: ",", thousands: "." });
+
     Vue.directive("decimal", {
       bind(el, binding, vnode) {
         let maxDecimal = parseInt(binding.value);
