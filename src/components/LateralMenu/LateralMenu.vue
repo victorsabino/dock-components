@@ -59,6 +59,10 @@ export default {
   cursor: pointer;
   transition: background-color 0.5s ease;
 }
+.itemLateralMenu:hover {
+  background: #3d968f !important;
+  transition: background-color 0.5s ease;
+}
 /* .itemLateralMenu:hover {
    background-color:#10434F !important
 } */
