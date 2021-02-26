@@ -1,3 +1,4 @@
+import money from "v-money";
 import VModal from "vue-js-modal";
 import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
@@ -34,6 +35,7 @@ import CustomInput from "./components/CustomInput/CustomInput.vue";
 import SelectButton from "./components/SelectButton/SelectButton.vue";
 import EditableField from "./components/EditableField/EditableField.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
+import DisplayInformation from "./components/DisplayInformation/DisplayInformation.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
 
 module.exports = {
@@ -41,6 +43,8 @@ module.exports = {
     Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
     Vue.use(VueMaterial);
     Vue.use(VueTheMask);
+    Vue.use(money, { precision: 2, prefix: "R$ ", decimal: ",", thousands: "." });
+
     Vue.directive("decimal", {
       bind(el, binding, vnode) {
         let maxDecimal = parseInt(binding.value);
@@ -93,6 +97,7 @@ module.exports = {
     Vue.component('dock-components', SelectButton);
     Vue.component('dock-components', EditableField);
     Vue.component('dock-components', CustomTextArea);
+    Vue.component('dock-components', DisplayInformation);
     Vue.component('dock-components', ConfirmationDialog);
   }
 };

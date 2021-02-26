@@ -2,14 +2,29 @@
   <md-field class="customInput" :md-counter="counter" data-testid="customInput">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
-      v-if="mask"
+      v-if="mask === true"
       v-mask="mask"
       :placeholder="placeholder"
-      :disabled="disabled === 'true'"
+      :disabled="disabled"
       v-bind:type="type"
       v-model="currentValue"
       v-decimal="maxDecimal"
       :maxlength="maxlength"
+      @blur="blur"
+      @keyup.enter.native="onEnter"
+      :data-testid="currentValue"
+    />
+    <md-input
+      v-else-if="money === true"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      v-bind:type="type"
+      v-money="formatMoney"
+      v-model.lazy="currentValue"
+      :step="step"
+      :maxlength="maxlength"
+      :pattern="pattern"
+      v-decimal="maxDecimal"
       @blur="blur"
       @keyup.enter.native="onEnter"
       :data-testid="currentValue"
@@ -34,10 +49,20 @@
 </template>
 
 <script>
+import {VMoney} from 'v-money'
+
 export default {
+  directives: {money: VMoney},
   data() {
     return {
-      currentVal: false
+      currentVal: false,
+      formatMoney: {
+        decimal: ",",
+        thousands: ".",
+        prefix: "R$ ",
+        precision: 2,
+        masked: false
+      }
     };
   },
   props: {
@@ -97,6 +122,10 @@ export default {
     counter: {
       type: Boolean,
       default: false
+    },
+    money: {
+      type: Boolean,
+      dafault: true
     }
   },
   methods: {},

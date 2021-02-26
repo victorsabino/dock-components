@@ -31,6 +31,7 @@ import SelectButton from "./components/SelectButton/SelectButton.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
 import EditableField from "./components/EditableField/EditableField.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
+import DisplayInformation from "./components/DisplayInformation/DisplayInformation.vue";
 import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
 
 export {
@@ -67,5 +68,6 @@ export {
   SelectButton,
   EditableField,
   CustomTextArea,
+  DisplayInformation,
   ConfirmationDialog
 };

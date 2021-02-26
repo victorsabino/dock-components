@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: "Toggle",
   data() {
     return {
       isToggled: this.defaultToggle

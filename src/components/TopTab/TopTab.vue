@@ -46,8 +46,6 @@ export default {
     },
     activeClass: function(key) {
       let _class = "topTabTitle";
-      console.log('key ', key)
-      console.log('active ', this.active, this.tabKey)
       if (key !== this.active) _class += " topTabTitleInactive";
       return _class;
     }

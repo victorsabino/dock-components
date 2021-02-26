@@ -6,13 +6,13 @@ window.MutationObserver = require("mutation-observer");
 test('test if icon is rendering', async () => {
   render(Button);
 
-  expect(screen.queryByText('add_circle_outline')).toBeTruthy();
+  expect(screen.queryByTestId('mainButton')).toBeTruthy();
 })
 
 test('test if icon is not rendering', async () => {
   render(Button)
 
-  expect(screen.queryByText('no_icon')).toBeFalsy();
+  expect(screen.queryByTestId('not_mainButton')).toBeFalsy();
 })
 
 test('test if icon is swap', async () => {

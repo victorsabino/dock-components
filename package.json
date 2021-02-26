@@ -1,6 +1,6 @@
 {
   "name": "dock-components",
-  "version": "3.1.44",
+  "version": "3.1.45",
   "author": "dockmarket",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -21,7 +21,8 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/index.min.js",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "test": "jest"
+    "test": "jest",
+    "publish-test": "yarn jest && yarn publish"
   },
   "files": [
     "dist/*",
@@ -32,7 +33,7 @@
     "hooks": {}
   },
   "dependencies": {
-    "@storybook/addon-docs": "^6.0.21",
+    "@storybook/addon-docs": "^6.1.19",
     "@vue/cli-plugin-unit-jest": "^4.5.3",
     "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
@@ -49,6 +50,7 @@
     "rollup-plugin-uglify-es": "0.0.1",
     "rollup-plugin-vue": "^4.7.2",
     "template-compiler": "^1.2.1",
+    "v-money": "^0.8.1",
     "vue": "^2.6.11",
     "vue-ctk-date-time-picker": "^2.5.0",
     "vue-docgen-api": "^4.32.1",
@@ -63,10 +65,10 @@
   },
   "devDependencies": {
     "@rollup/plugin-url": "^6.0.0",
-    "@storybook/addon-knobs": "^6.0.22",
-    "@storybook/addons": "^6.0.26",
-    "@storybook/theming": "^6.0.26",
-    "@storybook/vue": "^5.3.19",
+    "@storybook/addon-knobs": "^6.1.19",
+    "@storybook/addons": "^6.1.19",
+    "@storybook/theming": "^6.1.19",
+    "@storybook/vue": "^6.1.19",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/vue": "^5.0.4",
     "@vue/cli-plugin-babel": "~4.4.0",
