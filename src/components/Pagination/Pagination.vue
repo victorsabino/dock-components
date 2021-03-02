@@ -21,7 +21,7 @@
           <span> {{ page }} </span>
         </div>
         <div class="page">
-          <span v-if="parseInt(current) + 8 < length"> ... </span>
+          <span v-if="parseInt(current) + middlePagesCount < length"> ... </span>
           <span :class="length === current ? 'highlight' : ''"  @click="() => setPage(this.length)">{{
             length
           }}</span>
@@ -40,8 +40,12 @@ export default {
   props: {
     length: {
       type: Number,
-      default: 10,
+      default: 900,
     },
+    middlePagesCount: {
+      type: Number,
+      default: 8
+    }
   },
   data() {
     return {
@@ -50,7 +54,7 @@ export default {
   },
   computed: {
     shouldShowFirstDot () {
-      if (this.length < 8) return false;
+      if (this.length < this.middlePagesCount) return false;
       return this.current > 2;
     },
   },
@@ -74,27 +78,29 @@ export default {
       let arr = [];
       const _current = parseInt(this.current);
       let num;
-       if (this.length <= 8 ) {
-        for (let i = 0; i < 8; i++) {
+       if (this.length <= this.middlePagesCount ) {
+        for (let i = 0; i < this.middlePagesCount; i++) {
           arr.push(i + 2);
         }
       }
       else if (_current > 1) {
-        num = this.length - 8;
-        for (let i = 0; i < Math.min(this.length, 8); i++) {
-          arr.push(_current + i - Math.min(4, _current - 2));
+        num = this.length - this.middlePagesCount;
+        for (let i = 0; i < Math.min(this.length, this.middlePagesCount); i++) {
+          arr.push(_current + i - Math.min(Math.trunc(this.middlePagesCount / 2), _current - 2));
+          console.log("_current > 1", _current + i - Math.min(4, _current - 2))
+          console.log("_current > 1", _current + i - Math.min(Math.trunc(this.middlePagesCount / 2), _current - 2))
         }
       }
-      else if (_current + 8 <= this.length) {
-        num = this.length - 8;
-        for (let i = 0; i < Math.min(this.length, 8); i++) {
+      else if (_current + this.middlePagesCount <= this.length) {
+        num = this.length - this.middlePagesCount;
+        for (let i = 0; i < Math.min(this.length, this.middlePagesCount); i++) {
           arr.push(_current + i);
         }
       } else {
-        num = this.length - 8;
+        num = this.length - this.middlePagesCount;
 
-        for (let i = 0; i < Math.min(this.length, 8); i++) {
-          num = this.length - 8 + i;
+        for (let i = 0; i < Math.min(this.length, this.middlePagesCount); i++) {
+          num = this.length - this.middlePagesCount + i;
           arr.push(num);
         }
       }
