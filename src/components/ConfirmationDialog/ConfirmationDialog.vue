@@ -23,6 +23,7 @@
           :shadow="buttonCancelStyle.shadow"
           :border="buttonCancelStyle.border"
           :color="buttonCancelStyle.color"
+          :width="buttonCancelWidth"
           :icon="buttonCancelIcon"
           v-if="canCancel"
           :onClick="onCancel"
@@ -82,6 +83,10 @@ export default {
       type: String
     },
     confirmationWidth: {
+      default: "200px",
+      type: String
+    },
+    buttonCancelWidth: {
       default: "200px",
       type: String
     }

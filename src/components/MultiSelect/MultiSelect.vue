@@ -180,7 +180,7 @@ export default {
   font-weight: 400;
 }
 .multiselect__content-wrapper {
-  min-height: 201px;
+  /* min-height: 201px; */
   margin-top:-2px;
   z-index: 2;
   box-shadow: 0 2px 1px #d8d1c4;

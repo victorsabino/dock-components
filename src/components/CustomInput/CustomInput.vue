@@ -2,7 +2,7 @@
   <md-field class="customInput" :md-counter="counter" data-testid="customInput">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
-      v-if="mask === true"
+      v-if="mask != null"
       v-mask="mask"
       :placeholder="placeholder"
       :disabled="disabled"
@@ -108,8 +108,8 @@ export default {
       default: false
     },
     mask: {
-      type: Object,
-      default: () => {}
+      type: Array,
+      default: null
     },
     blur: {
       default: () => {},
@@ -125,7 +125,7 @@ export default {
     },
     money: {
       type: Boolean,
-      dafault: true
+      dafault: false
     }
   },
   methods: {},
