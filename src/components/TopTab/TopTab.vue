@@ -6,6 +6,7 @@
       class="topTab"
       :class="activeClass(index)"
       @click="() => setActive(index)"
+      :tabKey="tabKey"
     >
       <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
       <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
