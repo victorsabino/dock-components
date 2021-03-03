@@ -1,11 +1,11 @@
 <template>
   <div class="lateralMenuWrapper">
-    <div class="itemLateralMenu" v-for="(item, index) in itens" :key="index" @click="setActive(index)" :class="activeClass(index)">
+    <div class="itemLateralMenu" v-for="(item, index) in itens" :key="index" @click="setActive(index)" :class="activeClass(index)" :tabKey="tabKey">
       <div class="itemLateralName">
         <span>
           <md-icon class="itemLateralIcon">{{item.icon}}</md-icon>
         </span>
-        {{item.name}} 
+        {{item.name}}
         <span v-if="item.quantity">
           ({{padLeft(item.quantity, 2)}})
         </span>
@@ -21,6 +21,10 @@ export default {
       type: Array,
       default: () => []
     },
+    tabKey: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {
@@ -41,6 +45,12 @@ export default {
       return Array(n-String(nr).length+1).join(str||'0')+nr;
     }
   },
+  mounted () {
+    this.active = parseInt(this.tabKey);
+  },
+  updated () {
+    this.active = parseInt(this.tabKey);
+  }
 }
 </script>
 

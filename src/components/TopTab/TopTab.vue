@@ -54,6 +54,7 @@ export default {
     this.active = parseInt(this.tabKey);
   },
   updated () {
+    console.log('updated ', this.tabKey)
     this.active = parseInt(this.tabKey);
   }
 };
