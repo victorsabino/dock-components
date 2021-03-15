@@ -4,6 +4,7 @@ import VueMaterial from "vue-material";
 import VueTheMask from "vue-the-mask";
 import Card from "./components/Card/Card.vue";
 import Rain from "./components/Rain/Rain.vue";
+import List from "./components/List/List.vue";
 import Wind from "./components/Wind/Wind.vue";
 import Logo from "./components/Logo/Logo.vue";
 import Money from "./components/Money/Money.vue";
@@ -67,6 +68,7 @@ module.exports = {
     Vue.component('dock-components', Logo);
     Vue.component('dock-components', Card);
     Vue.component('dock-components', Rain);
+    Vue.component('dock-components', List);
     Vue.component('dock-components', Wind);
     Vue.component('dock-components', Modal);
     Vue.component('dock-components', Badge);

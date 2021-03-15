@@ -2,6 +2,7 @@ import Logo from "./components/Logo/Logo.vue";
 import Card from "./components/Card/Card.vue";
 import Rain from "./components/Rain/Rain.vue";
 import Wind from "./components/Wind/Wind.vue";
+import List from "./components/List/List.vue";
 import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import Money from "./components/Money/Money.vue";
@@ -38,6 +39,7 @@ export {
   Logo,
   Card,
   Rain,
+  List,
   Wind,
   Modal,
   Money,
