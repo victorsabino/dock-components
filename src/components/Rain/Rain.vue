@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<label class="font12 openSans darkBlue formLabel">{{ label }}</label>
+		<label class="font16 openSans darkBlue formLabel">{{ label }}</label>
 		<div class="rainWrapper">
 			<div class="min">
 				<div v-for="gota in gotas" :key="gota.id">
@@ -74,14 +74,14 @@ export default {
 	height: 13px;
 }
 .value {
-	margin-top: 13px;
-	margin-left: 10px;
-	color: #10434F;
-	font-size: 16px;
+	margin-left: 5px;
+	color: #00000099;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 }
 .formLabel {
   margin-bottom: 0;
   margin-top: 10px;
+	font-weight: 600;
 }
 </style>

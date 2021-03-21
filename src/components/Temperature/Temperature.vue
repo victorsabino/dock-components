@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<label class="font12 openSans darkBlue formLabel">{{ label }}</label>
+		<label class="font16 openSans darkBlue formLabel">{{ label }}</label>
 		<div class="temperatureWrapper">
 			<div class="min">
 				<img :src="minIcon">
@@ -54,8 +54,8 @@ export default {
 }
 .min, .max {
 	display: inherit;
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 .min img {
 	margin-top: 11px;
@@ -70,14 +70,13 @@ export default {
 	width: 18px;
 }
 .value {
-	margin-top: 13px;
-	margin-left: 8px;
-	color: #10434F;
-	font-size: 16px;
+	color: #00000099;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 }
 .formLabel {
   margin-bottom: 0;
   margin-top: 10px;
+	font-weight: 600;
 }
 </style>

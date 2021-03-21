@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<label class="font12 openSans darkBlue formLabel">{{ label }}</label>
+		<label class="font16 openSans darkBlue formLabel">{{ label }}</label>
 		<div class="windWrapper">
-			<div class="min">
+			<div class="direction">
 				<img :src="directionIcon" :style="angle">
 				<div class="value">{{direction}} - {{speed}}km/h</div>
 			</div>	
@@ -35,21 +35,21 @@ export default {
 	computed: {
 		angle() {
 			if(this.direction === "N") {
-				return 'transform: rotate(225deg); margin-top: 18px; margin-left: 6px;' ;	
+				return 'transform: rotate(225deg); margin-top: 5px;' ;	
 			}else if(this.direction === "NW") {
-				return "transform: rotate(180deg); margin-top: 16px; margin-left: 9px;" ;	
+				return "transform: rotate(180deg); margin-top: 4px; margin-left: 9px;" ;	
 			} else if(this.direction === "NE") {
-				return "transform: rotate(265deg);margin-top: 18px;margin-left: 6px;" ;	
+				return "transform: rotate(265deg);margin-top: 5px;margin-left: 6px;" ;	
 			} else if(this.direction === "S") {
-				return "transform: rotate(45deg); margin-top: 14px; margin-left: 7px;";	
+				return "transform: rotate(45deg); margin-top: 2px; margin-left: 7px;";	
 			} else if(this.direction === "SW") {
-				return "transform: rotate(90deg); margin-top: 16px; margin-left: 9px;";	
+				return "transform: rotate(90deg); margin-top: 3px; margin-left: 9px;";	
 				} else if(this.direction === "SE") {
-				return "transform: rotate(0deg); margin-top: 16px; margin-left: 9px;";	
+				return "transform: rotate(0deg); margin-top: 3px; margin-left: 9px;";	
 			}else if(this.direction === "W") {
-				return "transform: rotate(135deg); margin-top: 17px; margin-left: 9px;";	
+				return "transform: rotate(135deg); margin-top: 4px; margin-left: 9px;";	
 			}else if(this.direction === "E") {
-				return "transform: rotate(-45deg); margin-top: 17px; margin-left: 9px;";	
+				return "transform: rotate(-45deg); margin-top: 4px; margin-left: 9px;";	
 			}
 		}
 	},
@@ -65,12 +65,11 @@ export default {
 	display: flex;
 	margin-top: 3px;
 }
-.min {
+.direction {
 	display: flex;
-    margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
 }
-.min img {
+.direction img {
 	margin-top: 2px;
 	margin-left: 4px;
 	margin-right: 8px;
@@ -78,14 +77,13 @@ export default {
 	width: 13px;
 }
 .value {
-	margin-top: 13px;
-	margin-left: 10px;
-	color: #10434F;
-	font-size: 16px;
+	color: #00000099;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 }
 .formLabel {
   margin-bottom: 0;
   margin-top: 10px;
+	font-weight: 600;
 }
 </style>

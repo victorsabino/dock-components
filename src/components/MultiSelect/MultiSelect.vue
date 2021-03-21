@@ -12,6 +12,7 @@
       open-direction="below"
       :custom-label="customLabel"
       :show-labels="false"
+      :multiple="multiple"
       :disabled="disabled"
       @search-change="searchChange"
     >
@@ -58,6 +59,10 @@ export default {
       type: Array
     },
     searchable: {
+      default: false,
+      type: Boolean
+    },
+    multiple: {
       default: false,
       type: Boolean
     },
