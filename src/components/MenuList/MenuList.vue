@@ -9,7 +9,7 @@
           <div v-if="item" @click="() => _click(item.onClick)" class="rowWrapper">
             <div class="flex">
               <div class="iconWrapper" v-if="item.icon">
-                <md-icon style="color: #e34642 !important">{{item.icon}}</md-icon>
+                <md-icon>{{item.icon}}</md-icon>
               </div>
               <div class="menuListName">{{item.name}}</div>
             </div>
