@@ -1,6 +1,8 @@
 <template>
   <div class="badgeRoot" data-testid="badge">
-    <Ellipsis :name="name" width="auto"/>
+    <div class="textWrapper" @click="onClick">
+      <Ellipsis :name="name" width="auto"/>
+    </div>
     <div @click="onDelete" data-testid="badgeDelete" class="closeWrapper">
       <md-icon>close</md-icon>
     </div>
@@ -15,6 +17,10 @@ export default {
       type: String,
       default: ""
     },
+    onClick: {
+      type: Function,
+      default: () => {}
+    },  
     onDelete: {
       type: Function,
       default: () => () => {}
@@ -55,5 +61,13 @@ export default {
   top: -5px;
   left: -4px;
   min-width: 20px;
+}
+.textWrapper {
+  width: 89% !important
+}
+</style>
+<style>
+.badgeRoot .textWrapper .ellipsis{
+  width: auto !important
 }
 </style>
