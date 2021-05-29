@@ -10,7 +10,7 @@
     :scrollable="true"
   >
     <div class="modalContainer">
-      <div class="close" @click="close">
+      <div class="close" @click="close" v-if="!hideClose">
         <md-icon class="iconColor" :style="`color: ${closeColor} !important`">close</md-icon>
       </div>
       <div>
@@ -47,6 +47,10 @@ export default {
     close: {
       type: Function,
       default: () => {}
+    },
+    hideClose: {
+      type: Boolean,
+      default: false
     },
     beforeOpen: {
       type: Function,
