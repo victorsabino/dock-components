@@ -59,7 +59,7 @@ export default {
       formatMoney: {
         decimal: ",",
         thousands: ".",
-        prefix: this.currency === "BRL" ? "R$ " : "US$ ",
+        prefix: this.currency === "USD" ? "US$ " : "R$ ",
         precision: 2,
         masked: false
       }
