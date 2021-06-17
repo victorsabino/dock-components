@@ -59,7 +59,7 @@ export default {
       formatMoney: {
         decimal: ",",
         thousands: ".",
-        prefix: "R$ ",
+        prefix: this.currency === "USD" ? "US$ " : "R$ ",
         precision: 2,
         masked: false
       }
@@ -73,6 +73,9 @@ export default {
     maxDecimal: {
       type: String,
       default: "999"
+    },
+    currency: {
+      type: String,
     },
     icon: {
       type: String,
