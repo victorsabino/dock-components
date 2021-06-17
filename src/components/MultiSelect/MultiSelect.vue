@@ -14,6 +14,7 @@
       :show-labels="false"
       :multiple="multiple"
       :disabled="disabled"
+      :internal-search="internal-search"
       @search-change="searchChange"
     >
       <template slot="option" slot-scope="props">
@@ -82,6 +83,10 @@ export default {
       type: Boolean,
       default: false
     },
+    "internal-search": {
+      type: Boolean,
+      default: true
+    }
   },
   components: {
     Multiselect,
