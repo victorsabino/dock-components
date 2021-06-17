@@ -14,7 +14,7 @@
       :show-labels="false"
       :multiple="multiple"
       :disabled="disabled"
-      :internal-search="internal-search"
+      :internal-search="internalSearch"
       @search-change="searchChange"
     >
       <template slot="option" slot-scope="props">
@@ -83,7 +83,7 @@ export default {
       type: Boolean,
       default: false
     },
-    "internal-search": {
+    internalSearch: {
       type: Boolean,
       default: true
     }
