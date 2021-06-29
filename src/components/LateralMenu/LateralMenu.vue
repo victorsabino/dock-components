@@ -58,7 +58,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .lateralMenuWrapper {
-  width: 250px;
+  width: 210px;
   border-radius: 4px;
   overflow: auto;
 }
@@ -84,7 +84,7 @@ export default {
 .itemLateralName {
   font-family: Raleway;
   color: #F4F1EB;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   top: 50%;
   transform: translate(0px, -50%);
