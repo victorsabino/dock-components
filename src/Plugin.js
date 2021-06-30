@@ -27,6 +27,7 @@ import TimeInput from "./components/TimeInput/TimeInput.vue";
 import DateInput from "./components/DateInput/DateInput.vue";
 import Terminals from "./components/Terminals/Terminals.vue";
 import ButtonIcon from "./components/ButtonIcon/ButtonIcon.vue";
+import Breadcrumb from "./components/Breadcrumb/Breadcrumb.vue";
 import Pagination from "./components/Pagination/Pagination.vue";
 import InputLabel from "./components/InputLabel/InputLabel.vue";
 import MultiSelect from "./components/MultiSelect/MultiSelect.vue";
@@ -37,7 +38,7 @@ import SelectButton from "./components/SelectButton/SelectButton.vue";
 import EditableField from "./components/EditableField/EditableField.vue";
 import CustomTextArea from "./components/CustomTextArea/CustomTextArea.vue";
 import DisplayInformation from "./components/DisplayInformation/DisplayInformation.vue";
-import ConfirmationDialog from "./components/ConfirmationDialog/ConfirmationDialog.vue";
+import DisplayInformation from "./components/DisplayInformation/DisplayInformation.vue";
 
 module.exports = {
   install: function (Vue, options) {
@@ -90,6 +91,7 @@ module.exports = {
     Vue.component('dock-components', DateInput);
     Vue.component('dock-components', DateForm);
     Vue.component('dock-components', ButtonIcon);
+    Vue.component('dock-components', Breadcrumb);
     Vue.component('dock-components', Pagination);
     Vue.component('dock-components', InputLabel);
     Vue.component('dock-components', LateralMenu);

@@ -5,20 +5,23 @@
     :name="name"
     @before-open="beforeOpen"
     @before-close="beforeClose"
+    @opened="event => openedWithOverlayCalc(event)"
     height="auto"
     :clickToClose="clickToClose"
-    :scrollable="true"
+    :scrollable="scrollable"
   >
-    <div class="modalContainer">
-      <div class="close" @click="close" v-if="!hideClose">
-        <md-icon class="iconColor" :style="`color: ${closeColor} !important`">close</md-icon>
-      </div>
-      <div>
-        <div v-if="hasLogo" class="logo">
-          <Logo :logoImg="logoFull"/>
+    <div class="modalWrapper">
+      <div class="modalContainer">
+        <div class="close" @click="close" v-if="!hideClose">
+          <md-icon class="iconColor" :style="`color: ${closeColor} !important`">close</md-icon>
         </div>
+        <div>
+          <div v-if="hasLogo" class="logo">
+            <Logo :logoImg="logoFull"/>
+          </div>
+        </div>
+        <slot name="content" />
       </div>
-      <slot name="content" />
     </div>
   </modal>
 </template>
@@ -74,9 +77,29 @@ export default {
     closeColor: {
       type: String,
       default: "#10434F"
+    },
+    opened: {
+      type: Function,
+      default: () => {}
+    },
+    scrollable: {
+      type: Boolean,
+      default: true
     }
   },
-  components: { Logo }
+  components: { Logo },
+  methods: {
+    openedWithOverlayCalc(event) {
+      this.opened(event);
+      const container = document.querySelector(`[data-modal="${this.name}"]`).parentElement;
+      const modalHeight = container.scrollHeight;
+      const innerHeight = window.innerHeight;
+
+      if(modalHeight > innerHeight) {
+        container.children[0].setAttribute('style', `height: ${modalHeight+100}px !important`)
+      }
+    }
+  },
 };
 </script>
 <style scoped>
@@ -130,7 +153,7 @@ export default {
 </style>
 <style>
 .customModal {
-  overflow: visible !important;
+  overflow: visible;
   top: 150px;
 }
 </style>
