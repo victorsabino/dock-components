@@ -58,7 +58,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .lateralMenuWrapper {
-  width: 210px;
+  width: 225px;
   border-radius: 4px;
   overflow: auto;
 }
