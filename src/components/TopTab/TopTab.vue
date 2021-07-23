@@ -14,6 +14,9 @@
       <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
       </div>
+      <div v-if="tab.quantity" :class="activeClass(index)">
+        ( {{ tab.quantity }} )
+      </div>
     </div>
   </div>
 </template>

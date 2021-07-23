@@ -12,6 +12,7 @@ import Badge from "./components/Badge/Badge.vue";
 import Modal from "./components/Modal/Modal.vue";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
+import Drawer from "./components/Drawer/Drawer.vue";
 import Select from "./components/Select/Select.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
@@ -77,6 +78,7 @@ module.exports = {
     Vue.component('dock-components', Select);
     Vue.component('dock-components', Status);
     Vue.component('dock-components', Button);
+    Vue.component('dock-components', Drawer);
     Vue.component('dock-components', Toggle);
     Vue.component('dock-components', TopTab);
     Vue.component('dock-components', Loading);

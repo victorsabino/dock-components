@@ -8,6 +8,7 @@ import Modal from "./components/Modal/Modal.vue";
 import Money from "./components/Money/Money.vue";
 import Status from "./components/Status/Status.vue";
 import Button from "./components/Button/Button.vue";
+import Drawer from "./components/Drawer/Drawer.vue";
 import Select from "./components/Select/Select.vue";
 import Toggle from "./components/Toggle/Toggle.vue";
 import TopTab from "./components/TopTab/TopTab.vue";
@@ -50,6 +51,7 @@ export {
   Status,
   Select,
   Button,
+  Drawer,
   Weather,
   Loading,
   Ellipsis,
