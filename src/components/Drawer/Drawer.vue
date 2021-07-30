@@ -58,33 +58,31 @@ export default {
   data() {
     return {
       showNavigation: false,
-      eventAdded: false,
     }
   },
   methods: {
-    toggleDrawer() {
-      this.showNavigation = !this.showNavigation
+    toggleDrawer(toggle) {
+      this.showNavigation = toggle
       this.$emit('isActive', this.showNavigation)
     },
     actionHover() {
-      if(this.eventAdded) {
-        this.eventAdded = false
-      }
-      this.toggleDrawer()
+      setTimeout(() => {
+          this.toggleDrawer(true)
+      }, 100)
+    },
+    actionLeave() {
+      this.toggleDrawer(false)
     },
     callback(mutationsList, observer) {
       mutationsList.forEach(mutation => {
         if (mutation.type === 'childList') {
           const drawerWrapper = document.querySelector('#drawer-wrapper');
           if(drawerWrapper.children.length === 3){
-              drawerWrapper.children[1].addEventListener('mouseleave', () => {
-                if(this.eventAdded === false) {
-                 this.actionHover()
-                  this.eventAdded = true
-                }
+              drawerWrapper.children[2].addEventListener('mouseenter', () => {
+                  this.actionLeave()
               })
-            }
           }
+        }
       })
     }
   },
