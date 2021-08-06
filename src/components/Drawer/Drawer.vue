@@ -1,7 +1,11 @@
 <template>
   <div class="drawer-wrapper" id="drawer-wrapper">
     <md-button class="md-icon-button" id="menuButton" @click="toggleDrawer" @mouseenter="actionHover">
-      <img :src="logo" style="font-size: 40px !important; color: #4eb9b1 !important;"/>
+      <img 
+        :src="logo" 
+        v-if="logo" 
+        style="font-size: 40px !important; color: #4eb9b1 !important; position: absolute; top: 0px"
+      />
       <div class="links-preview">
         <div v-for="(link, index) in links" :key="link+index">
           <img alt="svg icon" :src="link.icon" v-if="link.img" class="svgFilter"/>
@@ -37,7 +41,7 @@ export default {
     },
     logo: {
       type: String,
-      default: '../../assets/logo.svg'
+      default: null
     },
     links: {
       type: Array,
@@ -127,7 +131,7 @@ export default {
   min-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 16px;
+  margin-top: 18px;
   height: 100% !important;
   color: unset !important;
   z-index: 9 !important;
@@ -151,7 +155,7 @@ export default {
   padding: 0 !important;
 }
 .links-preview {
-  margin-top: 20px;
+  margin-top: 61px;
 }
 
 .links-preview div{
