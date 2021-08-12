@@ -7,8 +7,8 @@
         style="font-size: 40px !important; color: #4eb9b1 !important; position: absolute; top: 0px"
       />
       <div class="links-preview">
-        <div v-for="(link, index) in links" :key="link+index">
-          <img alt="svg icon" :src="link.icon" v-if="link.img" class="svgFilter"/>
+        <div v-for="(link, index) in links" :key="link+index" @click="link.action">
+          <img alt="svg icon" :src="link.icon" v-if="link.img" class="svgFilter drawer-icon" />
           <md-icon v-else style="color: #4EB9B1 !important">{{ link.icon }}</md-icon>
         </div>
         
@@ -23,7 +23,7 @@
         v-for="(link, index) in links"
         :key="link+index"
       >
-        <md-list-item @click="link.action" :class="`${link.subLabel ? 'userName' : ''}`">
+        <md-list-item @click="link.action" :class="`${link.subLabel ? 'userName' : ''} drawer-label`">
           <span class="md-list-item-text">{{ link.label }}</span>
           <span class="md-list-item-text" v-if="link.subLabel">{{ link.subLabel }}</span>
         </md-list-item>

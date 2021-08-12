@@ -110,9 +110,8 @@ export default {
   width: 100%;
   height: 1px;
   border-bottom: 1px solid #d8d1c4;
-  border-top: 1px solid #ffffff;
-  margin-top: 3px;
-  margin-bottom: 6px;
+  border-top: 1px solid #fff;
+  position: absolute;
 }
 .fakebg {
   position: fixed;
@@ -128,8 +127,17 @@ export default {
 .rowWrapper {
   width: 100%;
   flex-direction: column;
+  position: relative;
 }
 .flex{
   cursor: pointer;
+}
+@media only screen and (max-width: 900px) {
+  .file {
+    height: 100% !important
+  }
+  .menuListName {
+    height: 27px;
+  }
 }
 </style>
