@@ -116,3 +116,4 @@ The configuration only reads from jest.config.js, don't put any jest configurati
 
 - [@Victor Sabino](https://github.com/victorsabino) - Creator & Collaborator
 - [@Lucas Estrela](https://github.com/lucasestreladeoliveira) - Collaborator
+- [@Fernando Valente](https://github.com//fernandovalente) - Greatest Tech Lead to Ever Live
