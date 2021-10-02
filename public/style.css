@@ -1,6 +1,5 @@
 html {
   height: 100% !important;
-  background-color: #103a4f !important;
   position: relative;
 }
 .raleway {
@@ -61,11 +60,9 @@ input:invalid {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #103a4f !important;
 }
 
 body {
-  background-color: #10434f;
   height: 100%;
 }
 
@@ -80,7 +77,7 @@ body {
   visibility: hidden;
 }
 .md-icon.md-theme-default.md-icon-font {
-  color: #4eb9a7 !important;
+  color: #4eb9a7;
 }
 
 .vm--container {

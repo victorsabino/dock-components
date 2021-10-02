@@ -1,6 +1,6 @@
 import SelectButton from "./SelectButton.vue";
 
-export default { title: "SelectButton" };
+export default { title: "Components/Select/SelectButton", component: SelectButton };
 
 export const SelectButtonDateForm = () => ({
   components: { SelectButton },

@@ -77,11 +77,7 @@ export default {
       `;
     },
     onSelect (option) {
-      console.log('teste')
       this.$emit("change", val);
-    },
-    logProps: function (props) {
-      console.log("props ", props);
     },
   },
   beforeMount() {
@@ -116,7 +112,6 @@ export default {
       if (this.selected == null) this.selected = val;
     },
     value: function (val) {
-      console.log('teste')
       this.$emit("change", this.value);
       if (this.reset) setTimeout(() => (this.selected = this.startValue), 200);
     },

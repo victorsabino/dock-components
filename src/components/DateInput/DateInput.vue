@@ -1,17 +1,19 @@
 <template>
   <div class="dateInput" ref="dateInput">
     <md-datepicker
-      v-model="vmodel"
+      v-model="value"
       md-immediately
       :md-disabled-dates="disabled"
       :md-open-on-focus="false"
       :dir="right ? 'rtl' : ''"
       :class="right ? 'right' : 'left'"
       class="iconFill"
+      @input="emitInput"
     >
       <label
+        ref="label"
         :class="[
-          shouldHideLabel , 
+          shouldHideLabel,
           right ? 'rightLabel' : ''
         ]"
       >dd/mm/aaaa</label>
@@ -24,25 +26,58 @@ import { ptBR } from "vuejs-datepicker/dist/locale";
 import moment from "moment";
 
 export default {
-  props: [
-    "label",
-    "icon",
-    "value",
-    "type",
-    "startDate",
-    "error",
-    "disableDate",
-    "right",
-  ],
+  props: {
+    row: {
+      type: String,
+      default:''
+    },
+    right: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: Boolean,
+      default: false
+    },
+    value: {
+      type: Date,
+      default: undefined
+    },
+    disableDate: {
+      type: Function,
+      default: moment().subtract(3, "years")
+    },
+  },
   methods: {
-    shouldHideLabel: function() {
-      if (this.value === null) return "";
-      return "hide";
+    data: function () {
+      return {
+        ptBR,
+        timer: undefined,
+        val: "",
+      };
     },
     disabled(date) {
-      if (!this.disableDate) return false;
+      if (!this.disableDate || this.value === "") return false;
       return moment(date) < moment(this.disableDate);
-    }
+    },
+    emitValue(val) {
+      if (this.timer) clearTimeout();
+      this.timer = setTimeout(() => {
+        this.$emit("input", val);
+      }, 100);
+    },
+    formatDate(str) {
+      if (!str) return;
+      let input = str;
+
+      var len = str.length;
+      if (!/^\d+$/.test(str[len - 1])) return str.slice(0, len - 1);
+      if (len >= 10) return str.slice(0, 10);
+      if (len === 2) input += "/";
+      if (len === 5) input += "/";
+
+      return input;
+    },
   },
   components: {},
   computed: {
@@ -53,39 +88,36 @@ export default {
       return "";
     },
     shouldHideLabel() {
-      console.log('value ', this.value)
-      if (this.value === null) return "";
-      return (this.value)
-        ? "hide"
-        : "";
+      if (!this.value) return "dd/MM/yyyy";
+      this.emitValue(this.value);
+      return "hide";
     },
-    vmodel: {
-      get() {
-        return this.value
-      },
-      set(val) {
-        this.$emit('input', val)
-      }
-    }
-  },
-  data: function() {
-    return {
-      value: null,
-      ptBR
-    };
   },
   beforeMount() {
-    this.$material.locale.dateFormat = 'dd/MM/yyyy'
+    this.$material.locale.dateFormat = "dd/MM/yyyy";
   },
-  mounted () {
-    this.$refs.dateInput.querySelector('input').addEventListener(
-      'click',
-      (e) => {
-        this.$refs.dateInput.querySelector('input').focus();
+  mounted() {
+    const that = this;
+    this.$refs.dateInput
+      .querySelector("input")
+      .addEventListener("click", (e) => {
+        this.$refs.dateInput.querySelector("input").focus();
         e.stopPropagation();
-      }
-    );
-  }
+      });
+    this.$refs.dateInput
+      .querySelector("input")
+      .addEventListener("input", (e) => {
+        let v = "";
+        let _date = this.$refs.dateInput.querySelector("input").value;
+        if (_date.length > 0) that.$refs.label.style.display = "none";
+        else that.$refs.label.style.display = "block";
+
+        if (!e.data) return;
+        const _formatedDate = that.formatDate(_date);
+
+        that.$refs.dateInput.querySelector("input").value = _formatedDate;
+      });
+  },
 };
 </script>
 
@@ -119,6 +151,7 @@ export default {
 }
 .rightLabel {
   left: 8px !important;
+  top: 14px !important;
 }
 .md-field label {
   top: 20px;
@@ -143,10 +176,8 @@ export default {
   font-family: Open Sans, sans-serif;
   z-index: 1;
 }
-.dateInput input i {
-  top: 25px;
-  position: absolute;
-  right: 10px;
+.dateInput i {
+  margin-top: 0 !important;
 }
 .dateInput input::after,
 .dateInput input::before {

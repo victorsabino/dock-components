@@ -5,20 +5,23 @@
     :name="name"
     @before-open="beforeOpen"
     @before-close="beforeClose"
+    @opened="event => openedWithOverlayCalc(event)"
     height="auto"
     :clickToClose="clickToClose"
-    :scrollable="true"
+    :scrollable="scrollable"
   >
-    <div class="modalContainer">
-      <div class="close" @click="close">
-        <md-icon style="color: #10434F !important">close</md-icon>
-      </div>
-      <div>
-        <div v-if="hasLogo" class="logo">
-          <Logo :logoImg="logoFull"/>
+    <div class="modalWrapper">
+      <div class="modalContainer">
+        <div class="close" @click="close" v-if="!hideClose">
+          <md-icon class="iconColor" :style="`color: ${closeColor} !important`">close</md-icon>
         </div>
+        <div>
+          <div v-if="hasLogo" class="logo">
+            <Logo :logoImg="logoFull"/>
+          </div>
+        </div>
+        <slot name="content" />
       </div>
-      <slot name="content" />
     </div>
   </modal>
 </template>
@@ -48,6 +51,10 @@ export default {
       type: Function,
       default: () => {}
     },
+    hideClose: {
+      type: Boolean,
+      default: false
+    },
     beforeOpen: {
       type: Function,
       default: () => {}
@@ -66,9 +73,33 @@ export default {
     },
     logoFull: {
       default: logoImg
+    },
+    closeColor: {
+      type: String,
+      default: "#10434F"
+    },
+    opened: {
+      type: Function,
+      default: () => {}
+    },
+    scrollable: {
+      type: Boolean,
+      default: true
     }
   },
-  components: { Logo }
+  components: { Logo },
+  methods: {
+    openedWithOverlayCalc(event) {
+      this.opened(event);
+      const container = document.querySelector(`[data-modal="${this.name}"]`).parentElement;
+      const modalHeight = container.scrollHeight;
+      const innerHeight = window.innerHeight;
+
+      if(modalHeight > innerHeight) {
+        container.children[0].setAttribute('style', `height: ${modalHeight+100}px !important`)
+      }
+    }
+  },
 };
 </script>
 <style scoped>
@@ -79,7 +110,7 @@ export default {
 .modalContainer {
   overflow: visible;
   background-color: #f4f1eb !important;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 4px 4px;
   color: #f4f1eb;
   height: auto;
   top: 30px;
@@ -118,10 +149,11 @@ export default {
   margin-right: auto;
   left: 0 !important;
 }
+
 </style>
 <style>
 .customModal {
-  overflow: visible !important;
-  top: 150px !important;
+  overflow: visible;
+  top: 150px;
 }
 </style>

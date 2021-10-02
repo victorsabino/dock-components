@@ -21,27 +21,58 @@
 <script>
 export default {
   props: {
-    label: {},
-    "v-modal": {},
-    name: {},
-    id: {},
-    currentValue: null,
-    backgroundColor: {},
+    label: {
+      type: String,
+      default: ''
+    },
+    name: {
+      type: String,
+      default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    },
+    currentValue: {
+      type: String,
+      default: null
+    },
+    backgroundColor: {
+      type: String,
+      default: ''
+    },
     options: {
       default: () => [],
       type: Array
     },
-    objKey: {},
-    shadow: {},
-    showKey: {},
-    disabled: {},
+    objKey: {
+      type: String,
+      default: null
+    },
+    shadow: {
+      type: String,
+      default: ''
+    },
+    showKey: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
     reset: {
-      default: () => false
+      type: Boolean,
+      default: false
     },
     startValue: {
-      default: () => null
+      type: String,
+      default: null
     },
-    color: {}
+    color: {
+      type: String,
+      default: ''
+    }
   },
 
   data: function() {
@@ -106,7 +137,7 @@ export default {
   color: #104550 !important;
   -webkit-text-fill-color: #104550;
 
-  background-color: #E8E3DA;
+  background-color: #EBE8E3;
   border-radius: 4px;
   box-shadow: 0px 2px 1px #dcd7cd;
   max-width: 90px;

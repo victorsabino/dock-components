@@ -1,17 +1,33 @@
 <template>
-  <md-field class="customInput">
+  <md-field class="customInput" :md-counter="counter" data-testid="customInput">
     <label :style="style" :class="shouldHideLabel">{{ label }}</label>
     <md-input
-      v-if="mask"
+      v-if="mask != null"
       v-mask="mask"
       :placeholder="placeholder"
-      :disabled="disabled === 'true'"
+      :disabled="disabled"
       v-bind:type="type"
       v-model="currentValue"
       v-decimal="maxDecimal"
-      :maxlength="maxLength"
-      :md-counter="maxLength"
+      :maxlength="maxlength"
       @blur="blur"
+      @keyup.enter.native="onEnter"
+      :data-testid="currentValue"
+    />
+    <md-input
+      v-else-if="money === true"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      v-bind:type="type"
+      v-money="formatMoney"
+      v-model.lazy="currentValue"
+      :step="step"
+      :maxlength="maxlength"
+      :pattern="pattern"
+      v-decimal="maxDecimal"
+      @blur="blur"
+      @keyup.enter.native="onEnter"
+      :data-testid="currentValue"
     />
     <md-input
       v-else
@@ -20,63 +36,75 @@
       v-bind:type="type"
       v-model="currentValue"
       :step="step"
-      :maxlength="maxLength"
+      :maxlength="maxlength"
       :pattern="pattern"
       v-decimal="maxDecimal"
       @blur="blur"
+      @keyup.enter.native="onEnter"
+      :data-testid="currentValue"
     />
 
-    <md-icon :v-if="icon" style="color: #D8D1C4 !important">{{ icon }}</md-icon>
+    <md-icon :v-if="icon" class="color">{{ icon }}</md-icon>
   </md-field>
 </template>
 
 <script>
+import {VMoney} from 'v-money'
+
 export default {
+  directives: {money: VMoney},
   data() {
     return {
-      currentVal: false
+      currentVal: false,
+      formatMoney: {
+        decimal: ",",
+        thousands: ".",
+        prefix: this.currency === "USD" ? "US$ " : "R$ ",
+        precision: 2,
+        masked: false
+      }
     };
   },
   props: {
     label: {
       type: String,
-      default: ""
+      default: ''
     },
     maxDecimal: {
       type: String,
       default: "999"
     },
+    currency: {
+      type: String,
+    },
     icon: {
       type: String,
-      default: ""
+      default: ''
     },
     value: {
       type: String,
-      default: ""
+      default: ''
     },
     pattern: {
       type: String,
-      default: ""
+      default: ''
     },
     step: {
       type: String,
-      default: ""
+      default: ''
     },
     type: {
       type: String,
-      default: ""
+      default: ''
     },
     disabled: {
       type: Boolean,
       default: false
     },
-    maxlength: {
-      type: String,
-      default: ""
-    },
+    maxlength: {},
     placeholder: {
       type: String,
-      default: ""
+      default: ''
     },
     error: {
       type: Boolean,
@@ -84,13 +112,24 @@ export default {
     },
     mask: {
       type: Array,
-      default: () => {}
+      default: null
     },
     blur: {
       default: () => {},
       type: Function
     },
-    maxLength: {}
+    onEnter: {
+      default: () => {},
+      type: Function
+    },
+    counter: {
+      type: Boolean,
+      default: false
+    },
+    money: {
+      type: Boolean,
+      dafault: false
+    }
   },
   methods: {},
   computed: {
@@ -101,7 +140,7 @@ export default {
       return "color:  #104550;";
     },
     shouldHideLabel() {
-      if (this.currentVal === null || !this.value) return "";
+      if (!this.currentVal) return "";
       return (this.currentVal && this.currentVal.length > 0) ||
         (this.value && this.value.length > 0)
         ? "hide"
@@ -116,7 +155,10 @@ export default {
         this.$emit("input", val);
       }
     }
-  }
+  },
+  mounted () {
+    this.currentVal = this.value;
+  },
 };
 </script>
 
@@ -160,6 +202,9 @@ export default {
 
 .md-field {
   padding-top: 0;
+}
+.color {
+  color: #D8D1C4 !important;
 }
 </style>
 

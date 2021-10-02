@@ -15,7 +15,7 @@ export default {
       type: String
     },
     logoImg: {
-      defaultt: LogoFull
+      default: LogoFull
     }
   },
 };

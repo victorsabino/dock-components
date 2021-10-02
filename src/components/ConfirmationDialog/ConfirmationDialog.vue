@@ -23,6 +23,7 @@
           :shadow="buttonCancelStyle.shadow"
           :border="buttonCancelStyle.border"
           :color="buttonCancelStyle.color"
+          :width="buttonCancelWidth"
           :icon="buttonCancelIcon"
           v-if="canCancel"
           :onClick="onCancel"
@@ -55,7 +56,7 @@ export default {
     title: "",
     confirmButtonText: "Ok",
     width: "500px",
-    cancelButtonText: "Cancelar",
+    cancelButtonText: "Cancel",
     justifyContent: "space-between",
     buttonConfirmStyle: {
       bgcolor: undefined,
@@ -84,13 +85,17 @@ export default {
     confirmationWidth: {
       default: "200px",
       type: String
+    },
+    buttonCancelWidth: {
+      default: "200px",
+      type: String
     }
   },
   methods: {
     resetDialog() {
       this.text = "";
       this.title = "";
-      this.cancelButtonText = "Cancelar";
+      this.cancelButtonText = "Cancel";
       this.confirmButtonText = "Ok";
       this.confirmListButtons = null;
       this.width = "500px";

@@ -4,11 +4,18 @@
       v-for="(tab, index) in tabs"
       :key="index"
       class="topTab"
+      :class="activeClass(index)"
       @click="() => setActive(index)"
+      :tabKey="tabKey"
     >
-      <md-icon v-if="tab.icon"> {{ tab.icon }} </md-icon>
-      <div v-if="tab.icon" :class="activeClass(index)">
+      <md-icon v-if="tab.icon" class="tabIcon"> {{ tab.icon }} </md-icon>
+      <md-img v-if="tab.img" class="tabIcon"> {{ tab.icon }} </md-img>
+      <img v-if="tab.img" :src="tab.img">
+      <div v-if="tab.title" :class="activeClass(index)">
         {{ tab.title }}
+      </div>
+      <div v-if="tab.quantity" :class="activeClass(index)">
+        ( {{ tab.quantity }} )
       </div>
     </div>
   </div>
@@ -16,6 +23,16 @@
 
 <script>
 export default {
+  props: {
+    tabs: {
+      type: Array,
+      default: () => []
+    },
+    tabKey: {
+      type: Number,
+      defualt: 0
+    }
+  },
   data: function() {
     return {
       active: 0
@@ -23,8 +40,13 @@ export default {
   },
   methods: {
     setActive: function(key) {
-      this.$emit("key", key);
-      this.active = key;
+      if(this.tabLock !== null) {
+        this.$emit("key", key);
+        this.active = this.tabLock;
+      }else {
+        this.$emit("key", key);
+        this.active = key;
+      }
     },
     activeClass: function(key) {
       let _class = "topTabTitle";
@@ -32,45 +54,57 @@ export default {
       return _class;
     }
   },
-  props: {
-    tabs: {
-      type: Array,
-      default: () => []
-    }
+  mounted () {
+    this.active = parseInt(this.tabKey);
+  },
+  updated () {
+    console.log('updated ', this.tabKey)
+    this.active = parseInt(this.tabKey);
   }
 };
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .topTabRoot {
-  height: 35px;
-  min-width: 310px;
+  height: 30px;
+  width: Calc(100% - 100px);
+  max-width: 1300px;
   display: flex;
   margin-top: 17px;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 .topTab {
-  background-color: #1b4c57;
-  margin-right: 20px;
-  padding: 7px 10px;
-  display: flex;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  width: 160px;
-}
-.topTab i {
-  margin-left: 5px;
+  background: #F4F1EB 0% 0% no-repeat padding-box;
   margin-right: 5px;
+  padding: 5px 10px;
+  display: flex;
+  border-radius: 4px 4px 0px 0px;
 }
 .topTabTitle {
   font-weight: 500;
-  font-family: "Raleway", "sans-serif";
-  font-size: 20px;
+  font-family: Raleway, "sans-serif";
+  font-weight: bold;
+  font-size: 15px;
   margin-left: 5px;
   margin-top: 2px;
+  color: #10434F;
   transition: all 0.5s;
+  text-transform: uppercase;
 }
 .topTabTitleInactive {
-  opacity: 0.2;
+  opacity: 0.5;
+}
+.tabIcon {
+  color: #10434F !important;
+  font-size: 22px !important;
+  margin-top: -2px;
+}
+.tabImg {
+  margin-top: 2px;
+  margin-right: 3px;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
-  <div class="badge" data-testid="badge">
-    {{ name }}
+  <div class="badgeRoot" data-testid="badge">
+    <div class="textWrapper" @click="onClick">
+      <Ellipsis :name="name" width="auto"/>
+    </div>
     <div @click="onDelete" data-testid="badgeDelete" class="closeWrapper">
       <md-icon>close</md-icon>
     </div>
@@ -8,18 +10,36 @@
 </template>
 
 <script>
+import Ellipsis from "../Ellipsis";
 export default {
-  props: ["name", "onDelete"]
+  props: {
+    name: {
+      type: String,
+      default: ""
+    },
+    onClick: {
+      type: Function,
+      default: () => {}
+    },  
+    onDelete: {
+      type: Function,
+      default: () => () => {}
+    },
+  },
+  components: {
+    Ellipsis
+  },
 };
 </script>
 
 <style scoped>
-.badge {
+.badgeRoot {
   background-color: #4eb9b1;
   height: 35px;
   width: auto;
   border-radius: 16px;
   display: flex;
+  justify-content: space-between;
   padding: 0 10px;
   padding-top: 7px;
   padding-left: 10px;
@@ -32,6 +52,7 @@ export default {
   border-radius: 50%;
   height: 15px;
   width: 15px;
+  min-width: 15px;
   margin-left: 10px;
   margin-top: 2px;
 }
@@ -40,5 +61,14 @@ export default {
   position: absolute;
   top: -5px;
   left: -4px;
+  min-width: 20px;
+}
+.textWrapper {
+  width: 89% !important
+}
+</style>
+<style>
+.badgeRoot .textWrapper .ellipsis{
+  width: auto !important
 }
 </style>
