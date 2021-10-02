@@ -1,5 +1,5 @@
 # dock-components
-
+For more information, please, visit https://www.npmjs.com/package/dock-components
 ## Project setup
 ```
 yarn install
